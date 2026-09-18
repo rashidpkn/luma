@@ -86,6 +86,47 @@ export const DashboardSection: React.FC = () => {
           </div>
         </div>
       </div>
+      <style>{`
+        .block-dashboard .btn-wrapper .btn {
+          display: inline-flex !important;
+          align-items: center !important;
+          justify-content: center !important;
+          text-align: center !important;
+          border-radius: 9999px !important;
+          min-height: 178px !important;
+          padding: 0 144px 6px 144px !important;
+          font-family: helv-regular, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+          font-size: 40px !important;
+          line-height: 1 !important;
+          white-space: nowrap !important;
+          text-decoration: none !important;
+          box-shadow: var(--box-shadow-btn) !important;
+          box-sizing: border-box !important;
+          transition: background-color .6s cubic-bezier(.19,1,.22,1), color .6s cubic-bezier(.19,1,.22,1), box-shadow .6s cubic-bezier(.19,1,.22,1) !important;
+        }
+        @media (max-width: 1100px) {
+          .block-dashboard .btn-wrapper .btn {
+            min-height: 140px !important;
+            padding: 0 80px !important;
+            font-size: 30px !important;
+          }
+        }
+        @media (max-width: 768px) {
+          .block-dashboard .btn-wrapper .btn {
+            min-height: 90px !important;
+            padding: 0 40px !important;
+            font-size: 22px !important;
+          }
+        }
+        @media (max-width: 480px) {
+          .block-dashboard .btn-wrapper .btn {
+            min-height: 64px !important;
+            padding: 12px 24px !important;
+            font-size: 16px !important;
+            white-space: normal !important;
+          }
+        }
+      `}</style>
     </section>
   );
 };
