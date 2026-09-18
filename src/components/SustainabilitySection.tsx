@@ -37,7 +37,7 @@ export const SustainabilitySection: React.FC = () => {
 
   return (
     <section ref={sectionRef} data-logo-color="white" className="block-sustainability">
-      <div className="row">
+      <div className="row align-middle">
         <div className="xxlarge-8 xxlarge-offset-1 small-16 small-offset-0 small-order-2 columns">
           <h2 className="h-medium">
             <span className="block">
@@ -65,6 +65,11 @@ export const SustainabilitySection: React.FC = () => {
           </div>
         </div>
       </div>
+      <style>{`
+        .block-sustainability .image-wrapper {
+          margin-top: 0 !important;
+        }
+      `}</style>
     </section>
   );
 };
