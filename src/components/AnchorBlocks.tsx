@@ -45,7 +45,19 @@ export const AnchorBlocks: React.FC = () => {
       endTrigger: '.block-get-paid',
       onUpdate: (self) => {
         const progress = self.progress;
-        progressLine.progress(progress);
+
+        // Map progress to line:
+        // SaveTime occupies 0.0 to ~0.80 across 4 steps (0, 1, 2, 3)
+        // GetPaid occupies >= 0.80 as step 4 (Spend Money)
+        let lineProg = 0;
+        if (progress < 0.80) {
+          lineProg = (progress / 0.80) * 0.75;
+        } else if (progress < 0.86) {
+          lineProg = 0.75 + ((progress - 0.80) / 0.06) * 0.25;
+        } else {
+          lineProg = 1;
+        }
+        progressLine.progress(Math.min(1, Math.max(0, lineProg)));
 
         const items = containerRef.current?.querySelectorAll('.anchor-list-item');
         if (!items) return;
@@ -54,19 +66,20 @@ export const AnchorBlocks: React.FC = () => {
           let active = false;
           let passed = false;
 
-          if (progress < 0.25) {
+          if (progress < 0.20) {
             active = idx === 0;
             passed = false;
-          } else if (progress >= 0.25 && progress < 0.5) {
+          } else if (progress >= 0.20 && progress < 0.40) {
             active = idx === 1;
             passed = idx < 1;
-          } else if (progress >= 0.5 && progress < 0.75) {
+          } else if (progress >= 0.40 && progress < 0.60) {
             active = idx === 2;
             passed = idx < 2;
-          } else if (progress >= 0.75 && progress < 0.999) {
+          } else if (progress >= 0.60 && progress < 0.80) {
             active = idx === 3;
             passed = idx < 3;
-          } else if (progress >= 0.999) {
+          } else {
+            // In block-get-paid (Step 5: Spend Money)
             active = idx === 4;
             passed = idx < 4;
           }
@@ -89,7 +102,7 @@ export const AnchorBlocks: React.FC = () => {
     // Toggle white theme when entering block-get-paid
     const changeColor = ScrollTrigger.create({
       trigger: '.block-get-paid',
-      start: 'top 50%',
+      start: 'top 70%',
       toggleClass: { targets: wrapperRef.current, className: 'light' }
     });
 

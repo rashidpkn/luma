@@ -6,47 +6,116 @@ export const GetPaidSection: React.FC = () => {
       data-logo-color="white"
       className="block-get-paid no-clients"
       style={{
-        backgroundColor: '#000',
+        backgroundColor: '#000000',
         position: 'relative',
-        paddingTop: '120px',
-        paddingBottom: '120px',
+        zIndex: 2,
+        paddingTop: 'clamp(80px, 8.82vw, 150px)',
+        paddingBottom: 'clamp(100px, 10vw, 180px)',
         overflow: 'hidden'
       }}
     >
       {/* Background Cover Overlay */}
-      <div className="video-wrapper">
-        <div className="block-bg-cover">
+      <div
+        className="video-wrapper"
+        style={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          width: '100%',
+          height: '100%',
+          zIndex: 0,
+          overflow: 'hidden'
+        }}
+      >
+        <div className="block-bg-cover" style={{ width: '100%', height: '100%' }}>
           <img
             alt="Spend anywhere. Stay in control."
             src="https://cdn.sanity.io/images/1ib26v3b/new/29a92889f018458789ceb213209d2295f16337d4-3840x2160.jpg?auto=format&q=100"
             className="element-cover"
-            style={{ opacity: 0.4 }}
+            style={{
+              width: '104%',
+              height: '104%',
+              top: '-2%',
+              left: '-2%',
+              position: 'absolute',
+              objectFit: 'cover'
+            }}
           />
         </div>
       </div>
 
-      <div className="row relative z-10">
+      <div className="row" style={{ position: 'relative', zIndex: 1 }}>
         <div className="xxlarge-12 xxlarge-offset-2 small-16 small-offset-0 columns">
-          <h2 className="h-large text-white font-normal" style={{ whiteSpace: 'pre-line' }}>
+          <h2
+            className="h-large"
+            style={{
+              color: '#ffffff',
+              fontFamily: 'helv-regular, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
+              fontSize: 'clamp(44px, 4.47vw, 76px)',
+              lineHeight: 1.08,
+              letterSpacing: '-0.03em',
+              whiteSpace: 'pre-line',
+              fontWeight: 400,
+              margin: 0
+            }}
+          >
             Spend anywhere.{'\n'}Stay in control.
           </h2>
 
-          <div className="p-big mt-4 text-gray-300 max-w-xl">
-            <p>
-              Use your Luma physical or virtual Luma debit card for purchases in all merchants and terminals, which accepts Master cards.
+          <div className="p-big" style={{ marginTop: '20px', maxWidth: '515px' }}>
+            <p
+              style={{
+                color: 'rgba(255, 255, 255, 0.6)',
+                fontFamily: 'helv-regular, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
+                fontSize: 'clamp(18px, 1.41vw, 24px)',
+                lineHeight: 1.35,
+                letterSpacing: '-0.01em',
+                margin: 0
+              }}
+            >
+              Use your Speedy physical or virtual Speedy debit card for purchases in all merchants and terminals, which accepts Master cards.
             </p>
           </div>
 
-          {/* Realistic Browser / Terminal Frame with Video and Screenshots */}
-          <div className="browser-wrapper mt-10 rounded-2xl overflow-hidden shadow-2xl border border-white/10 relative">
-            <div className="video-wrapper" style={{ minHeight: '420px', position: 'relative' }}>
-              <div className="block-bg-cover">
+          {/* Centered Browser Window Mockup */}
+          <div
+            className="browser-wrapper"
+            style={{
+              position: 'relative',
+              width: '100%',
+              maxWidth: '1150px',
+              margin: 'clamp(40px, 4.1vw, 70px) auto 0 auto',
+              borderRadius: '14px',
+              overflow: 'hidden',
+              boxShadow: '0 30px 60px -12px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(255, 255, 255, 0.08)'
+            }}
+          >
+            {/* Layer 0: Background Loop Video */}
+            <div
+              className="video-wrapper"
+              style={{
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                width: '100%',
+                height: '100%',
+                zIndex: 0,
+                overflow: 'hidden',
+                borderRadius: '14px'
+              }}
+            >
+              <div className="block-bg-cover" style={{ width: '100%', height: '100%' }}>
                 <video
                   autoPlay
                   muted
                   playsInline
                   loop
-                  className="element-cover w-full h-full object-cover"
+                  className="element-cover"
+                  style={{
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'cover'
+                  }}
                 >
                   <source
                     src="https://cdn.sanity.io/files/1ib26v3b/new/a6c56ffe5712d367966a9820d591221b813f0221.mp4"
@@ -56,30 +125,36 @@ export const GetPaidSection: React.FC = () => {
               </div>
             </div>
 
-            {/* Desktop Mockup Overlay */}
+            {/* Layer 1: Desktop Browser Chrome & Cards Overlay */}
             <img
               alt="Payment Method"
               src="https://cdn.sanity.io/images/1ib26v3b/new/e7eec72eab1b198d80f3860e6d0a7b157e98d0eb-2366x1614.png?auto=format"
-              className="desktop hidden md:block w-full pointer-events-none"
+              className="desktop"
+              style={{
+                position: 'relative',
+                width: '100%',
+                height: 'auto',
+                display: 'block',
+                zIndex: 1,
+                pointerEvents: 'none'
+              }}
             />
-            {/* Mobile Mockup Overlay */}
+
+            {/* Mobile Fallback Overlay */}
             <img
               alt="Invoice Payment"
               src="https://cdn.sanity.io/images/1ib26v3b/new/9c005840c488a0f13b7718eab0f6f1f2ae18d6b2-565x1005.png?auto=format"
-              className="mobile block md:hidden w-full pointer-events-none"
+              className="mobile"
+              style={{
+                position: 'relative',
+                width: '100%',
+                height: 'auto',
+                display: 'none',
+                zIndex: 1,
+                pointerEvents: 'none'
+              }}
             />
           </div>
-        </div>
-      </div>
-
-      {/* Scroll indicator */}
-      <div className="scroll-helper-wrapper">
-        <div className="scroll-helper visible">
-          <svg width="18" height="27" viewBox="0 0 18 27" fill="none">
-            <rect x="1" y="5" width="16" height="21" rx="5" stroke="white" strokeWidth="2" />
-            <line x1="9" y1="9" x2="9" y2="14" stroke="white" strokeWidth="2" />
-          </svg>
-          <span style={{ color: 'rgba(255,255,255,0.7)' }}>Scrooooll</span>
         </div>
       </div>
     </section>

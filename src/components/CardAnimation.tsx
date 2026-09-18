@@ -148,8 +148,13 @@ export const CardAnimation: React.FC = () => {
             ease: 'power2.inOut'
           }
         )
-        // Hold Step 4 across remaining scroll range
-        .to({}, { duration: 4.2 });
+        // Hide card animation container when entering block-get-paid
+        ScrollTrigger.create({
+          trigger: '.block-get-paid',
+          start: 'top 95%',
+          onEnter: () => gsap.to(containerRef.current, { autoAlpha: 0, duration: 0.25 }),
+          onLeaveBack: () => gsap.to(containerRef.current, { autoAlpha: 1, duration: 0.25 })
+        });
       };
 
       animRef.current.addEventListener('DOMLoaded', handleReady);
