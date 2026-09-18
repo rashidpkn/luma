@@ -28,6 +28,8 @@ export const Navbar: React.FC = () => {
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    let scrollTimeout: any;
+
     const handleScroll = () => {
       const scrollY = window.scrollY;
       const direction = scrollY > lastScrollY.current ? 'down' : 'up';
@@ -48,6 +50,14 @@ export const Navbar: React.FC = () => {
         setIsCollapsedDown(false);
         setIsCollapsedUp(false);
       }
+
+      clearTimeout(scrollTimeout);
+      scrollTimeout = setTimeout(() => {
+        if (window.scrollY > 100) {
+          setIsCollapsedDown(false);
+          setIsCollapsedUp(true);
+        }
+      }, 300);
 
       // Detect [data-logo-color] of section directly under navbar
       const sections = document.querySelectorAll('[data-logo-color]');
@@ -72,7 +82,10 @@ export const Navbar: React.FC = () => {
 
     window.addEventListener('scroll', handleScroll, { passive: true });
     handleScroll();
-    return () => window.removeEventListener('scroll', handleScroll);
+    return () => {
+      clearTimeout(scrollTimeout);
+      window.removeEventListener('scroll', handleScroll);
+    };
   }, []);
 
   // Close dropdown on outside click

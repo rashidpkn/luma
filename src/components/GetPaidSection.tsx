@@ -10,11 +10,11 @@ export const GetPaidSection: React.FC = () => {
         position: 'relative',
         zIndex: 2,
         paddingTop: 'clamp(80px, 8.82vw, 150px)',
-        paddingBottom: 'clamp(100px, 10vw, 180px)',
-        overflow: 'hidden'
+        paddingBottom: 'clamp(80px, 10vw, 140px)',
+        overflow: 'visible'
       }}
     >
-      {/* Background Cover Overlay */}
+      {/* Background Cover Overlay: Extends 100vh down from top, leaving bottom of section in pure black */}
       <div
         className="video-wrapper"
         style={{
@@ -22,7 +22,7 @@ export const GetPaidSection: React.FC = () => {
           top: 0,
           left: 0,
           width: '100%',
-          height: '100%',
+          height: 'clamp(680px, 72vh, 880px)',
           zIndex: 0,
           overflow: 'hidden'
         }}
@@ -77,7 +77,7 @@ export const GetPaidSection: React.FC = () => {
             </p>
           </div>
 
-          {/* Centered Browser Window Mockup */}
+          {/* Centered Browser Window Mockup: Spreads across ribbon and pure black screens */}
           <div
             className="browser-wrapper"
             style={{
@@ -154,6 +154,65 @@ export const GetPaidSection: React.FC = () => {
                 pointerEvents: 'none'
               }}
             />
+          </div>
+
+          {/* Centered Vertical Track Line & Arch Icon directly beneath browser mockup */}
+          <div
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              margin: '0 auto',
+              position: 'relative',
+              zIndex: 1
+            }}
+          >
+            {/* Vertical slot / track line */}
+            <div
+              style={{
+                width: '12px',
+                height: '60px',
+                border: '1.5px solid rgba(255, 255, 255, 0.4)',
+                borderTop: 'none',
+                borderRadius: '0 0 2px 2px'
+              }}
+            />
+            {/* Double arch outline icon */}
+            <div
+              style={{
+                marginTop: '12px',
+                width: '46px',
+                height: '30px',
+                position: 'relative'
+              }}
+            >
+              <svg
+                width="46"
+                height="30"
+                viewBox="0 0 46 30"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M1 29V11C1 5.47715 5.47715 1 11 1C16.5228 1 21 5.47715 21 11V29"
+                  stroke="rgba(255, 255, 255, 0.45)"
+                  strokeWidth="1.5"
+                />
+                <path
+                  d="M25 29V11C25 5.47715 29.4772 1 35 1C40.5228 1 45 5.47715 45 11V29"
+                  stroke="rgba(255, 255, 255, 0.45)"
+                  strokeWidth="1.5"
+                />
+                <line
+                  x1="1"
+                  y1="29"
+                  x2="45"
+                  y2="29"
+                  stroke="rgba(255, 255, 255, 0.45)"
+                  strokeWidth="1.5"
+                />
+              </svg>
+            </div>
           </div>
         </div>
       </div>
