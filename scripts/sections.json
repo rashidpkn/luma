@@ -1,0 +1,55 @@
+[
+  {
+    "index": 0,
+    "tag": "div",
+    "cls": "loading-splash-wrapper",
+    "id": "",
+    "headings": [],
+    "htmlSnippet": "<div class=\"loading-splash-wrapper\" data-v-74a71836=\"\"><div class=\"anime-container\" data-v-74a71836=\"\"></div></div>"
+  },
+  {
+    "index": 1,
+    "tag": "div",
+    "cls": "awwards-wrapper",
+    "id": "",
+    "headings": [
+      "Awards translated",
+      "Certifications translated"
+    ],
+    "htmlSnippet": "<div class=\"awwards-wrapper\" data-v-b6bebff0=\"\"><div class=\"banner-wrapper\" data-v-b6bebff0=\"\"><p class=\"cert-text\" data-v-b6bebff0=\"\">\n      Awards\n      &amp;<br data-v-b6bebff0=\"\">\n      Certifications\n    </p> <svg width=\"62\" height=\"187\" viewBox=\"0 0 62 187\" fill=\"none\" xmlns=\"http://www.w3.org"
+  },
+  {
+    "index": 2,
+    "tag": "div",
+    "cls": "app-modal-wrapper",
+    "id": "",
+    "headings": [
+      "Get the Speedy App"
+    ],
+    "htmlSnippet": "<div countries-array=\"[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]\" class=\"app-modal-wrapper\" data-v-4fe7"
+  },
+  {
+    "index": 3,
+    "tag": "div",
+    "cls": "js-locomotive home-page",
+    "id": "",
+    "headings": [
+      "NF Payment",
+      "Your Money.Simplified.",
+      "Add funds in seconds",
+      "Get an Overview",
+      "Send money, anywhere",
+      "Convert with confidence",
+      "Spend anywhere. Stay in control.",
+      "We are local, yet global.",
+      "Increase your visibility in spendings.",
+      "We care about our Mother Earth as well as we care about your business. You can just make the world greener by planting a tree. We do it for you with every money you spend with us.",
+      "Better than a bank",
+      "Built for trust. Powered by speed.",
+      "Strength you can trust. Simplicity you’ll love",
+      "Professional by design. Flexible by nature.",
+      "Dedicated Accounts and Payment Cards"
+    ],
+    "htmlSnippet": "<div data-country=\"global\" class=\"js-locomotive home-page\" data-v-186ff90c=\"\"><div class=\"menu\" data-v-55223bbe=\"\" data-v-186ff90c=\"\"><div class=\"menu-wrapper\" data-v-55223bbe=\"\"><div class=\"row\" data-v-55223bbe=\"\"><div class=\"xxlarge-10 small-16 columns\" data-v-55223bbe=\"\"><span class=\"title anime-"
+  }
+]
