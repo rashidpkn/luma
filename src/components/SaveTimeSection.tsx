@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useLayoutEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -8,7 +8,7 @@ export const SaveTimeSection: React.FC = () => {
   const sectionRef = useRef<HTMLElement>(null);
   const fixedWrapperRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (!sectionRef.current || !fixedWrapperRef.current) return;
 
     const mm = gsap.matchMedia();

@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useLayoutEffect, useRef } from 'react';
 import lottie, { type AnimationItem } from 'lottie-web';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -10,11 +10,13 @@ export const CardAnimation: React.FC = () => {
   const cardWrapperRef = useRef<HTMLDivElement>(null);
   const animRef = useRef<AnimationItem | null>(null);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (!cardWrapperRef.current || !containerRef.current) return;
 
     let timeline: gsap.core.Timeline | null = null;
     let mm: gsap.MatchMedia | null = null;
+    let observer: MutationObserver | null = null;
+    let disposed = false;
 
     try {
       animRef.current = lottie.loadAnimation({
@@ -258,7 +260,9 @@ export const CardAnimation: React.FC = () => {
         ['img_0.png', 'img_1.png', 'img_2.png', 'img_4.png', 'img_12.png'].forEach(recolorDarkCard);
       };
 
-      const observer = new MutationObserver(applyCardGlassTheme);
+      observer = new MutationObserver(() => {
+        if (!disposed) applyCardGlassTheme();
+      });
       observer.observe(cardWrapperRef.current, { childList: true, subtree: true });
 
       animRef.current.addEventListener('DOMLoaded', () => {
@@ -270,10 +274,19 @@ export const CardAnimation: React.FC = () => {
     }
 
     return () => {
-      mm?.revert();
+      disposed = true;
+      observer?.disconnect();
+      // Kill all ScrollTriggers before reverting to prevent removeChild races
+      ScrollTrigger.getAll().forEach(st => {
+        if (st.trigger === containerRef.current || st.vars?.trigger === containerRef.current) {
+          st.kill();
+        }
+      });
       timeline?.kill();
+      mm?.revert();
       if (animRef.current) {
         animRef.current.destroy();
+        animRef.current = null;
       }
     };
   }, []);

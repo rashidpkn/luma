@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useLayoutEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -8,7 +8,7 @@ export const ScrollHelper: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const helperRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (!containerRef.current || !helperRef.current) return;
 
     const st = ScrollTrigger.create({

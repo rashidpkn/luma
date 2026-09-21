@@ -1,9 +1,18 @@
-import React, { useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect, useCallback } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useApp } from '../context/AppContext';
 
 export const FullscreenMenu: React.FC = () => {
   const { isMenuOpen, setIsMenuOpen } = useApp();
+  const navigate = useNavigate();
+
+  const handleNavigate = useCallback((path: string) => {
+    setIsMenuOpen(false);
+    // Small delay to let menu close and body overflow reset before route transition
+    setTimeout(() => {
+      navigate(path);
+    }, 50);
+  }, [setIsMenuOpen, navigate]);
 
   useEffect(() => {
     if (isMenuOpen) {
@@ -124,13 +133,16 @@ export const FullscreenMenu: React.FC = () => {
                     { label: 'Dispute Resolution', path: '/terms-of-service' }
                   ].map((item, idx) => (
                     <li key={idx} className="anime-in">
-                      <Link
-                        to={item.path}
-                        onClick={() => setIsMenuOpen(false)}
+                      <a
+                        href={item.path}
+                        onClick={(e) => {
+                          e.preventDefault();
+                          handleNavigate(item.path);
+                        }}
                         className="underline-anime small"
                       >
                         {item.label}
-                      </Link>
+                      </a>
                     </li>
                   ))}
                 </ul>

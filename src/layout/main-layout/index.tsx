@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useLayoutEffect } from 'react';
 import { Outlet, useLocation } from 'react-router-dom';
 import Lenis from 'lenis';
 import gsap from 'gsap';
@@ -16,7 +16,10 @@ const LayoutContent: React.FC = () => {
   const { country } = useApp();
   const location = useLocation();
 
-  useEffect(() => {
+  useLayoutEffect(() => {
+    // Refresh ScrollTrigger after route change to recalculate positions
+    ScrollTrigger.refresh();
+
     window.scrollTo(0, 0);
     const lenis = (window as any).lenis;
     if (lenis) {
