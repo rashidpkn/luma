@@ -819,6 +819,13 @@ html, body {
 }
 
 @media only screen and (max-width: 960px) {
+  .menu .discover-links-column {
+    display: none !important;
+  }
+  .menu .menu-wrapper {
+    justify-content: center !important;
+    padding-top: 80px !important;
+  }
   .menu .page-links {
     gap: 16px !important;
     margin-bottom: 36px !important;

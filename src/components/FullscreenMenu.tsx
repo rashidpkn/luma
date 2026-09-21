@@ -48,8 +48,8 @@ export const FullscreenMenu: React.FC = () => {
     >
       <div className="menu-wrapper" style={{ minHeight: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', paddingTop: '100px', paddingBottom: '40px' }}>
         <div className="row align-bottom">
-          {/* Main Discover links */}
-          <div className="xxlarge-10 small-16 columns">
+          {/* Main Discover links — hidden on mobile */}
+          <div className="xxlarge-10 small-16 columns discover-links-column" style={{ }}>
             <span className="title anime-in">Discover</span>
             <ul className="page-links">
               <li className="anime-in">

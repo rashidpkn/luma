@@ -18,8 +18,8 @@ export const GlobalSection: React.FC = () => {
       style={{
         backgroundColor: '#000',
         position: 'relative',
-        paddingTop: '180px',
-        paddingBottom: '180px',
+        paddingTop: 'clamp(60px, 10vw, 180px)',
+        paddingBottom: 'clamp(60px, 10vw, 180px)',
         overflow: 'hidden'
       }}
     >

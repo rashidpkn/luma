@@ -87,7 +87,7 @@ export const HighlightBox: React.FC<{ children: React.ReactNode }> = ({ children
       borderLeft: '3px solid #38bdf8',
       borderRadius: '6px',
       padding: '16px 20px',
-      fontSize: '14.5px',
+      fontSize: '15.5px',
       lineHeight: 1.65,
       color: '#e2e8f0',
       marginBottom: '32px'
@@ -318,7 +318,7 @@ export const LegalLayout: React.FC<LegalLayoutProps> = ({
                 borderRadius: '20px',
                 padding: 'clamp(24px, 4vw, 48px)',
                 lineHeight: 1.75,
-                fontSize: '15px',
+                fontSize: '16.5px',
                 color: '#cbd5e1',
                 boxShadow: '0 20px 50px rgba(0, 0, 0, 0.5), 0 0 30px rgba(56, 189, 248, 0.05)'
               }}
