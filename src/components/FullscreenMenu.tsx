@@ -31,10 +31,12 @@ export const FullscreenMenu: React.FC = () => {
         transition: 'opacity 0.4s cubic-bezier(0.19, 1, 0.22, 1), visibility 0.4s ease',
         backdropFilter: 'blur(25px)',
         WebkitBackdropFilter: 'blur(25px)',
-        backgroundColor: 'rgba(0, 0, 0, 0.95)'
+        backgroundColor: 'rgba(0, 0, 0, 0.95)',
+        overflowY: 'auto',
+        WebkitOverflowScrolling: 'touch'
       }}
     >
-      <div className="menu-wrapper">
+      <div className="menu-wrapper" style={{ minHeight: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', paddingTop: '80px', paddingBottom: '40px' }}>
         <div className="row align-bottom">
           {/* Main Discover links */}
           <div className="xxlarge-10 small-16 columns">

@@ -28,88 +28,90 @@ export const AnchorBlocks: React.FC = () => {
     // Set initial line position (hidden above)
     gsap.set(lineRef.current, { yPercent: -100 });
 
-    const progressLine = gsap.timeline({ paused: true }).to(lineRef.current, {
-      duration: 1,
-      yPercent: 0,
-      force3D: true,
-      willChange: 'transform',
-      ease: 'none'
-    });
+    const mm = gsap.matchMedia();
 
-    const fixAnchor = ScrollTrigger.create({
-      trigger: containerRef.current,
-      start: 'top top',
-      end: 'bottom bottom',
-      pin: true,
-      pinSpacing: false,
-      endTrigger: '.block-get-paid',
-      onUpdate: (self) => {
-        const progress = self.progress;
+    mm.add('(min-width: 961px)', () => {
+      const progressLine = gsap.timeline({ paused: true }).to(lineRef.current, {
+        duration: 1,
+        yPercent: 0,
+        force3D: true,
+        willChange: 'transform',
+        ease: 'none'
+      });
 
-        // Map progress to line:
-        // SaveTime occupies 0.0 to ~0.80 across 4 steps (0, 1, 2, 3)
-        // GetPaid occupies >= 0.80 as step 4 (Spend Money)
-        let lineProg = 0;
-        if (progress < 0.80) {
-          lineProg = (progress / 0.80) * 0.75;
-        } else if (progress < 0.86) {
-          lineProg = 0.75 + ((progress - 0.80) / 0.06) * 0.25;
-        } else {
-          lineProg = 1;
+      ScrollTrigger.create({
+        trigger: containerRef.current,
+        start: 'top top',
+        end: 'bottom bottom',
+        pin: true,
+        pinSpacing: false,
+        endTrigger: '.block-get-paid',
+        onUpdate: (self) => {
+          const progress = self.progress;
+
+          // Map progress to line:
+          // SaveTime occupies 0.0 to ~0.80 across 4 steps (0, 1, 2, 3)
+          // GetPaid occupies >= 0.80 as step 4 (Spend Money)
+          let lineProg = 0;
+          if (progress < 0.80) {
+            lineProg = (progress / 0.80) * 0.75;
+          } else if (progress < 0.86) {
+            lineProg = 0.75 + ((progress - 0.80) / 0.06) * 0.25;
+          } else {
+            lineProg = 1;
+          }
+          progressLine.progress(Math.min(1, Math.max(0, lineProg)));
+
+          const items = containerRef.current?.querySelectorAll('.anchor-list-item');
+          if (!items) return;
+
+          items.forEach((item, idx) => {
+            let active = false;
+            let passed = false;
+
+            if (progress < 0.20) {
+              active = idx === 0;
+              passed = false;
+            } else if (progress >= 0.20 && progress < 0.40) {
+              active = idx === 1;
+              passed = idx < 1;
+            } else if (progress >= 0.40 && progress < 0.60) {
+              active = idx === 2;
+              passed = idx < 2;
+            } else if (progress >= 0.60 && progress < 0.80) {
+              active = idx === 3;
+              passed = idx < 3;
+            } else {
+              // In block-get-paid (Step 5: Spend Money)
+              active = idx === 4;
+              passed = idx < 4;
+            }
+
+            if (active) {
+              item.classList.add('active');
+            } else {
+              item.classList.remove('active');
+            }
+
+            if (passed) {
+              item.classList.add('passed');
+            } else {
+              item.classList.remove('passed');
+            }
+          });
         }
-        progressLine.progress(Math.min(1, Math.max(0, lineProg)));
+      });
 
-        const items = containerRef.current?.querySelectorAll('.anchor-list-item');
-        if (!items) return;
-
-        items.forEach((item, idx) => {
-          let active = false;
-          let passed = false;
-
-          if (progress < 0.20) {
-            active = idx === 0;
-            passed = false;
-          } else if (progress >= 0.20 && progress < 0.40) {
-            active = idx === 1;
-            passed = idx < 1;
-          } else if (progress >= 0.40 && progress < 0.60) {
-            active = idx === 2;
-            passed = idx < 2;
-          } else if (progress >= 0.60 && progress < 0.80) {
-            active = idx === 3;
-            passed = idx < 3;
-          } else {
-            // In block-get-paid (Step 5: Spend Money)
-            active = idx === 4;
-            passed = idx < 4;
-          }
-
-          if (active) {
-            item.classList.add('active');
-          } else {
-            item.classList.remove('active');
-          }
-
-          if (passed) {
-            item.classList.add('passed');
-          } else {
-            item.classList.remove('passed');
-          }
-        });
-      }
-    });
-
-    // Toggle white theme when entering block-get-paid
-    const changeColor = ScrollTrigger.create({
-      trigger: '.block-get-paid',
-      start: 'top 70%',
-      toggleClass: { targets: wrapperRef.current, className: 'light' }
+      // Toggle white theme when entering block-get-paid
+      ScrollTrigger.create({
+        trigger: '.block-get-paid',
+        start: 'top 70%',
+        toggleClass: { targets: wrapperRef.current, className: 'light' }
+      });
     });
 
     return () => {
-      progressLine.kill();
-      fixAnchor.kill();
-      changeColor.kill();
+      mm.revert();
     };
   }, []);
 

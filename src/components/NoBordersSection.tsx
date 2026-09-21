@@ -366,7 +366,7 @@ export const NoBordersSection: React.FC = () => {
         }
       },
       {
-        threshold: 0.35,
+        threshold: window.innerWidth < 768 ? 0.2 : 0.35,
       }
     );
 
@@ -886,51 +886,88 @@ export const NoBordersSection: React.FC = () => {
 
         @media screen and (max-width: 991px) {
           .global-sc {
-            --r: 1.3vw;
+            --r: 1.1vw;
           }
           .globe-wrapper {
-            width: calc(80 * var(--r));
-            height: calc(80 * var(--r));
+            width: calc(75 * var(--r));
+            height: calc(75 * var(--r));
           }
         }
 
-        @media screen and (max-width: 767px) {
+        @media screen and (max-width: 768px) {
           .global-sc {
-            --r: 1.8vw;
+            --r: 12px;
+            overflow: hidden;
+            padding-bottom: 30px;
+          }
+          .container.global-s {
+            padding-top: 40px;
+            padding-bottom: 30px;
           }
           .globe-h {
-            font-size: 36px;
+            font-size: clamp(28px, 7.5vw, 38px) !important;
           }
           .description.global-s {
-            width: 90%;
-            font-size: 15px;
+            width: 92% !important;
+            max-width: 480px !important;
+            font-size: clamp(14px, 3.8vw, 16px) !important;
           }
+          .globe-wrapper {
+            width: min(85vw, 360px) !important;
+            height: min(85vw, 360px) !important;
+            transform: translate(0, 40px) !important;
+          }
+          .globe-wrapper.move {
+            transform: translate(0, 0) !important;
+          }
+          .globe-coins {
+            width: min(92vw, 380px) !important;
+            height: min(92vw, 380px) !important;
+          }
+          .globe-widgets.move {
+            width: min(88vw, 360px) !important;
+            height: min(88vw, 360px) !important;
+          }
+
+          /* Keep all 8 floating widgets visible & cleanly proportioned on mobile */
+          .globe-vidget.s1 { width: clamp(96px, 30vw, 130px) !important; }
+          .globe-vidget.s1.move { inset: 46% auto auto -4% !important; }
+
+          .globe-vidget.s2 { width: clamp(75px, 24vw, 105px) !important; }
+          .globe-vidget.s2.move { top: 12% !important; left: -2% !important; }
+
+          .globe-vidget.s3 { width: clamp(75px, 24vw, 105px) !important; }
+          .globe-vidget.s3.move { top: 4% !important; left: 24% !important; }
+
+          .globe-vidget.s4 { width: clamp(36px, 11vw, 50px) !important; }
+          .globe-vidget.s4.move { top: 6% !important; right: 10% !important; }
+
+          .globe-vidget.s5 { width: clamp(90px, 28vw, 120px) !important; }
+          .globe-vidget.s5.move { top: 22% !important; right: -3% !important; }
+
+          .globe-vidget.s6 { width: clamp(22px, 7vw, 32px) !important; }
+          .globe-vidget.s6.move { top: 46% !important; right: 2% !important; }
+
+          .globe-vidget.s7 { width: clamp(80px, 25vw, 110px) !important; }
+          .globe-vidget.s7.move { bottom: 12% !important; right: 2% !important; }
+
+          .globe-vidget.s8 { width: clamp(36px, 11vw, 50px) !important; }
+          .globe-vidget.s8.move { bottom: 4% !important; left: 14% !important; }
+
           .gobal-down-info {
-            grid-template-columns: 1fr;
-            text-align: center;
-            width: 90%;
-            margin-top: calc(6 * var(--r));
+            grid-template-columns: 1fr !important;
+            text-align: center !important;
+            row-gap: 16px !important;
+            width: 90% !important;
+            margin-top: 36px !important;
           }
           .display-2xl {
-            font-size: 80px;
+            font-size: clamp(52px, 15vw, 76px) !important;
+            text-align: center !important;
           }
           .body-b1 {
-            font-size: 18px;
-          }
-        }
-
-        @media screen and (max-width: 479px) {
-          .global-sc {
-            --r: 2.2vw;
-          }
-          .globe-coin.s1, .globe-coin.s1.move, .globe-coin.s2, .globe-coin.s2.move {
-            display: none;
-          }
-          .globe-coin.s6, .globe-coin.s6.move, .globe-coin.s7, .globe-coin.s7.move {
-            display: none;
-          }
-          .globe-vidget.s6, .globe-vidget.s7, .globe-vidget.s5 {
-            display: none;
+            font-size: clamp(14px, 3.8vw, 17px) !important;
+            text-align: center !important;
           }
         }
       `}</style>

@@ -69,6 +69,56 @@ export const BenefitsSection: React.FC = () => {
           </div>
         </div>
       </div>
+
+      <style>{`
+        @media only screen and (max-width: 960px) {
+          .block-benefits {
+            padding: 60px 0 80px 0 !important;
+            overflow: hidden !important;
+            height: auto !important;
+          }
+          .block-benefits .cards-container {
+            padding-left: 16px !important;
+            padding-right: 16px !important;
+            width: 100% !important;
+            max-width: 100% !important;
+            box-sizing: border-box !important;
+          }
+          .block-benefits .cards-container .cards-wrapper {
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: stretch !important;
+            gap: 24px !important;
+            margin-top: 20px !important;
+            margin-bottom: 0 !important;
+            position: static !important;
+            width: 100% !important;
+          }
+          .block-benefits .cards-container .cards-wrapper .card,
+          .block-benefits .cards-container .cards-wrapper .card:first-child,
+          .block-benefits .cards-container .cards-wrapper .card:nth-child(1),
+          .block-benefits .cards-container .cards-wrapper .card:nth-child(2),
+          .block-benefits .cards-container .cards-wrapper .card:nth-child(3),
+          .block-benefits .cards-container .cards-wrapper .card:nth-child(4),
+          .block-benefits .card {
+            margin: 0 !important;
+            margin-top: 0 !important;
+            margin-bottom: 0 !important;
+            margin-left: 0 !important;
+            margin-right: 0 !important;
+            width: 100% !important;
+            max-width: 100% !important;
+            transform: none !important;
+            position: relative !important;
+            top: auto !important;
+            bottom: auto !important;
+            left: auto !important;
+            right: auto !important;
+            padding: 32px 24px !important;
+            box-sizing: border-box !important;
+          }
+        }
+      `}</style>
     </section>
   );
 };

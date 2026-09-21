@@ -4,6 +4,7 @@ export const HeroHeader: React.FC = () => {
   return (
     <header
       data-logo-color="white"
+      className="hero-header"
       style={{
         position: 'relative',
         width: '100%',
@@ -29,27 +30,37 @@ export const HeroHeader: React.FC = () => {
       </div>
 
       {/* Hero Content Container */}
-      <div className="row align-bottom" style={{ height: '100%', position: 'relative', zIndex: 2 }}>
-        <div className="xxlarge-8 medium-10 small-16 columns relative pb-20">
+      <div className="row align-bottom hero-content-row" style={{ height: '100%', position: 'relative', zIndex: 2 }}>
+        <div className="xxlarge-8 medium-10 small-16 columns relative pb-20 hero-text-col">
           <div style={{ display: 'none' }}>
             <h1>NF Payment</h1>
           </div>
 
           <div
+            className="hero-badge"
             style={{
               color: '#38bdf8',
-              fontSize: '13px',
+              fontSize: '11px',
               fontWeight: 700,
-              letterSpacing: '0.15em',
+              letterSpacing: '0.14em',
               textTransform: 'uppercase',
-              marginBottom: '16px',
+              marginBottom: '14px',
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '8px',
+              padding: '6px 14px',
+              background: 'rgba(56, 189, 248, 0.08)',
+              border: '1px solid rgba(56, 189, 248, 0.25)',
+              borderRadius: '9999px',
+              backdropFilter: 'blur(8px)',
               textShadow: '0 0 15px rgba(56, 189, 248, 0.4)'
             }}
           >
+            <span style={{ width: 6, height: 6, borderRadius: '50%', backgroundColor: '#00f2fe', boxShadow: '0 0 8px #00f2fe', flexShrink: 0 }} />
             MULTI-CURRENCY BUSINESS BANKING
           </div>
 
-          <h2 className="h-xlarge" style={{ color: '#fff', textShadow: '0 4px 24px rgba(0,0,0,0.5)' }}>
+          <h2 className="h-xlarge hero-title" style={{ color: '#fff', textShadow: '0 4px 24px rgba(0,0,0,0.5)', marginTop: 0, marginBottom: 0 }}>
             <span className="block">Your Money.</span>
             <span
               className="block"
@@ -64,12 +75,13 @@ export const HeroHeader: React.FC = () => {
             </span>
           </h2>
 
-          <p className="p-big" style={{ color: '#94a3b8', marginTop: '20px', maxWidth: '520px', lineHeight: 1.5 }}>
+          <p className="p-big hero-desc" style={{ color: '#94a3b8', marginTop: '16px', maxWidth: '520px', lineHeight: 1.5 }}>
             Send, spend, exchange and stay in control—all from one considered platform.
           </p>
 
           <a
             href="#flow"
+            className="hero-link"
             style={{
               display: 'inline-flex',
               alignItems: 'center',
@@ -79,7 +91,7 @@ export const HeroHeader: React.FC = () => {
               fontWeight: 700,
               letterSpacing: '0.15em',
               textTransform: 'uppercase',
-              marginTop: '32px',
+              marginTop: '24px',
               borderBottom: '1px solid rgba(56, 189, 248, 0.4)',
               paddingBottom: '4px',
               textDecoration: 'none',
@@ -101,6 +113,53 @@ export const HeroHeader: React.FC = () => {
           <span style={{ color: '#38bdf8', letterSpacing: '0.08em', fontWeight: 600 }}>SCROLL TO MOVE MONEY</span>
         </div>
       </div>
+
+      <style>{`
+        @media only screen and (max-width: 960px) {
+          header.hero-header {
+            height: 100svh !important;
+            min-height: 560px !important;
+            padding-top: 0 !important;
+          }
+          .hero-content-row {
+            align-items: flex-start !important;
+            padding-top: clamp(68px, 10.5vh, 88px) !important;
+          }
+          .hero-text-col {
+            padding-bottom: 0 !important;
+          }
+          .hero-badge {
+            font-size: 10px !important;
+            margin-bottom: 10px !important;
+            letter-spacing: 0.12em !important;
+            padding: 4px 10px !important;
+          }
+          .hero-title,
+          header h2.h-xlarge {
+            font-size: clamp(30px, 8vw, 42px) !important;
+            line-height: 1.08 !important;
+            margin-top: 0 !important;
+            margin-bottom: 0 !important;
+          }
+          .hero-desc {
+            font-size: clamp(13px, 3.5vw, 15px) !important;
+            margin-top: 10px !important;
+            max-width: 92% !important;
+            line-height: 1.4 !important;
+          }
+          .hero-link {
+            margin-top: 14px !important;
+            font-size: 11px !important;
+          }
+          .scroll-helper-wrapper__header {
+            bottom: 8px !important;
+          }
+          .scroll-helper-wrapper__header span {
+            font-size: 9px !important;
+            letter-spacing: 0.05em !important;
+          }
+        }
+      `}</style>
     </header>
   );
 };

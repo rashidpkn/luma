@@ -11,18 +11,22 @@ export const SaveTimeSection: React.FC = () => {
   useEffect(() => {
     if (!sectionRef.current || !fixedWrapperRef.current) return;
 
-    // Pin .fixed-wrapper inside .block-save-time for its full 600vh scroll
-    const st = ScrollTrigger.create({
-      trigger: fixedWrapperRef.current,
-      start: 'top top',
-      end: 'bottom bottom',
-      endTrigger: sectionRef.current,
-      pin: true,
-      pinSpacing: false
+    const mm = gsap.matchMedia();
+
+    mm.add('(min-width: 961px)', () => {
+      // Pin .fixed-wrapper inside .block-save-time for its full 600vh scroll
+      ScrollTrigger.create({
+        trigger: fixedWrapperRef.current,
+        start: 'top top',
+        end: 'bottom bottom',
+        endTrigger: sectionRef.current,
+        pin: true,
+        pinSpacing: false
+      });
     });
 
     return () => {
-      st.kill();
+      mm.revert();
     };
   }, []);
 
