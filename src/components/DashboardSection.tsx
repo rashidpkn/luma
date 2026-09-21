@@ -6,13 +6,22 @@ export const DashboardSection: React.FC = () => {
   const { setIsAppModalOpen } = useApp();
 
   return (
-    <section data-theme={theme} data-logo-color="black" className="block-dashboard">
+    <section
+      data-theme={theme}
+      data-logo-color="white"
+      className="block-dashboard"
+      style={{
+        borderTop: '1px solid rgba(255, 255, 255, 0.22)',
+        borderBottom: '1px solid rgba(255, 255, 255, 0.22)',
+        backgroundColor: '#2581E9'
+      }}
+    >
       <div className="row align-center">
         <div className="small-14 xsmall-16 columns xxlarge-9">
           <h2 className="h-large">
             <div className="anime-container lottie-anime eye">
               <svg viewBox="0 0 48 48" width="48" height="48" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ display: 'inline-block', verticalAlign: 'middle', marginRight: '16px' }}>
-                <path d="M24 9C14 9 5.46 15.22 2 24c3.46 8.78 12 15 22 15s18.54-6.22 22-15c-3.46-8.78-12-15-22-15zm0 25c-5.52 0-10-4.48-10-10s4.48-10 10-10 10 4.48 10 10-4.48 10-10 10zm0-16c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6z" fill="currentColor" />
+                <path d="M24 9C14 9 5.46 15.22 2 24c3.46 8.78 12 15 22 15s18.54-6.22 22-15c-3.46-8.78-12-15-22-15zm0 25c-5.52 0-10-4.48-10-10s4.48-10 10-10 10 4.48 10 10-4.48 10-10 10zm0-16c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6z" fill="#ffffff" />
               </svg>
             </div>
             Increase your visibility in global spendings.
@@ -76,9 +85,9 @@ export const DashboardSection: React.FC = () => {
         <div className="xxlarge-12 small-16 columns">
           <div className="text-container">
             <div className="p-big">
-              <p style={{ color: '#475569' }}>The Luma Pay Client Portal provides treasury teams with real-time liquidity oversight, instant FX quote execution, and automated settlement workflows.</p>
-              <p style={{ color: '#475569' }}>Eliminate manual reconciliation and banking delays with audit-ready statements and multi-jurisdiction reporting built directly into your operations.</p>
-              <p style={{ color: '#475569' }}>Seamlessly initiate cross-border payments, manage multi-currency balances, and track payment statuses across all supported corridors.</p>
+              <p style={{ color: 'rgba(255, 255, 255, 0.92)' }}>The Luma Pay Client Portal provides treasury teams with real-time liquidity oversight, instant FX quote execution, and automated settlement workflows.</p>
+              <p style={{ color: 'rgba(255, 255, 255, 0.92)' }}>Eliminate manual reconciliation and banking delays with audit-ready statements and multi-jurisdiction reporting built directly into your operations.</p>
+              <p style={{ color: 'rgba(255, 255, 255, 0.92)' }}>Seamlessly initiate cross-border payments, manage multi-currency balances, and track payment statuses across all supported corridors.</p>
             </div>
           </div>
           <div className="btn-wrapper">
@@ -117,16 +126,21 @@ export const DashboardSection: React.FC = () => {
           cursor: pointer !important;
           transition: all 0.3s cubic-bezier(.19,1,.22,1) !important;
         }
+        .block-dashboard .note {
+          color: rgba(255, 255, 255, 0.75) !important;
+        }
         .block-dashboard[data-theme="dark"] .btn-wrapper .btn,
         .block-dashboard[data-theme="light"] .btn-wrapper .btn {
-          background-color: #0c6ce5 !important;
-          color: #ffffff !important;
-          border: 1px solid #0c6ce5 !important;
+          background-color: #ffffff !important;
+          color: #0c6ce5 !important;
+          border: 1px solid #ffffff !important;
+          font-weight: 700 !important;
         }
         .block-dashboard[data-theme="dark"] .btn-wrapper .btn:hover,
         .block-dashboard[data-theme="light"] .btn-wrapper .btn:hover {
-          background-color: #0284c7 !important;
-          box-shadow: 0 14px 35px rgba(12, 108, 229, 0.35) !important;
+          background-color: #f0f7ff !important;
+          color: #0284c7 !important;
+          box-shadow: 0 14px 35px rgba(0, 0, 0, 0.25) !important;
           transform: translateY(-2px) !important;
         }
         @media (max-width: 768px) {

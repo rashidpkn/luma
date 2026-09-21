@@ -31,7 +31,7 @@ export const SplashLoader: React.FC = () => {
         position: 'fixed',
         inset: 0,
         zIndex: 9999,
-        backgroundColor: '#C2F1FF',
+        backgroundColor: '#2581E9',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',

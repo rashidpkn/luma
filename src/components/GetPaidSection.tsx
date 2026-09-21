@@ -3,10 +3,12 @@ import React from 'react';
 export const GetPaidSection: React.FC = () => {
   return (
     <section
-      data-logo-color="black"
+      data-logo-color="white"
       className="block-get-paid no-clients"
       style={{
-        backgroundColor: '#C2F1FF',
+        backgroundColor: '#2581E9',
+        borderTop: '1px solid rgba(255, 255, 255, 0.22)',
+        borderBottom: '1px solid rgba(255, 255, 255, 0.22)',
         position: 'relative',
         zIndex: 2,
         paddingTop: 'clamp(80px, 8.82vw, 150px)',
@@ -49,7 +51,7 @@ export const GetPaidSection: React.FC = () => {
           <h2
             className="h-large"
             style={{
-              color: '#0f172a',
+              color: '#ffffff',
               fontFamily: 'helv-regular, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
               fontSize: 'clamp(44px, 4.47vw, 76px)',
               lineHeight: 1.08,
@@ -65,7 +67,7 @@ export const GetPaidSection: React.FC = () => {
           <div className="p-big" style={{ marginTop: '20px', maxWidth: '515px' }}>
             <p
               style={{
-                color: '#475569',
+                color: 'rgba(255, 255, 255, 0.92)',
                 fontFamily: 'helv-regular, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
                 fontSize: 'clamp(18px, 1.41vw, 24px)',
                 lineHeight: 1.35,
@@ -172,7 +174,7 @@ export const GetPaidSection: React.FC = () => {
               style={{
                 width: '12px',
                 height: '60px',
-                border: '1.5px solid rgba(12, 108, 229, 0.4)',
+                border: '1.5px solid rgba(255, 255, 255, 0.6)',
                 borderTop: 'none',
                 borderRadius: '0 0 2px 2px'
               }}
@@ -195,12 +197,12 @@ export const GetPaidSection: React.FC = () => {
               >
                 <path
                   d="M1 29V11C1 5.47715 5.47715 1 11 1C16.5228 1 21 5.47715 21 11V29"
-                  stroke="rgba(12, 108, 229, 0.45)"
+                  stroke="rgba(255, 255, 255, 0.6)"
                   strokeWidth="1.5"
                 />
                 <path
                   d="M25 29V11C25 5.47715 29.4772 1 35 1C40.5228 1 45 5.47715 45 11V29"
-                  stroke="rgba(12, 108, 229, 0.45)"
+                  stroke="rgba(255, 255, 255, 0.6)"
                   strokeWidth="1.5"
                 />
                 <line
@@ -208,7 +210,7 @@ export const GetPaidSection: React.FC = () => {
                   y1="29"
                   x2="45"
                   y2="29"
-                  stroke="rgba(12, 108, 229, 0.45)"
+                  stroke="rgba(255, 255, 255, 0.6)"
                   strokeWidth="1.5"
                 />
               </svg>

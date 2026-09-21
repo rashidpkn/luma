@@ -21,7 +21,6 @@ export const SliderNames: React.FC = () => {
       if (!nameEl) return;
 
       const singleHeight = nameEl.offsetHeight || 96;
-      const totalCount = NAMES_DATA.length;
 
       gsap.set('.slider-names .names-list-regular-wrapper', { height: singleHeight });
 
@@ -60,12 +59,12 @@ export const SliderNames: React.FC = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} data-logo-color="black" className="slider-names">
+    <section ref={sectionRef} data-logo-color="white" className="slider-names">
       <style>{`
         .slider-names {
-          background-color: #C2F1FF !important;
-          border-top: 1px solid rgba(12, 108, 229, 0.18) !important;
-          border-bottom: 1px solid rgba(12, 108, 229, 0.18) !important;
+          background-color: #2581E9 !important;
+          border-top: 1px solid rgba(255, 255, 255, 0.22) !important;
+          border-bottom: 1px solid rgba(255, 255, 255, 0.22) !important;
           padding: clamp(48px, 6vw, 96px) 0 !important;
           position: relative !important;
           overflow: hidden !important;
@@ -97,7 +96,7 @@ export const SliderNames: React.FC = () => {
         }
 
         .slider-names-title {
-          color: #0f172a !important;
+          color: #ffffff !important;
           font-family: helv-regular, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
           font-size: clamp(32px, 5.2vw, 84px) !important;
           line-height: 1.15 !important;
@@ -130,7 +129,7 @@ export const SliderNames: React.FC = () => {
         }
 
         .slider-names-right .secondary a {
-          color: #0c6ce5 !important;
+          color: #ffffff !important;
           font-family: helv-bold, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
           font-size: clamp(28px, 4.4vw, 72px) !important;
           line-height: 1.15 !important;

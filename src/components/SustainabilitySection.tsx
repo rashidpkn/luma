@@ -36,20 +36,29 @@ export const SustainabilitySection: React.FC = () => {
   }, [hasAnimated]);
 
   return (
-    <section ref={sectionRef} data-logo-color="black" className="block-sustainability">
+    <section
+      ref={sectionRef}
+      data-logo-color="white"
+      className="block-sustainability"
+      style={{
+        borderTop: '1px solid rgba(255, 255, 255, 0.22)',
+        borderBottom: '1px solid rgba(255, 255, 255, 0.22)',
+        backgroundColor: '#2581E9'
+      }}
+    >
       <div className="row align-middle">
         <div className="xxlarge-8 xxlarge-offset-1 small-16 small-offset-0 small-order-2 columns">
-          <h2 className="h-medium" style={{ color: '#0f172a' }}>
+          <h2 className="h-medium" style={{ color: '#ffffff' }}>
             <span className="block">
               <span>We care about our </span>
               <span className="color-text" style={{ color: '#059669' }}>Mother Earth</span>
               <span> as deeply as we care about your global growth. Through the Luma Pay Eden Project, every cross-border settlement helps plant trees and restore native ecosystems worldwide.</span>
             </span>
           </h2>
-          <div className="p-big" style={{ color: '#475569' }}>
-            <p style={{ color: '#475569' }}>Powering sustainable global finance. Partnered with verified conservation leaders, Luma Pay pledges tree planting and carbon offsets alongside your transaction volume.</p>
+          <div className="p-big" style={{ color: 'rgba(255, 255, 255, 0.92)' }}>
+            <p style={{ color: 'rgba(255, 255, 255, 0.92)' }}>Powering sustainable global finance. Partnered with verified conservation leaders, Luma Pay pledges tree planting and carbon offsets alongside your transaction volume.</p>
           </div>
-          <a href="#eden-project" className="btn outline" style={{ color: '#0c6ce5', borderColor: '#0c6ce5' }}>Discover the Eden Project</a>
+          <a href="#eden-project" className="btn outline" style={{ color: '#ffffff', borderColor: 'rgba(255, 255, 255, 0.6)' }}>Discover the Eden Project</a>
         </div>
         <div className="xxlarge-7 small-16 small-offset-0 small-order-1 columns">
           <div className="image-wrapper">

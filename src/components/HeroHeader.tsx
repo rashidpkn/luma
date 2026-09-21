@@ -3,15 +3,16 @@ import React from 'react';
 export const HeroHeader: React.FC = () => {
   return (
     <header
-      data-logo-color="black"
+      data-logo-color="white"
       className="hero-header"
       style={{
         position: 'relative',
         width: '100%',
         height: '100vh',
         overflow: 'hidden',
-        backgroundColor: '#C2F1FF',
-        background: 'linear-gradient(180deg, #A8E8FC 0%, #C2F1FF 40%, #C2F1FF 100%)'
+        backgroundColor: '#2581E9',
+        background: '#2581E9',
+        borderBottom: '1px solid rgba(255, 255, 255, 0.22)'
       }}
     >
       {/* Background Video */}
@@ -40,7 +41,7 @@ export const HeroHeader: React.FC = () => {
           <h2
             className="h-xlarge hero-title"
             style={{
-              color: '#0f172a',
+              color: '#ffffff',
               marginTop: 0,
               marginBottom: 0,
               hyphens: 'none',
@@ -52,7 +53,7 @@ export const HeroHeader: React.FC = () => {
             <span
               className="block"
               style={{
-                background: 'linear-gradient(135deg, #0c6ce5 0%, #0284c7 45%, #2563eb 100%)',
+                background: 'linear-gradient(135deg, #ffffff 0%, #BAE6FD 100%)',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
                 textShadow: 'none'
@@ -62,7 +63,7 @@ export const HeroHeader: React.FC = () => {
             </span>
           </h2>
 
-          <p className="p-big hero-desc" style={{ color: '#475569', marginTop: '16px', maxWidth: '520px', lineHeight: 1.5 }}>
+          <p className="p-big hero-desc" style={{ color: 'rgba(255, 255, 255, 0.92)', marginTop: '16px', maxWidth: '520px', lineHeight: 1.5 }}>
             Luma Pay delivers dedicated multi-currency accounts, institutional foreign exchange, and swift cross-border payment settlement across global corridors.
           </p>
 
@@ -73,13 +74,13 @@ export const HeroHeader: React.FC = () => {
               display: 'inline-flex',
               alignItems: 'center',
               gap: '8px',
-              color: '#0c6ce5',
+              color: '#ffffff',
               fontSize: '12px',
               fontWeight: 700,
               letterSpacing: '0.15em',
               textTransform: 'uppercase',
               marginTop: '24px',
-              borderBottom: '1px solid rgba(12, 108, 229, 0.4)',
+              borderBottom: '1px solid rgba(255, 255, 255, 0.6)',
               paddingBottom: '4px',
               textDecoration: 'none',
               transition: 'all 0.3s ease'
@@ -94,10 +95,10 @@ export const HeroHeader: React.FC = () => {
       <div className="scroll-helper-wrapper__header">
         <div className="scroll-helper__header visible" style={{ opacity: 1 }}>
           <svg width="18" height="27" viewBox="0 0 18 27" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect x="1" y="5" width="16" height="21" rx="5" stroke="#0c6ce5" strokeWidth="2" />
-            <line x1="9" y1="9" x2="9" y2="14" stroke="#0c6ce5" strokeWidth="2" />
+            <rect x="1" y="5" width="16" height="21" rx="5" stroke="#ffffff" strokeWidth="2" />
+            <line x1="9" y1="9" x2="9" y2="14" stroke="#ffffff" strokeWidth="2" />
           </svg>
-          <span style={{ color: '#0c6ce5', letterSpacing: '0.08em', fontWeight: 600 }}>SCROLL TO EXPLORE LUMA PAY</span>
+          <span style={{ color: '#ffffff', letterSpacing: '0.08em', fontWeight: 600 }}>SCROLL TO EXPLORE LUMA PAY</span>
         </div>
       </div>
 

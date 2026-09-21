@@ -13,12 +13,14 @@ export const GlobalSection: React.FC = () => {
 
   return (
     <section
-      data-logo-color="black"
+      data-logo-color="white"
       className="block-countries-global"
       style={{
-        backgroundColor: '#C2F1FF',
-        background: '#C2F1FF',
+        backgroundColor: '#2581E9',
+        background: '#2581E9',
         position: 'relative',
+        borderTop: '1px solid rgba(255, 255, 255, 0.22)',
+        borderBottom: '1px solid rgba(255, 255, 255, 0.22)',
         paddingTop: 'clamp(60px, 10vw, 180px)',
         paddingBottom: 'clamp(60px, 10vw, 180px)',
         overflow: 'hidden'
@@ -27,10 +29,10 @@ export const GlobalSection: React.FC = () => {
       {/* Huge Background Watermark Marquee */}
       <div className="bg-text-container select-none" style={{ opacity: 0.55 }}>
         <div className="bg-text-wrapper flex whitespace-nowrap animate-marquee">
-          <span className="bg-text text-8xl font-black uppercase" style={{ WebkitTextStroke: '1.5px rgba(12, 108, 229, 0.4)', WebkitTextFillColor: 'transparent', color: 'transparent' }}>
+          <span className="bg-text text-8xl font-black uppercase" style={{ WebkitTextStroke: '1.5px rgba(255, 255, 255, 0.25)', WebkitTextFillColor: 'transparent', color: 'transparent' }}>
             — CANADA — UNITED KINGDOM — EUROPEAN UNION — UNITED STATES — AUSTRALIA — GLOBAL CORRIDORS&nbsp;
           </span>
-          <span className="bg-text text-8xl font-black uppercase" style={{ WebkitTextStroke: '1.5px rgba(12, 108, 229, 0.4)', WebkitTextFillColor: 'transparent', color: 'transparent' }}>
+          <span className="bg-text text-8xl font-black uppercase" style={{ WebkitTextStroke: '1.5px rgba(255, 255, 255, 0.25)', WebkitTextFillColor: 'transparent', color: 'transparent' }}>
             — CANADA — UNITED KINGDOM — EUROPEAN UNION — UNITED STATES — AUSTRALIA — GLOBAL CORRIDORS&nbsp;
           </span>
         </div>
@@ -39,17 +41,17 @@ export const GlobalSection: React.FC = () => {
       <div className="row align-middle relative z-10">
         {/* Left Column: Story */}
         <div className="xxlarge-6 xxlarge-offset-1 small-16 small-offset-0 columns">
-          <h2 className="h-large" style={{ color: '#0f172a' }}>
+          <h2 className="h-large" style={{ color: '#ffffff' }}>
             <span className="block">Serving clients across</span>
-            <span className="block" style={{ color: '#64748b' }}>global corridors.</span>
+            <span className="block" style={{ color: 'rgba(255, 255, 255, 0.7)' }}>global corridors.</span>
           </h2>
 
-          <div className="p-big mt-6 space-y-4" style={{ color: '#475569' }}>
-            <p className="font-semibold" style={{ color: '#0f172a' }}>Seamless multi-currency cross-border trade.</p>
-            <p style={{ color: '#475569' }}>
+          <div className="p-big mt-6 space-y-4" style={{ color: 'rgba(255, 255, 255, 0.92)' }}>
+            <p className="font-semibold" style={{ color: '#ffffff' }}>Seamless multi-currency cross-border trade.</p>
+            <p style={{ color: 'rgba(255, 255, 255, 0.92)' }}>
               Luma Pay connects commercial enterprises across Canada, the United Kingdom, the European Union (Germany, the Netherlands, Ireland), the United States, and Australia.
             </p>
-            <p style={{ color: '#475569' }}>
+            <p style={{ color: 'rgba(255, 255, 255, 0.92)' }}>
               Collect settlements in CAD, GBP, EUR, or USD and pay international vendors with local-currency rails, transparent exchange rates, and predictable settlement timelines.
             </p>
           </div>
