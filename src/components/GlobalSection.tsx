@@ -13,10 +13,11 @@ export const GlobalSection: React.FC = () => {
 
   return (
     <section
-      data-logo-color="white"
+      data-logo-color="black"
       className="block-countries-global"
       style={{
-        backgroundColor: '#000',
+        backgroundColor: '#C2F1FF',
+        background: '#C2F1FF',
         position: 'relative',
         paddingTop: 'clamp(60px, 10vw, 180px)',
         paddingBottom: 'clamp(60px, 10vw, 180px)',
@@ -24,12 +25,12 @@ export const GlobalSection: React.FC = () => {
       }}
     >
       {/* Huge Background Watermark Marquee */}
-      <div className="bg-text-container select-none opacity-20">
+      <div className="bg-text-container select-none" style={{ opacity: 0.55 }}>
         <div className="bg-text-wrapper flex whitespace-nowrap animate-marquee">
-          <span className="bg-text text-8xl font-black uppercase text-transparent stroke-white" style={{ WebkitTextStroke: '1px #fff' }}>
+          <span className="bg-text text-8xl font-black uppercase" style={{ WebkitTextStroke: '1.5px rgba(12, 108, 229, 0.4)', WebkitTextFillColor: 'transparent', color: 'transparent' }}>
             — CANADA — UNITED KINGDOM — EUROPEAN UNION — UNITED STATES — AUSTRALIA — GLOBAL CORRIDORS&nbsp;
           </span>
-          <span className="bg-text text-8xl font-black uppercase text-transparent stroke-white" style={{ WebkitTextStroke: '1px #fff' }}>
+          <span className="bg-text text-8xl font-black uppercase" style={{ WebkitTextStroke: '1.5px rgba(12, 108, 229, 0.4)', WebkitTextFillColor: 'transparent', color: 'transparent' }}>
             — CANADA — UNITED KINGDOM — EUROPEAN UNION — UNITED STATES — AUSTRALIA — GLOBAL CORRIDORS&nbsp;
           </span>
         </div>
@@ -38,17 +39,17 @@ export const GlobalSection: React.FC = () => {
       <div className="row align-middle relative z-10">
         {/* Left Column: Story */}
         <div className="xxlarge-6 xxlarge-offset-1 small-16 small-offset-0 columns">
-          <h2 className="h-large text-white!">
+          <h2 className="h-large" style={{ color: '#0f172a' }}>
             <span className="block">Serving clients across</span>
-            <span className="block text-gray-400">global corridors.</span>
+            <span className="block" style={{ color: '#64748b' }}>global corridors.</span>
           </h2>
 
-          <div className="p-big mt-6 text-white! space-y-4">
-            <p className="font-semibold text-white!">Seamless multi-currency cross-border trade.</p>
-            <p className='text-white!'>
+          <div className="p-big mt-6 space-y-4" style={{ color: '#475569' }}>
+            <p className="font-semibold" style={{ color: '#0f172a' }}>Seamless multi-currency cross-border trade.</p>
+            <p style={{ color: '#475569' }}>
               Luma Pay connects commercial enterprises across Canada, the United Kingdom, the European Union (Germany, the Netherlands, Ireland), the United States, and Australia.
             </p>
-            <p className='text-white!'>
+            <p style={{ color: '#475569' }}>
               Collect settlements in CAD, GBP, EUR, or USD and pay international vendors with local-currency rails, transparent exchange rates, and predictable settlement timelines.
             </p>
           </div>
@@ -56,7 +57,7 @@ export const GlobalSection: React.FC = () => {
 
         {/* Right Column: Globe Video & Sound Button */}
         <div className="xxlarge-6 xxlarge-offset-2 small-16 small-offset-0 columns flex flex-col items-center">
-          <div className="globe-wrapper relative w-80 h-80 md:w-96 md:h-96 rounded-full overflow-hidden shadow-2xl flex items-center justify-center">
+          <div className="globe-wrapper relative w-80 h-80 md:w-96 md:h-96 rounded-full overflow-hidden shadow-2xl flex items-center justify-center" style={{ boxShadow: '0 20px 50px rgba(12, 108, 229, 0.15)' }}>
             <video
               ref={videoRef}
               muted
@@ -79,32 +80,33 @@ export const GlobalSection: React.FC = () => {
               display: 'flex',
               alignItems: 'center',
               borderRadius: '25px',
-              backgroundColor: isAudioActive ? '#2d2d2d' : '#1a1a1a',
+              backgroundColor: isAudioActive ? '#0c6ce5' : '#ffffff',
               padding: '6px 18px',
-              border: '1px solid rgba(255,255,255,0.15)',
+              border: '1px solid rgba(12, 108, 229, 0.25)',
+              boxShadow: '0 2px 10px rgba(12, 108, 229, 0.1)',
               cursor: 'pointer',
-              transition: 'background-color 0.3s ease'
+              transition: 'all 0.3s ease'
             }}
           >
             <span className="icon mr-2">
               <svg viewBox="0 0 19 14" width="19" height="14" className="audio-icon">
                 <path
                   d="M1 8.8V5.5C1 5 1.4 4.7 1.8 4.7H4C4.2 4.7 4.4 4.6 4.5 4.5L7.9 2.3C8.5 1.9 9.2 2.3 9.2 2.9V11.4C9.2 12 8.5 12.4 7.9 12L4.5 9.8C4.4 9.7 4.2 9.6 4 9.6H1.8C1.4 9.6 1 9.3 1 8.8Z"
-                  stroke="white"
-                  fill="#171717"
+                  stroke={isAudioActive ? '#ffffff' : '#0c6ce5'}
+                  fill={isAudioActive ? '#0c6ce5' : '#ffffff'}
                   strokeWidth="1.5"
                 />
                 {isAudioActive ? (
                   <g className="on">
                     <path
                       d="M12.9 3.5C12.9 3.5 14.1 4.7 14.1 6.8C14.1 8.8 12.9 10 12.9 10"
-                      stroke="white"
+                      stroke="#ffffff"
                       strokeWidth="1.5"
                       strokeLinecap="round"
                     />
                     <path
                       d="M15.4 1C15.4 1 17.4 3.1 17.4 6.8C17.4 10.4 15.4 12.5 15.4 12.5"
-                      stroke="white"
+                      stroke="#ffffff"
                       strokeWidth="1.5"
                       strokeLinecap="round"
                     />
@@ -113,7 +115,7 @@ export const GlobalSection: React.FC = () => {
                   <g className="off">
                     <path
                       d="M14.1 6.2L15.8 7.8M12.5 7.8L14.1 6.2M15.8 4.5L14.1 6.2M14.1 6.2L12.5 4.5"
-                      stroke="white"
+                      stroke="#0c6ce5"
                       strokeWidth="1.5"
                       strokeLinecap="round"
                     />
@@ -121,7 +123,10 @@ export const GlobalSection: React.FC = () => {
                 )}
               </svg>
             </span>
-            <span className="label-wrapper text-xs text-white uppercase tracking-wider font-semibold">
+            <span
+              className="label-wrapper text-xs uppercase tracking-wider font-semibold"
+              style={{ color: isAudioActive ? '#ffffff' : '#0f172a' }}
+            >
               {isAudioActive ? 'Mute Sound' : 'Better with Sound'}
             </span>
           </button>

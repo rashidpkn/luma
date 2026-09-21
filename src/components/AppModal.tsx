@@ -14,12 +14,12 @@ export const AppModal: React.FC = () => {
       <div className={`modal ${isAppModalOpen ? 'active' : ''}`}>
         <div className="inner">
           <img
-            src="/logos/logo-white.png"
+            src="/logos/logo.png"
             alt="Luma Pay"
             style={{ height: '28px', width: 'auto', margin: '0 auto 16px auto', display: 'block' }}
           />
-          <h3 className="h-medium" style={{ color: '#fff' }}>Access Luma Pay</h3>
-          <p className="p-normal top" style={{ color: '#94a3b8' }}>
+          <h3 className="h-medium" style={{ color: '#0f172a' }}>Access Luma Pay</h3>
+          <p className="p-normal top" style={{ color: '#475569' }}>
             Scan the QR code to open the Luma Pay Mobile Portal
           </p>
 

@@ -37,7 +37,7 @@ export const AwardsModal: React.FC = () => {
           transition: 'opacity 0.3s ease'
         }}
       >
-        <p className="cert-text" style={{ color: '#94a3b8' }}>
+        <p className="cert-text" style={{ color: '#475569' }}>
           Awards
           &amp;<br />
           Certifications

@@ -3,14 +3,15 @@ import React from 'react';
 export const HeroHeader: React.FC = () => {
   return (
     <header
-      data-logo-color="white"
+      data-logo-color="black"
       className="hero-header"
       style={{
         position: 'relative',
         width: '100%',
         height: '100vh',
         overflow: 'hidden',
-        backgroundColor: '#000'
+        backgroundColor: '#C2F1FF',
+        background: 'linear-gradient(180deg, #A8E8FC 0%, #C2F1FF 40%, #C2F1FF 100%)'
       }}
     >
       {/* Background Video */}
@@ -22,7 +23,7 @@ export const HeroHeader: React.FC = () => {
             playsInline
             loop
             className="element-cover"
-            style={{ opacity: 0.65 }}
+            style={{ opacity: 0.25 }}
           >
             <source src="/videos/header_mobile.mp4" type="video/mp4" />
           </video>
@@ -36,13 +37,10 @@ export const HeroHeader: React.FC = () => {
             <h1>Luma Pay - Multi-Currency Accounts, Foreign Exchange &amp; Cross-Border Payments</h1>
           </div>
 
-
-
           <h2
             className="h-xlarge hero-title"
             style={{
-              color: '#fff',
-              textShadow: '0 4px 24px rgba(0,0,0,0.5)',
+              color: '#0f172a',
               marginTop: 0,
               marginBottom: 0,
               hyphens: 'none',
@@ -54,7 +52,7 @@ export const HeroHeader: React.FC = () => {
             <span
               className="block"
               style={{
-                background: 'linear-gradient(135deg, #00f2fe 0%, #38bdf8 45%, #818cf8 80%, #a855f7 100%)',
+                background: 'linear-gradient(135deg, #0c6ce5 0%, #0284c7 45%, #2563eb 100%)',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
                 textShadow: 'none'
@@ -64,7 +62,7 @@ export const HeroHeader: React.FC = () => {
             </span>
           </h2>
 
-          <p className="p-big hero-desc" style={{ color: '#94a3b8', marginTop: '16px', maxWidth: '520px', lineHeight: 1.5 }}>
+          <p className="p-big hero-desc" style={{ color: '#475569', marginTop: '16px', maxWidth: '520px', lineHeight: 1.5 }}>
             Luma Pay delivers dedicated multi-currency accounts, institutional foreign exchange, and swift cross-border payment settlement across global corridors.
           </p>
 
@@ -75,13 +73,13 @@ export const HeroHeader: React.FC = () => {
               display: 'inline-flex',
               alignItems: 'center',
               gap: '8px',
-              color: '#38bdf8',
+              color: '#0c6ce5',
               fontSize: '12px',
               fontWeight: 700,
               letterSpacing: '0.15em',
               textTransform: 'uppercase',
               marginTop: '24px',
-              borderBottom: '1px solid rgba(56, 189, 248, 0.4)',
+              borderBottom: '1px solid rgba(12, 108, 229, 0.4)',
               paddingBottom: '4px',
               textDecoration: 'none',
               transition: 'all 0.3s ease'
@@ -95,11 +93,11 @@ export const HeroHeader: React.FC = () => {
       {/* Scroll Helper Indicator */}
       <div className="scroll-helper-wrapper__header">
         <div className="scroll-helper__header visible" style={{ opacity: 1 }}>
-          <svg width="18" height="27" viewBox="0 0 18 27" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ filter: 'drop-shadow(0 0 6px rgba(56, 189, 248, 0.6))' }}>
-            <rect x="1" y="5" width="16" height="21" rx="5" stroke="#38bdf8" strokeWidth="2" />
-            <line x1="9" y1="9" x2="9" y2="14" stroke="#38bdf8" strokeWidth="2" />
+          <svg width="18" height="27" viewBox="0 0 18 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="1" y="5" width="16" height="21" rx="5" stroke="#0c6ce5" strokeWidth="2" />
+            <line x1="9" y1="9" x2="9" y2="14" stroke="#0c6ce5" strokeWidth="2" />
           </svg>
-          <span style={{ color: '#38bdf8', letterSpacing: '0.08em', fontWeight: 600 }}>SCROLL TO EXPLORE LUMA PAY</span>
+          <span style={{ color: '#0c6ce5', letterSpacing: '0.08em', fontWeight: 600 }}>SCROLL TO EXPLORE LUMA PAY</span>
         </div>
       </div>
 

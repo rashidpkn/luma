@@ -503,8 +503,8 @@ export const NoBordersSection: React.FC = () => {
           inset: 0%;
           width: 100%;
           height: 100%;
-          background-color: #ffffff;
-          background-image: linear-gradient(#fff 9%, #8ae4ff 31%, #0c6ce5 47%, #8ae4ff 67%, #fff 88%);
+          background-color: #C2F1FF;
+          background-image: linear-gradient(#C2F1FF 9%, #8ae4ff 31%, #0c6ce5 47%, #8ae4ff 67%, #C2F1FF 88%);
           filter: blur(calc(2.2 * var(--r)));
           transform: scale(1.2);
           z-index: 1;

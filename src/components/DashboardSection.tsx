@@ -2,11 +2,11 @@ import React, { useState } from 'react';
 import { useApp } from '../context/AppContext';
 
 export const DashboardSection: React.FC = () => {
-  const [theme, setTheme] = useState<'dark' | 'light'>('dark');
+  const [theme, setTheme] = useState<'dark' | 'light'>('light');
   const { setIsAppModalOpen } = useApp();
 
   return (
-    <section data-theme={theme} data-logo-color={theme === 'dark' ? 'white' : 'black'} className="block-dashboard">
+    <section data-theme={theme} data-logo-color="black" className="block-dashboard">
       <div className="row align-center">
         <div className="small-14 xsmall-16 columns xxlarge-9">
           <h2 className="h-large">
@@ -76,15 +76,16 @@ export const DashboardSection: React.FC = () => {
         <div className="xxlarge-12 small-16 columns">
           <div className="text-container">
             <div className="p-big">
-              <p>The Luma Pay Client Portal provides treasury teams with real-time liquidity oversight, instant FX quote execution, and automated settlement workflows.</p>
-              <p>Eliminate manual reconciliation and banking delays with audit-ready statements and multi-jurisdiction reporting built directly into your operations.</p>
-              <p>Seamlessly initiate cross-border payments, manage multi-currency balances, and track payment statuses across all supported corridors.</p>
+              <p style={{ color: '#475569' }}>The Luma Pay Client Portal provides treasury teams with real-time liquidity oversight, instant FX quote execution, and automated settlement workflows.</p>
+              <p style={{ color: '#475569' }}>Eliminate manual reconciliation and banking delays with audit-ready statements and multi-jurisdiction reporting built directly into your operations.</p>
+              <p style={{ color: '#475569' }}>Seamlessly initiate cross-border payments, manage multi-currency balances, and track payment statuses across all supported corridors.</p>
             </div>
           </div>
           <div className="btn-wrapper">
             <button
               type="button"
               className="btn"
+              onClick={() => setIsAppModalOpen(true)}
             >
               Access the Luma Pay Portal
             </button>
@@ -116,24 +117,16 @@ export const DashboardSection: React.FC = () => {
           cursor: pointer !important;
           transition: all 0.3s cubic-bezier(.19,1,.22,1) !important;
         }
-        .block-dashboard[data-theme="dark"] .btn-wrapper .btn {
-          background-color: #ffffff !important;
-          color: #020617 !important;
-          border: 1px solid rgba(255, 255, 255, 0.9) !important;
-        }
-        .block-dashboard[data-theme="dark"] .btn-wrapper .btn:hover {
-          background-color: #f0f9ff !important;
-          box-shadow: 0 14px 35px rgba(56, 189, 248, 0.35) !important;
-          transform: translateY(-2px) !important;
-        }
+        .block-dashboard[data-theme="dark"] .btn-wrapper .btn,
         .block-dashboard[data-theme="light"] .btn-wrapper .btn {
-          background-color: #020617 !important;
+          background-color: #0c6ce5 !important;
           color: #ffffff !important;
-          border: 1px solid #020617 !important;
+          border: 1px solid #0c6ce5 !important;
         }
+        .block-dashboard[data-theme="dark"] .btn-wrapper .btn:hover,
         .block-dashboard[data-theme="light"] .btn-wrapper .btn:hover {
-          background-color: #0f172a !important;
-          box-shadow: 0 14px 35px rgba(15, 23, 42, 0.3) !important;
+          background-color: #0284c7 !important;
+          box-shadow: 0 14px 35px rgba(12, 108, 229, 0.35) !important;
           transform: translateY(-2px) !important;
         }
         @media (max-width: 768px) {

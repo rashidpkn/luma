@@ -31,7 +31,7 @@ export const SplashLoader: React.FC = () => {
         position: 'fixed',
         inset: 0,
         zIndex: 9999,
-        backgroundColor: '#020617',
+        backgroundColor: '#C2F1FF',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
@@ -48,7 +48,7 @@ export const SplashLoader: React.FC = () => {
           style={{ filter: 'drop-shadow(0 0 20px rgba(56, 189, 248, 0.6))' }}
         />
         <img
-          src="/logos/logo-white.png"
+          src="/logos/logo.png"
           alt="Luma Pay"
           style={{ height: '22px', width: 'auto', marginTop: '8px', opacity: 0.95 }}
         />

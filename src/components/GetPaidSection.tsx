@@ -3,10 +3,10 @@ import React from 'react';
 export const GetPaidSection: React.FC = () => {
   return (
     <section
-      data-logo-color="white"
+      data-logo-color="black"
       className="block-get-paid no-clients"
       style={{
-        backgroundColor: '#000000',
+        backgroundColor: '#C2F1FF',
         position: 'relative',
         zIndex: 2,
         paddingTop: 'clamp(80px, 8.82vw, 150px)',
@@ -14,7 +14,7 @@ export const GetPaidSection: React.FC = () => {
         overflow: 'visible'
       }}
     >
-      {/* Background Cover Overlay: Extends 100vh down from top, leaving bottom of section in pure black */}
+      {/* Background Cover Overlay: Extends 100vh down from top, leaving bottom of section in pure white */}
       <div
         className="video-wrapper"
         style={{
@@ -49,7 +49,7 @@ export const GetPaidSection: React.FC = () => {
           <h2
             className="h-large"
             style={{
-              color: '#ffffff',
+              color: '#0f172a',
               fontFamily: 'helv-regular, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
               fontSize: 'clamp(44px, 4.47vw, 76px)',
               lineHeight: 1.08,
@@ -65,7 +65,7 @@ export const GetPaidSection: React.FC = () => {
           <div className="p-big" style={{ marginTop: '20px', maxWidth: '515px' }}>
             <p
               style={{
-                color: 'rgba(255, 255, 255, 0.6)',
+                color: '#475569',
                 fontFamily: 'helv-regular, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
                 fontSize: 'clamp(18px, 1.41vw, 24px)',
                 lineHeight: 1.35,
@@ -77,7 +77,7 @@ export const GetPaidSection: React.FC = () => {
             </p>
           </div>
 
-          {/* Centered Browser Window Mockup: Spreads across ribbon and pure black screens */}
+          {/* Centered Browser Window Mockup: Spreads across ribbon and pure light screens */}
           <div
             className="browser-wrapper"
             style={{
@@ -87,7 +87,7 @@ export const GetPaidSection: React.FC = () => {
               margin: 'clamp(40px, 4.1vw, 70px) auto 0 auto',
               borderRadius: '14px',
               overflow: 'hidden',
-              boxShadow: '0 30px 60px -12px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(255, 255, 255, 0.08)'
+              boxShadow: '0 30px 60px -12px rgba(12, 108, 229, 0.15), 0 0 0 1px rgba(12, 108, 229, 0.12)'
             }}
           >
             {/* Layer 0: Background Loop Video */}
@@ -172,7 +172,7 @@ export const GetPaidSection: React.FC = () => {
               style={{
                 width: '12px',
                 height: '60px',
-                border: '1.5px solid rgba(255, 255, 255, 0.4)',
+                border: '1.5px solid rgba(12, 108, 229, 0.4)',
                 borderTop: 'none',
                 borderRadius: '0 0 2px 2px'
               }}
@@ -195,12 +195,12 @@ export const GetPaidSection: React.FC = () => {
               >
                 <path
                   d="M1 29V11C1 5.47715 5.47715 1 11 1C16.5228 1 21 5.47715 21 11V29"
-                  stroke="rgba(255, 255, 255, 0.45)"
+                  stroke="rgba(12, 108, 229, 0.45)"
                   strokeWidth="1.5"
                 />
                 <path
                   d="M25 29V11C25 5.47715 29.4772 1 35 1C40.5228 1 45 5.47715 45 11V29"
-                  stroke="rgba(255, 255, 255, 0.45)"
+                  stroke="rgba(12, 108, 229, 0.45)"
                   strokeWidth="1.5"
                 />
                 <line
@@ -208,7 +208,7 @@ export const GetPaidSection: React.FC = () => {
                   y1="29"
                   x2="45"
                   y2="29"
-                  stroke="rgba(255, 255, 255, 0.45)"
+                  stroke="rgba(12, 108, 229, 0.45)"
                   strokeWidth="1.5"
                 />
               </svg>
