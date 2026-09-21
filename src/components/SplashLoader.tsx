@@ -1,10 +1,17 @@
 import React, { useEffect, useState } from 'react';
+import { useLocation } from 'react-router-dom';
 
 export const SplashLoader: React.FC = () => {
-  const [isVisible, setIsVisible] = useState(true);
+  const location = useLocation();
+  const [isVisible, setIsVisible] = useState(location.pathname === '/');
   const [isFading, setIsFading] = useState(false);
 
   useEffect(() => {
+    if (location.pathname !== '/') {
+      setIsVisible(false);
+      return;
+    }
+
     const timer = setTimeout(() => {
       setIsFading(true);
       setTimeout(() => {
@@ -13,7 +20,7 @@ export const SplashLoader: React.FC = () => {
     }, 600);
 
     return () => clearTimeout(timer);
-  }, []);
+  }, [location.pathname]);
 
   if (!isVisible) return null;
 
@@ -21,6 +28,13 @@ export const SplashLoader: React.FC = () => {
     <div
       className="loading-splash-wrapper"
       style={{
+        position: 'fixed',
+        inset: 0,
+        zIndex: 9999,
+        backgroundColor: '#020617',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
         opacity: isFading ? 0 : 1,
         transition: 'opacity 0.5s cubic-bezier(0.19, 1, 0.22, 1)',
         pointerEvents: isFading ? 'none' : 'all'

@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import { useApp } from '../context/AppContext';
 
 interface CountryItem {
@@ -147,12 +148,9 @@ export const Navbar: React.FC = () => {
                 pointerEvents: 'all'
               }}
             >
-              <a
-                href="#"
-                onClick={(e) => {
-                  e.preventDefault();
-                  window.scrollTo({ top: 0, behavior: 'smooth' });
-                }}
+              <Link
+                to="/"
+                onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
                 aria-label="Luma Pay Home"
                 style={{
                   display: 'inline-flex',
@@ -172,7 +170,7 @@ export const Navbar: React.FC = () => {
                     display: 'block'
                   }}
                 />
-              </a>
+              </Link>
 
               {/* Clean Corridor Dropdown */}
               <div ref={dropdownRef} style={{ position: 'relative' }}>

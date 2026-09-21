@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { useApp } from '../context/AppContext';
 
 export const FullscreenMenu: React.FC = () => {
@@ -113,24 +114,23 @@ export const FullscreenMenu: React.FC = () => {
                 <span className="title anime-in">Legal &amp; Compliance</span>
                 <ul className="legal-links">
                   {[
-                    'AML / KYC Policy',
-                    'Regulatory Disclosures',
-                    'Terms and Conditions',
-                    'Privacy Policy',
-                    'Information Security Policy',
-                    'Fee Schedule & Pricing',
-                    'Acceptable Use Policy',
-                    'Corporate Governance',
-                    'Dispute Resolution'
+                    { label: 'Privacy Policy', path: '/privacy-policy' },
+                    { label: 'Terms of Service', path: '/terms-of-service' },
+                    { label: 'Regulatory Disclosures', path: '/regulatory-disclosures' },
+                    { label: 'Information Security Policy', path: '/information-security-policy' },
+                    { label: 'AML / KYC Policy', path: '/aml-kyc-policy' },
+                    { label: 'Acceptable Use Policy', path: '/acceptable-use-policy' },
+                    { label: 'Corporate Governance', path: '/regulatory-disclosures' },
+                    { label: 'Dispute Resolution', path: '/terms-of-service' }
                   ].map((item, idx) => (
                     <li key={idx} className="anime-in">
-                      <a
-                        href="#"
-                        onClick={(e) => e.preventDefault()}
+                      <Link
+                        to={item.path}
+                        onClick={() => setIsMenuOpen(false)}
                         className="underline-anime small"
                       >
-                        {item}
-                      </a>
+                        {item.label}
+                      </Link>
                     </li>
                   ))}
                 </ul>

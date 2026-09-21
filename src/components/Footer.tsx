@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { useApp } from '../context/AppContext';
 
 export const Footer: React.FC = () => {
@@ -109,9 +110,12 @@ export const Footer: React.FC = () => {
                 </p>
               </div>
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: '16px', fontSize: '13px' }}>
-                <a href="#privacy" style={{ color: '#94a3b8', textDecoration: 'none' }}>Privacy Policy</a>
-                <a href="#terms" style={{ color: '#94a3b8', textDecoration: 'none' }}>Terms of Service</a>
-                <a href="#compliance" style={{ color: '#94a3b8', textDecoration: 'none' }}>AML / Compliance</a>
+                <Link to="/privacy-policy" style={{ color: '#94a3b8', textDecoration: 'none' }}>Privacy Policy</Link>
+                <Link to="/terms-of-service" style={{ color: '#94a3b8', textDecoration: 'none' }}>Terms of Service</Link>
+                <Link to="/regulatory-disclosures" style={{ color: '#94a3b8', textDecoration: 'none' }}>Regulatory Disclosures</Link>
+                <Link to="/information-security-policy" style={{ color: '#94a3b8', textDecoration: 'none' }}>Security Policy</Link>
+                <Link to="/aml-kyc-policy" style={{ color: '#94a3b8', textDecoration: 'none' }}>AML / Compliance</Link>
+                <Link to="/acceptable-use-policy" style={{ color: '#94a3b8', textDecoration: 'none' }}>Acceptable Use</Link>
                 <a href="mailto:support@luma-pay.io" style={{ color: '#38bdf8', textDecoration: 'none' }}>support@luma-pay.io</a>
               </div>
             </div>

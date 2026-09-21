@@ -838,4 +838,43 @@ html, body {
   }
 }
 
+/* ==========================================================================
+   LEGAL & COMPLIANCE HUB STYLING
+   ========================================================================== */
+
+.legal-page-container article {
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 0 0 30px rgba(56, 189, 248, 0.05);
+}
+
+.legal-page-container h2 {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+  padding-bottom: 12px;
+}
+
+@media print {
+  .navbar,
+  .menu,
+  aside,
+  footer,
+  .legal-page-container button {
+    display: none !important;
+  }
+  body,
+  .legal-page-container {
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+  .legal-page-container article {
+    box-shadow: none !important;
+    border: none !important;
+    padding: 0 !important;
+    color: #111111 !important;
+  }
+  .legal-page-container h1,
+  .legal-page-container h2 {
+    color: #000000 !important;
+  }
+}
+
+
 
