@@ -16,7 +16,7 @@ const COUNTRIES: CountryItem[] = [
 ];
 
 export const Navbar: React.FC = () => {
-  const { country, setCountry, isMenuOpen, setIsMenuOpen, setIsAppModalOpen } = useApp();
+  const { country, isMenuOpen, setIsMenuOpen, setIsAppModalOpen } = useApp();
   const [isCollapsed, setIsCollapsed] = useState(false);
   const [isCollapsedDown, setIsCollapsedDown] = useState(false);
   const [isCollapsedUp, setIsCollapsedUp] = useState(false);

@@ -157,11 +157,11 @@ export const CardAnimation: React.FC = () => {
         });
       };
 
-      const recolorCard12 = () => {
+      const recolorDarkCard = (srcFile: string) => {
         if (!cardWrapperRef.current) return;
         const img = new Image();
         img.crossOrigin = 'anonymous';
-        img.src = '/lotties/Features/images/img_12.png';
+        img.src = `/lotties/Features/images/${srcFile}`;
         img.onload = () => {
           const canvas = document.createElement('canvas');
           canvas.width = img.width;
@@ -171,38 +171,42 @@ export const CardAnimation: React.FC = () => {
           ctx.drawImage(img, 0, 0);
 
           const imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-          const data = imgData.data;
+          const px = imgData.data;
 
-          for (let y = 0; y < canvas.height; y++) {
-            for (let x = 0; x < canvas.width; x++) {
-              const idx = (y * canvas.width + x) * 4;
-              const a = data[idx + 3];
-              if (a > 15) {
-                const r = data[idx];
-                const g = data[idx + 1];
-                const b = data[idx + 2];
-                if (y < 280) {
-                  // Top card: originally white background with black text
-                  if (r > 200 && g > 200 && b > 200) {
-                    // Turn white card background into midnight navy glass
-                    data[idx] = 11;
-                    data[idx + 1] = 22;
-                    data[idx + 2] = 44;
-                  } else if (r < 65 && g < 65 && b < 65) {
-                    // Turn black text into crisp white
-                    data[idx] = 255;
-                    data[idx + 1] = 255;
-                    data[idx + 2] = 255;
-                  }
-                } else {
-                  // Bottom card: originally dark grey
-                  if (r < 60 && g < 60 && b < 60) {
-                    // Deepen to midnight navy glass
-                    data[idx] = 7;
-                    data[idx + 1] = 16;
-                    data[idx + 2] = 34;
-                  }
-                }
+          for (let i = 0; i < px.length; i += 4) {
+            const a = px[i + 3];
+            if (a < 15) continue;
+            const r = px[i], g = px[i + 1], b = px[i + 2];
+            const lum = 0.299 * r + 0.587 * g + 0.114 * b;
+            const maxC = Math.max(r, g, b);
+            const minC = Math.min(r, g, b);
+            const chroma = maxC - minC;
+
+            // Uniform navy that matches the site background
+            const NR = 5, NG = 12, NB = 28;
+
+            if (srcFile === 'img_12.png') {
+              // img_12: white top card + dark bottom card
+              const y = Math.floor((i / 4) / canvas.width);
+              if (y < 280) {
+                if (lum > 200 && chroma < 30) { px[i] = 11; px[i+1] = 22; px[i+2] = 44; }
+                else if (lum < 65 && chroma < 30) { px[i] = 255; px[i+1] = 255; px[i+2] = 255; }
+              } else {
+                if (lum < 80 && chroma < 30) { px[i] = NR; px[i+1] = NG; px[i+2] = NB; }
+              }
+            } else {
+              // All other dark cards (img_0, img_1, img_2, img_4):
+              // Use chroma to distinguish real content from background
+              if (lum > 210 && chroma < 40) {
+                // White/near-white neutral pixels → keep as white text
+              } else if (chroma > 35 && lum > 15) {
+                // Colored pixel (flags, photos, icons, graph, green text) → keep
+              } else if (lum > 140 && chroma < 35) {
+                // Light gray labels ("Due Date", "Reipient", "Balance") → slate
+                px[i] = 148; px[i+1] = 163; px[i+2] = 184;
+              } else {
+                // ALL neutral dark/gray backgrounds → single uniform navy
+                px[i] = NR; px[i+1] = NG; px[i+2] = NB;
               }
             }
           }
@@ -212,7 +216,7 @@ export const CardAnimation: React.FC = () => {
           const images = cardWrapperRef.current?.querySelectorAll('image');
           images?.forEach((el) => {
             const h = (el.getAttribute('href') || el.getAttributeNS('http://www.w3.org/1999/xlink', 'href') || '').split('?')[0];
-            if (h.endsWith('img_12.png')) {
+            if (h.endsWith(srcFile)) {
               el.setAttribute('href', themedUrl);
               el.setAttributeNS('http://www.w3.org/1999/xlink', 'href', themedUrl);
               el.style.filter = 'drop-shadow(0 0 20px rgba(56, 189, 248, 0.45))';
@@ -223,23 +227,36 @@ export const CardAnimation: React.FC = () => {
 
       const applyCardGlassTheme = () => {
         if (!cardWrapperRef.current) return;
-        // Match ONLY the floating card snippets (excluding img_12 which is recolored via canvas)
-        const cardRegex = /\/img_(0|1|2|3|4|7|8|9|10|11|13|14)\.png$/;
+        // White-background snippet cards that need the invert filter
+        const whiteCardRegex = /\/img_(3|8|10|11|13|14)\.png$/;
 
         const images = cardWrapperRef.current.querySelectorAll('image');
         images.forEach((img) => {
           const href = (img.getAttribute('href') || img.getAttributeNS('http://www.w3.org/1999/xlink', 'href') || '').split('?')[0];
-          if (cardRegex.test(href)) {
+          if (whiteCardRegex.test(href)) {
             img.style.filter =
               'invert(0.92) hue-rotate(185deg) saturate(2.4) brightness(0.86) contrast(1.15) drop-shadow(0 0 20px rgba(56, 189, 248, 0.45))';
-          } else if (href.endsWith('img_12.png')) {
-            // Handled by recolorCard12
+          } else if (href.endsWith('img_12.png') || href.endsWith('img_0.png') ||
+                     href.endsWith('img_1.png') || href.endsWith('img_2.png') ||
+                     href.endsWith('img_4.png')) {
+            // Handled by canvas recoloring
           } else {
             img.style.filter = 'none';
           }
         });
 
-        recolorCard12();
+        // Hide the Lottie "gray box" shape layer
+        const svgGroups = cardWrapperRef.current.querySelectorAll('g');
+        svgGroups.forEach((g) => {
+          // Lottie sets aria-label or data-name on groups matching layer names
+          const label = g.getAttribute('aria-label') || g.getAttribute('data-name') || '';
+          if (label === 'gray box') {
+            (g as unknown as HTMLElement).style.display = 'none';
+          }
+        });
+
+        // Recolor all dark-themed card images via canvas
+        ['img_0.png', 'img_1.png', 'img_2.png', 'img_4.png', 'img_12.png'].forEach(recolorDarkCard);
       };
 
       const observer = new MutationObserver(applyCardGlassTheme);

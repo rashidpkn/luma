@@ -6,6 +6,7 @@ import { GetPaidSection } from '../../components/GetPaidSection';
 import { ScrollHelper } from '../../components/ScrollHelper';
 import { GlobalSection } from '../../components/GlobalSection';
 import { DashboardSection } from '../../components/DashboardSection';
+import { NoBordersSection } from '../../components/NoBordersSection';
 import { SustainabilitySection } from '../../components/SustainabilitySection';
 import { BenefitsSection } from '../../components/BenefitsSection';
 import { SliderNames } from '../../components/SliderNames';
@@ -35,6 +36,9 @@ export default function Home() {
 
         {/* Section 4: Increase your visibility in spendings. Dark/Light Theme Switcher */}
         <DashboardSection />
+
+        {/* Section 4.5: One App. No Borders. No Banks. — 3D Globe */}
+        <NoBordersSection />
 
         {/* Section 5: Mother Earth Sustainability Section & Planted Tree Counter */}
         <SustainabilitySection />
