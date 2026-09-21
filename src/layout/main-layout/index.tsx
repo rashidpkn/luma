@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Outlet } from 'react-router-dom';
+import { Outlet, useLocation } from 'react-router-dom';
 import Lenis from 'lenis';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -14,6 +14,15 @@ gsap.registerPlugin(ScrollTrigger);
 
 const LayoutContent: React.FC = () => {
   const { country } = useApp();
+  const location = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    const lenis = (window as any).lenis;
+    if (lenis) {
+      lenis.scrollTo(0, { immediate: true });
+    }
+  }, [location.pathname]);
 
   useEffect(() => {
     // Initialize Lenis Smooth Scroll
