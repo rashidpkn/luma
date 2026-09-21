@@ -35,25 +35,70 @@ export const HeroHeader: React.FC = () => {
             <h1>NF Payment</h1>
           </div>
 
+          <div
+            style={{
+              color: '#38bdf8',
+              fontSize: '13px',
+              fontWeight: 700,
+              letterSpacing: '0.15em',
+              textTransform: 'uppercase',
+              marginBottom: '16px',
+              textShadow: '0 0 15px rgba(56, 189, 248, 0.4)'
+            }}
+          >
+            MULTI-CURRENCY BUSINESS BANKING
+          </div>
+
           <h2 className="h-xlarge" style={{ color: '#fff', textShadow: '0 4px 24px rgba(0,0,0,0.5)' }}>
             <span className="block">Your Money.</span>
-            <span className="block">Simplified.</span>
+            <span
+              className="block"
+              style={{
+                background: 'linear-gradient(135deg, #00f2fe 0%, #38bdf8 45%, #818cf8 80%, #a855f7 100%)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                textShadow: 'none'
+              }}
+            >
+              Simplified.
+            </span>
           </h2>
 
-          <p className="p-big" style={{ color: 'rgba(255,255,255,0.85)', marginTop: '24px' }}>
-            Send, spend, and stay in control, all in one app.
+          <p className="p-big" style={{ color: '#94a3b8', marginTop: '20px', maxWidth: '520px', lineHeight: 1.5 }}>
+            Send, spend, exchange and stay in control—all from one considered platform.
           </p>
+
+          <a
+            href="#flow"
+            style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '8px',
+              color: '#38bdf8',
+              fontSize: '12px',
+              fontWeight: 700,
+              letterSpacing: '0.15em',
+              textTransform: 'uppercase',
+              marginTop: '32px',
+              borderBottom: '1px solid rgba(56, 189, 248, 0.4)',
+              paddingBottom: '4px',
+              textDecoration: 'none',
+              transition: 'all 0.3s ease'
+            }}
+          >
+            EXPLORE THE FLOW <span style={{ fontSize: '14px' }}>↓</span>
+          </a>
         </div>
       </div>
 
       {/* Scroll Helper Indicator */}
       <div className="scroll-helper-wrapper__header">
         <div className="scroll-helper__header visible" style={{ opacity: 1 }}>
-          <svg width="18" height="27" viewBox="0 0 18 27" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect x="1" y="5" width="16" height="21" rx="5" stroke="white" strokeWidth="2" />
-            <line x1="9" y1="9" x2="9" y2="14" stroke="white" strokeWidth="2" />
+          <svg width="18" height="27" viewBox="0 0 18 27" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ filter: 'drop-shadow(0 0 6px rgba(56, 189, 248, 0.6))' }}>
+            <rect x="1" y="5" width="16" height="21" rx="5" stroke="#38bdf8" strokeWidth="2" />
+            <line x1="9" y1="9" x2="9" y2="14" stroke="#38bdf8" strokeWidth="2" />
           </svg>
-          <span style={{ color: '#fff' }}>Scroll</span>
+          <span style={{ color: '#38bdf8', letterSpacing: '0.08em', fontWeight: 600 }}>SCROLL TO MOVE MONEY</span>
         </div>
       </div>
     </header>

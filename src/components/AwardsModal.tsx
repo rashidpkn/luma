@@ -37,7 +37,7 @@ export const AwardsModal: React.FC = () => {
           transition: 'opacity 0.3s ease'
         }}
       >
-        <p className="cert-text">
+        <p className="cert-text" style={{ color: '#94a3b8' }}>
           Awards
           &amp;<br />
           Certifications
@@ -49,10 +49,11 @@ export const AwardsModal: React.FC = () => {
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >
-          <rect width="62" height="187" fill="#1A1A1A" />
+          <rect width="62" height="187" fill="rgba(15, 23, 42, 0.75)" stroke="rgba(56, 189, 248, 0.25)" strokeWidth="1" rx="8" />
           <path
             d="M17.6992 140.8V144.2C17.6992 147.1 20.0992 149.5 22.9992 149.5C22.9992 153.7 26.1992 157.1 30.2992 157.5V169.7H25.9992V171.2H35.9992V169.7H31.6992V157.5C35.7992 157.1 38.8992 153.7 38.9992 149.6C41.8992 149.6 44.2992 147.2 44.2992 144.3V140.8H17.6992ZM19.1992 144.2V142.3H22.9992V148C20.8992 148.1 19.1992 146.3 19.1992 144.2ZM42.7992 144.2C42.7992 146.3 41.0992 148 38.9992 148V142.3H42.7992V144.2Z"
-            fill="white"
+            fill="#38bdf8"
+            style={{ filter: 'drop-shadow(0 0 8px rgba(56, 189, 248, 0.7))' }}
           />
         </svg>
       </div>

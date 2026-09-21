@@ -38,9 +38,9 @@ export const FullscreenMenu: React.FC = () => {
         <div className="row align-bottom">
           {/* Main Discover links */}
           <div className="xxlarge-10 small-16 columns">
-            <span className="title anime-in">Discover</span>
+            <span className="title anime-in text-white!">Discover</span>
             <ul className="page-links">
-              <li className="anime-in">
+              <li className="anime-in ">
                 <a
                   href="#"
                   onClick={(e) => {
@@ -48,13 +48,13 @@ export const FullscreenMenu: React.FC = () => {
                     setIsMenuOpen(false);
                     window.scrollTo({ top: 0, behavior: 'smooth' });
                   }}
-                  className="underline-anime"
+                  className="underline-anime "
                 >
-                  <span className="content-wrapper">
-                    <span className="arrow mr-4">→</span>
-                    <span className="text">Luma</span>
-                    <span className="line" />
-                    <span className="subtitle">Business</span>
+                  <span className="content-wrapper ">
+                    <span className="arrow mr-4 text-[#39BDF8]">→</span>
+                    <span className="text text-[#39BDF8]!">Luma</span>
+                    <span className="line bg-[#39BDF8]! h-0.75!" />
+                    <span className="subtitle text-white!">Business</span>
                   </span>
                 </a>
               </li>
@@ -65,10 +65,10 @@ export const FullscreenMenu: React.FC = () => {
                   className="underline-anime"
                 >
                   <span className="content-wrapper">
-                    <span className="arrow mr-4">→</span>
-                    <span className="text">Enterprise</span>
-                    <span className="line" />
-                    <span className="subtitle">Checkout</span>
+                    <span className="arrow mr-4 text-[#39BDF8]">→</span>
+                    <span className="text text-[#39BDF8]!">Enterprise</span>
+                    <span className="line bg-[#39BDF8]! h-0.75!" />
+                    <span className="subtitle text-white!">Checkout</span>
                   </span>
                 </a>
               </li>
@@ -79,9 +79,9 @@ export const FullscreenMenu: React.FC = () => {
                   className="underline-anime"
                 >
                   <span className="content-wrapper">
-                    <span className="arrow mr-4">→</span>
-                    <span className="text">Eden Project</span>
-                    <span className="line" />
+                    <span className="arrow mr-4 text-[#39BDF8]">→</span>
+                    <span className="text text-[#39BDF8]!">Eden Project</span>
+                    <span className="line bg-[#39BDF8]! h-0.75!" />
                   </span>
                 </a>
               </li>
@@ -93,7 +93,7 @@ export const FullscreenMenu: React.FC = () => {
             <div className="row">
               {/* Legal Links */}
               <div className="xxlarge-10 small-8 xsmall-16 columns">
-                <span className="title anime-in">Legal</span>
+                <span className="title anime-in text-white!">Legal</span>
                 <ul className="legal-links">
                   {[
                     'Cookie Policy',
@@ -112,7 +112,7 @@ export const FullscreenMenu: React.FC = () => {
                       <a
                         href="#"
                         onClick={(e) => e.preventDefault()}
-                        className="underline-anime small"
+                        className="underline-anime small text-white!"
                       >
                         {item}
                       </a>
@@ -123,14 +123,14 @@ export const FullscreenMenu: React.FC = () => {
 
               {/* Support Links */}
               <div className="xxlarge-6 small-8 xsmall-16 columns">
-                <span className="title anime-in">Support</span>
+                <span className="title anime-in text-white!">Support</span>
                 <ul className="other-links">
                   {['Contact', 'Developer API', 'Careers'].map((item, idx) => (
                     <li key={idx} className="anime-in">
                       <a
                         href="#"
                         onClick={(e) => e.preventDefault()}
-                        className="underline-anime small"
+                        className="underline-anime small text-white!"
                       >
                         {item}
                       </a>
@@ -138,17 +138,7 @@ export const FullscreenMenu: React.FC = () => {
                   ))}
                 </ul>
 
-                <div className="madeby-wrapper anime-in">
-                  <a
-                    href="https://burocratik.com/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="p-normal"
-                    style={{ color: '#888', transition: 'color 0.3s ease' }}
-                  >
-                    Made by Büro
-                  </a>
-                </div>
+
               </div>
             </div>
           </div>

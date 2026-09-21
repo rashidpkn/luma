@@ -17,7 +17,6 @@ const COUNTRIES: CountryItem[] = [
 
 export const Navbar: React.FC = () => {
   const { country, setCountry, isMenuOpen, setIsMenuOpen, setIsAppModalOpen } = useApp();
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isCollapsed, setIsCollapsed] = useState(false);
   const [isCollapsedDown, setIsCollapsedDown] = useState(false);
   const [isCollapsedUp, setIsCollapsedUp] = useState(false);
@@ -88,16 +87,7 @@ export const Navbar: React.FC = () => {
     };
   }, []);
 
-  // Close dropdown on outside click
-  useEffect(() => {
-    const handleOutsideClick = (e: MouseEvent) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
-        setIsDropdownOpen(false);
-      }
-    };
-    document.addEventListener('mousedown', handleOutsideClick);
-    return () => document.removeEventListener('mousedown', handleOutsideClick);
-  }, []);
+
 
   const activeCountry = COUNTRIES.find(c => c.id === country) || COUNTRIES[0];
 
@@ -131,12 +121,11 @@ export const Navbar: React.FC = () => {
           {/* Left Column: Logo & Country Switcher */}
           <div className="xxlarge-6 small-8 columns">
             <div
-              className={`button-dropdown-wrapper ${isDropdownOpen ? 'active' : ''}`}
+              className={`button-dropdown-wrapper`}
               ref={dropdownRef}
             >
               <div
-                className={`active-country-wrapper ${isDropdownOpen ? 'active' : ''}`}
-                onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+                className={`active-country-wrapper`}
                 role="button"
                 tabIndex={0}
                 style={{ cursor: 'pointer', pointerEvents: 'all' }}
@@ -145,40 +134,35 @@ export const Navbar: React.FC = () => {
                 <button
                   type="button"
                   aria-label="Switch Website Country"
-                  className={`logo ${isDropdownOpen ? 'active' : ''}`}
+                  className={`logo`}
                 >
-                  {/* Luma Circular Moon Logo */}
-                  <svg viewBox="0 0 48 48" className="logo-svg">
+                  {/* Luma Gradient Logo */}
+                  <svg viewBox="0 0 48 48" className="logo-svg" style={{ filter: 'drop-shadow(0 0 10px rgba(56, 189, 248, 0.6))' }}>
+                    <defs>
+                      <linearGradient id="lumaLogoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stopColor="#00f2fe" />
+                        <stop offset="50%" stopColor="#38bdf8" />
+                        <stop offset="100%" stopColor="#818cf8" />
+                      </linearGradient>
+                    </defs>
+                    <rect width="48" height="48" rx="24" fill="url(#lumaLogoGrad)" />
                     <path
-                      d="M24 47.6C37 47.6 47.5 37 47.5 24 47.5 11 37 .4 24 .4S.5 11 .5 24C.5 37 11 47.6 24 47.6z"
-                      className="logo-svg-primary"
-                    />
-                    <path
-                      d="M24 44C13 44 4 35 4 24 4 12.9 13 4 24 4"
-                      className="logo-svg-secondary"
-                      strokeWidth="2"
+                      d="M17 15v18h13M22 20h5a3.5 3.5 0 0 1 0 7h-5"
+                      stroke="#ffffff"
+                      strokeWidth="3.2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      fill="none"
                     />
                   </svg>
 
-                  {/* Dropdown Arrow */}
-                  <svg
-                    viewBox="0 0 12 8"
-                    className="arrow"
-                    style={{
-                      transform: isDropdownOpen ? 'rotate(180deg)' : 'rotate(0deg)',
-                      transition: 'transform 0.3s ease'
-                    }}
-                  >
-                    <path d="M2 1.8l4 4 4-4" />
-                  </svg>
+
                 </button>
 
                 <div className="logo-country-name-wrapper">
                   <span
                     className="logo-country-name anime-name p-caption m-width"
                     style={{
-                      opacity: isDropdownOpen ? 1 : 0,
-                      visibility: isDropdownOpen ? 'visible' : 'hidden',
                       transition: 'opacity 0.3s ease'
                     }}
                   >
@@ -192,41 +176,14 @@ export const Navbar: React.FC = () => {
                 <span className="text p-small">
                   <span className="block">
                     <span className="color-text">{activeCountry.name}</span>
-                    <span>, welcome!</span>
                   </span>
                   <span className="block">
-                    <span>All your business needs in one platform.</span>
+                    <span style={{ color: '#94a3b8' }}>Business money, in one flow.</span>
                   </span>
                 </span>
               </span>
 
-              {/* Dropdown menu */}
-              {isDropdownOpen && (
-                <div className="countries-dropdown" style={{ display: 'flex' }}>
-                  <div className="dropdown-scroll">
-                    <div className="inner-scroll">
-                      {COUNTRIES.map((c) => (
-                        <div
-                          key={c.id}
-                          className="country-wrapper"
-                          onClick={() => {
-                            setCountry(c.id);
-                            setIsDropdownOpen(false);
-                          }}
-                          style={{ cursor: 'pointer' }}
-                        >
-                          <div className="inner anime-name">
-                            <span className={`currency-flag ${c.flagClass} mr-2 rounded-xs`} />
-                            <p className="country-name m-width" style={{ marginLeft: '12px' }}>
-                              {c.name}
-                            </p>
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              )}
+
             </div>
           </div>
 
@@ -265,8 +222,29 @@ export const Navbar: React.FC = () => {
                 type="button"
                 onClick={() => setIsAppModalOpen(true)}
                 className="btn login fill themed"
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '8px',
+                  borderRadius: '9999px',
+                  padding: '10px 22px'
+                }}
               >
-                Get the app
+                <span>Get the app</span>
+                <svg
+                  width="15"
+                  height="15"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                  <polyline points="7 10 12 15 17 10" />
+                  <line x1="12" y1="15" x2="12" y2="3" />
+                </svg>
               </button>
             </div>
           </div>

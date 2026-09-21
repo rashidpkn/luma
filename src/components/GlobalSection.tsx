@@ -7,7 +7,7 @@ export const GlobalSection: React.FC = () => {
 
   useEffect(() => {
     if (videoRef.current) {
-      videoRef.current.play().catch(() => {});
+      videoRef.current.play().catch(() => { });
     }
   }, []);
 
@@ -38,17 +38,17 @@ export const GlobalSection: React.FC = () => {
       <div className="row align-middle relative z-10">
         {/* Left Column: Story */}
         <div className="xxlarge-6 xxlarge-offset-1 small-16 small-offset-0 columns">
-          <h2 className="h-large text-white">
+          <h2 className="h-large text-white!">
             <span className="block">We are local,</span>
             <span className="block text-gray-400">yet global.</span>
           </h2>
 
-          <div className="p-big mt-6 text-gray-300 space-y-4">
-            <p className="font-semibold text-white">We adopt the &quot;Glocalization&quot; approach.</p>
-            <p>
+          <div className="p-big mt-6 text-white! space-y-4">
+            <p className="font-semibold text-white!">We adopt the &quot;Glocalization&quot; approach.</p>
+            <p className='text-white!'>
               Our Luma Accounts allow you to receive payments regardless of where your clients are and which payment method they want to go for. Multiple solutions in different regions tailored by Luma only for your business to maintain cashflow without any friction.
             </p>
-            <p>Get paid by local and global methods.</p>
+            <p className='text-white!'>Get paid by local and global methods.</p>
           </div>
         </div>
 

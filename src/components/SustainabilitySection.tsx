@@ -41,15 +41,15 @@ export const SustainabilitySection: React.FC = () => {
         <div className="xxlarge-8 xxlarge-offset-1 small-16 small-offset-0 small-order-2 columns">
           <h2 className="h-medium">
             <span className="block">
-              <span>We care about our </span>
+              <span className='text-white!'>We care about our </span>
               <span className="color-text" style={{ color: '#27ae60' }}>Mother Earth</span>
-              <span> as well as we care about your business. You can just make the world greener by planting a tree. We do it for you with every money you spend with us.</span>
+              <span className='text-white!'> as well as we care about your business. You can just make the world greener by planting a tree. We do it for you with every money you spend with us.</span>
             </span>
           </h2>
-          <div className="p-big">
-            <p>You can make the world greener by planting a tree. We do it for you with every transaction you make with us.</p>
+          <div className="p-big text-white!">
+            <p className='text-white!'>You can make the world greener by planting a tree. We do it for you with every transaction you make with us.</p>
           </div>
-          <a href="#eden-project" className="btn outline">Read more</a>
+          <a href="#eden-project" className="btn outline text-white!">Read more</a>
         </div>
         <div className="xxlarge-7 small-16 small-offset-0 small-order-1 columns">
           <div className="image-wrapper">

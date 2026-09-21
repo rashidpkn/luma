@@ -1,0 +1,482 @@
+/* ==========================================================================
+   LUMA GLOBAL - MODERN ELECTRIC CYAN & MIDNIGHT GLASS THEME
+   Inspired by futuristic high-tech fintech aesthetic
+   ========================================================================== */
+
+:root {
+  --primary-color: #38bdf8 !important;
+  --secondary-color: #020617 !important;
+  --white-color: #020617 !important;
+  --black-color: #020617 !important;
+  --global-color: #0284c7 !important;
+  --sustainability-color: #06b6d4 !important;
+  --shadow-color: rgba(56, 189, 248, 0.15) !important;
+  --grey-color: #94a3b8 !important;
+  --light-grey-color: rgba(15, 23, 42, 0.7) !important;
+  --dark-grey: #0f172a !important;
+  --bg-color: #020617 !important;
+  --text-color: #f8fafc !important;
+  --hover-color: #38bdf8 !important;
+
+  /* Theme Tokens */
+  --theme-bg-main: #020617;
+  --theme-bg-elevated: rgba(15, 23, 42, 0.7);
+  --theme-border-glow: rgba(56, 189, 248, 0.25);
+  --theme-cyan: #38bdf8;
+  --theme-cyan-bright: #00f2fe;
+  --theme-indigo: #818cf8;
+  --theme-text-primary: #ffffff;
+  --theme-text-secondary: #94a3b8;
+  --theme-text-muted: #64748b;
+}
+
+/* Global Body & Background */
+body {
+  background-color: #020617 !important;
+  color: #f8fafc !important;
+}
+
+/* Atmospheric Ambient Lighting on Page */
+.anchor-blocks-wrapper,
+main,
+header {
+  background-color: #020617;
+}
+
+/* Header Glowing Background */
+header[data-logo-color="white"] {
+  background: radial-gradient(circle at 72% 45%, rgba(14, 165, 233, 0.25) 0%, rgba(30, 58, 138, 0.18) 35%, rgba(2, 6, 23, 0.95) 75%, #020617 100%) !important;
+}
+
+/* Header Background Video Color Grade (turns grey waves into glowing cyan/blue oceanic waves) */
+.video-wrapper video.element-cover {
+  filter: hue-rotate(190deg) saturate(2.4) brightness(0.65) contrast(1.2) !important;
+}
+
+/* ==========================================================================
+   CARD ANIMATION & LOTTIE SVG STYLING
+   Transforming white paper cards into dark glowing cyan glassmorphism
+   ========================================================================== */
+
+.animation-container {
+  pointer-events: none;
+}
+
+/* Card animation container shadow */
+.animation-container .card-wrapper {
+  filter: drop-shadow(0 0 50px rgba(14, 165, 233, 0.22));
+}
+
+/* Hide or tint white raster shadows in Lottie */
+.card-wrapper svg image[href*="img_240.png"] {
+  opacity: 0.2 !important;
+  filter: hue-rotate(190deg) saturate(3) brightness(0.5) !important;
+}
+
+/* ==========================================================================
+   NAVBAR STYLING
+   ========================================================================== */
+
+.navbar {
+  background: transparent !important;
+}
+
+.navbar .navbar-wrapper .bg {
+  background-color: rgba(2, 6, 23, 0.8) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  border-bottom: 1px solid rgba(56, 189, 248, 0.12) !important;
+}
+
+/* Navbar Logo Badge */
+.navbar .logo {
+  border-radius: 50% !important;
+  background: linear-gradient(135deg, #00f2fe 0%, #0ea5e9 50%, #6366f1 100%) !important;
+  box-shadow: 0 0 20px rgba(56, 189, 248, 0.45) !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.4) !important;
+}
+
+.navbar .logo .logo-svg .logo-svg-primary {
+  fill: #ffffff !important;
+}
+
+.navbar .logo .logo-svg .logo-svg-secondary {
+  stroke: #ffffff !important;
+}
+
+.navbar .logo .arrow path {
+  stroke: #38bdf8 !important;
+}
+
+/* Active Country & Subtitle Text */
+.navbar .logo-text-wrapper .color-text {
+  color: #ffffff !important;
+  font-weight: 600;
+}
+
+.navbar .logo-text-wrapper .text span {
+  color: #94a3b8 !important;
+}
+
+/* Center Hamburger Button */
+.navbar .btn-menu {
+  background: rgba(15, 23, 42, 0.6) !important;
+  border: 1px solid rgba(56, 189, 248, 0.25) !important;
+  border-radius: 9999px !important;
+  backdrop-filter: blur(12px) !important;
+  padding: 6px 14px !important;
+  transition: all 0.3s ease !important;
+  box-shadow: 0 0 15px rgba(56, 189, 248, 0.12) !important;
+}
+
+.navbar .btn-menu:hover {
+  border-color: rgba(56, 189, 248, 0.5) !important;
+  box-shadow: 0 0 20px rgba(56, 189, 248, 0.25) !important;
+}
+
+.navbar .btn-menu .dash {
+  background-color: #ffffff !important;
+}
+
+/* CTA "Get the app" Button */
+.navbar .btn.login {
+  background-color: #ffffff !important;
+  color: #020617 !important;
+  font-weight: 600 !important;
+  border: 1px solid rgba(255, 255, 255, 0.8) !important;
+  box-shadow: 0 0 25px rgba(56, 189, 248, 0.35) !important;
+  transition: all 0.3s ease !important;
+}
+
+.navbar .btn.login:hover {
+  background-color: #f0f9ff !important;
+  box-shadow: 0 0 35px rgba(56, 189, 248, 0.6) !important;
+  transform: translateY(-1px);
+}
+
+/* Countries Dropdown */
+.navbar .countries-dropdown {
+  background: rgba(15, 23, 42, 0.95) !important;
+  border: 1px solid rgba(56, 189, 248, 0.3) !important;
+  backdrop-filter: blur(25px) !important;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6), 0 0 20px rgba(56, 189, 248, 0.2) !important;
+}
+
+.navbar .countries-dropdown .country-name {
+  color: #f8fafc !important;
+}
+
+.navbar .countries-dropdown .country-wrapper:hover {
+  background: rgba(56, 189, 248, 0.12) !important;
+}
+
+/* ==========================================================================
+   AWARDS VERTICAL BANNER & MODAL
+   ========================================================================== */
+
+.banner-wrapper.dark {
+  background-color: rgba(15, 23, 42, 0.65) !important;
+  backdrop-filter: blur(16px) !important;
+  border: 1px solid rgba(56, 189, 248, 0.2) !important;
+  border-left: none !important;
+  border-radius: 0 12px 12px 0 !important;
+  box-shadow: 0 0 20px rgba(56, 189, 248, 0.15) !important;
+}
+
+.banner-wrapper.dark .cert-text {
+  color: #94a3b8 !important;
+}
+
+.banner-wrapper.dark svg rect {
+  fill: transparent !important;
+}
+
+.banner-wrapper.dark svg path {
+  fill: #38bdf8 !important;
+  filter: drop-shadow(0 0 8px rgba(56, 189, 248, 0.6));
+}
+
+.modal-wraper.active {
+  background: rgba(15, 23, 42, 0.95) !important;
+  border: 1px solid rgba(56, 189, 248, 0.3) !important;
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.8), 0 0 30px rgba(56, 189, 248, 0.25) !important;
+  backdrop-filter: blur(25px) !important;
+  color: #ffffff !important;
+}
+
+.modal-wraper h3 {
+  color: #ffffff !important;
+}
+
+.modal-wraper p {
+  color: #94a3b8 !important;
+}
+
+/* ==========================================================================
+   SAVE TIME SECTION (Scroll Anchor Step 1-4)
+   ========================================================================== */
+
+.block-save-time {
+  background-color: #020617 !important;
+  background: radial-gradient(circle at 30% 50%, rgba(14, 165, 233, 0.12) 0%, transparent 60%), #020617 !important;
+}
+
+.block-save-time .fixed-wrapper .title-wrapper h2 {
+  color: #ffffff !important;
+}
+
+.block-save-time .fixed-wrapper .title-wrapper h2 .title-line-1,
+.block-save-time .fixed-wrapper .title-wrapper h2 .title-line-2 {
+  color: #ffffff !important;
+}
+
+.block-save-time .fixed-wrapper .text-wrapper p {
+  color: #94a3b8 !important;
+}
+
+/* ==========================================================================
+   ANCHOR BLOCKS (Timeline sidebar)
+   ========================================================================== */
+
+.anchor-blocks .anchor-list-wrapper .line-wrapper {
+  background-color: rgba(56, 189, 248, 0.18) !important;
+}
+
+.anchor-blocks .anchor-list-wrapper .line-wrapper .line {
+  background-color: #38bdf8 !important;
+  box-shadow: 0 0 12px #38bdf8 !important;
+}
+
+.anchor-blocks .anchor-list-item .btn {
+  color: #64748b !important;
+}
+
+.anchor-blocks .anchor-list-item .btn:hover {
+  color: #94a3b8 !important;
+}
+
+.anchor-blocks .anchor-list-item.active .btn {
+  color: #38bdf8 !important;
+  text-shadow: 0 0 14px rgba(56, 189, 248, 0.5) !important;
+}
+
+.anchor-blocks .anchor-list-item .btn .ball {
+  background-color: #020617 !important;
+  border-color: rgba(56, 189, 248, 0.3) !important;
+}
+
+.anchor-blocks .anchor-list-item.passed .btn .ball {
+  background-color: rgba(56, 189, 248, 0.3) !important;
+  border-color: #38bdf8 !important;
+}
+
+.anchor-blocks .anchor-list-item.active .btn .ball {
+  background-color: #38bdf8 !important;
+  border-color: #38bdf8 !important;
+  box-shadow: 0 0 12px #38bdf8, 0 0 20px rgba(56, 189, 248, 0.6) !important;
+}
+
+/* ==========================================================================
+   GET PAID SECTION
+   ========================================================================== */
+
+.block-get-paid {
+  background-color: #020617 !important;
+}
+
+.block-get-paid .h-large {
+  color: #ffffff !important;
+}
+
+.block-get-paid .p-big {
+  color: #94a3b8 !important;
+}
+
+/* ==========================================================================
+   GLOBAL SECTION
+   ========================================================================== */
+
+.block-global {
+  background-color: #020617 !important;
+  border-top: 1px solid rgba(56, 189, 248, 0.12) !important;
+}
+
+.block-global .h-large {
+  color: #ffffff !important;
+}
+
+.block-global .p-big {
+  color: #94a3b8 !important;
+}
+
+/* ==========================================================================
+   DASHBOARD SECTION
+   ========================================================================== */
+
+.block-dashboard {
+  background-color: #020617 !important;
+  --bg-color: #020617 !important;
+  --text-color: #ffffff !important;
+  border-top: 1px solid rgba(56, 189, 248, 0.12) !important;
+}
+
+.block-dashboard .switcher-wrapper {
+  background: rgba(15, 23, 42, 0.7) !important;
+  border: 1px solid rgba(56, 189, 248, 0.2) !important;
+  backdrop-filter: blur(12px) !important;
+}
+
+.block-dashboard .switcher-wrapper .btn {
+  color: #94a3b8 !important;
+}
+
+.block-dashboard .switcher-wrapper .btn.active {
+  background-color: rgba(56, 189, 248, 0.2) !important;
+  color: #38bdf8 !important;
+  box-shadow: 0 0 15px rgba(56, 189, 248, 0.25) !important;
+}
+
+.block-dashboard .screen-wrapper {
+  border: 1px solid rgba(56, 189, 248, 0.2) !important;
+  border-radius: 16px !important;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8), 0 0 40px rgba(56, 189, 248, 0.18) !important;
+  overflow: hidden !important;
+}
+
+/* ==========================================================================
+   SUSTAINABILITY SECTION
+   ========================================================================== */
+
+.block-sustainability {
+  background-color: #020617 !important;
+  border-top: 1px solid rgba(56, 189, 248, 0.12) !important;
+}
+
+.block-sustainability .h-large {
+  color: #ffffff !important;
+}
+
+.block-sustainability .p-big {
+  color: #94a3b8 !important;
+}
+
+.block-sustainability .counter-wrapper {
+  color: #38bdf8 !important;
+  text-shadow: 0 0 25px rgba(56, 189, 248, 0.4) !important;
+}
+
+/* ==========================================================================
+   BENEFITS SECTION
+   ========================================================================== */
+
+.block-benefits {
+  background-color: #020617 !important;
+  border-top: 1px solid rgba(56, 189, 248, 0.12) !important;
+}
+
+.block-benefits .bg-text-container .bg-text {
+  color: rgba(56, 189, 248, 0.05) !important;
+}
+
+.block-benefits .card {
+  background: rgba(15, 23, 42, 0.65) !important;
+  border: 1px solid rgba(56, 189, 248, 0.2) !important;
+  backdrop-filter: blur(16px) !important;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4), 0 0 25px rgba(56, 189, 248, 0.08) !important;
+  border-radius: 16px !important;
+  transition: all 0.3s ease !important;
+}
+
+.block-benefits .card:hover {
+  border-color: rgba(56, 189, 248, 0.45) !important;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.6), 0 0 35px rgba(56, 189, 248, 0.2) !important;
+  transform: translateY(-4px);
+}
+
+.block-benefits .card .h-medium {
+  color: #ffffff !important;
+}
+
+.block-benefits .card .p-normal {
+  color: #94a3b8 !important;
+}
+
+/* ==========================================================================
+   SLIDER NAMES & DOWNLOADS
+   ========================================================================== */
+
+.slider-names {
+  background-color: #020617 !important;
+  border-top: 1px solid rgba(56, 189, 248, 0.12) !important;
+}
+
+.slider-names .h-large {
+  color: #ffffff !important;
+}
+
+.slider-names .slider-wrapper .slider-item p {
+  color: #38bdf8 !important;
+  text-shadow: 0 0 25px rgba(56, 189, 248, 0.3) !important;
+}
+
+.slider-names .container .text.secondary a {
+  color: #38bdf8 !important;
+}
+
+/* ==========================================================================
+   FOOTER
+   ========================================================================== */
+
+footer {
+  background-color: #00040f !important;
+  border-top: 1px solid rgba(56, 189, 248, 0.12) !important;
+}
+
+footer p,
+footer a {
+  color: #94a3b8 !important;
+}
+
+footer a:hover {
+  color: #38bdf8 !important;
+}
+
+footer .copyright-wrapper .social-list .social-list-item a {
+  background-color: rgba(15, 23, 42, 0.8) !important;
+  border: 1px solid rgba(56, 189, 248, 0.2) !important;
+}
+
+footer .copyright-wrapper .social-list .social-list-item a:hover {
+  background-color: #38bdf8 !important;
+  box-shadow: 0 0 20px rgba(56, 189, 248, 0.6) !important;
+}
+
+footer .copyright-wrapper .social-list .social-list-item a:hover svg path {
+  fill: #020617 !important;
+}
+
+/* ==========================================================================
+   MODALS (App Modal, Awards Modal, Fullscreen Menu)
+   ========================================================================== */
+
+.app-modal-wrapper .modal {
+  background: rgba(15, 23, 42, 0.95) !important;
+  border: 1px solid rgba(56, 189, 248, 0.3) !important;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.9), 0 0 40px rgba(56, 189, 248, 0.25) !important;
+  backdrop-filter: blur(25px) !important;
+  border-radius: 24px !important;
+}
+
+.app-modal-wrapper .modal h3 {
+  color: #ffffff !important;
+}
+
+.app-modal-wrapper .modal p {
+  color: #94a3b8 !important;
+}
+
+.app-modal-wrapper .close-button {
+  background: rgba(56, 189, 248, 0.15) !important;
+  color: #38bdf8 !important;
+  border-radius: 50% !important;
+}

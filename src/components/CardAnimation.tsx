@@ -157,7 +157,98 @@ export const CardAnimation: React.FC = () => {
         });
       };
 
-      animRef.current.addEventListener('DOMLoaded', handleReady);
+      const recolorCard12 = () => {
+        if (!cardWrapperRef.current) return;
+        const img = new Image();
+        img.crossOrigin = 'anonymous';
+        img.src = '/lotties/Features/images/img_12.png';
+        img.onload = () => {
+          const canvas = document.createElement('canvas');
+          canvas.width = img.width;
+          canvas.height = img.height;
+          const ctx = canvas.getContext('2d');
+          if (!ctx) return;
+          ctx.drawImage(img, 0, 0);
+
+          const imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+          const data = imgData.data;
+
+          for (let y = 0; y < canvas.height; y++) {
+            for (let x = 0; x < canvas.width; x++) {
+              const idx = (y * canvas.width + x) * 4;
+              const a = data[idx + 3];
+              if (a > 15) {
+                const r = data[idx];
+                const g = data[idx + 1];
+                const b = data[idx + 2];
+                if (y < 280) {
+                  // Top card: originally white background with black text
+                  if (r > 200 && g > 200 && b > 200) {
+                    // Turn white card background into midnight navy glass
+                    data[idx] = 11;
+                    data[idx + 1] = 22;
+                    data[idx + 2] = 44;
+                  } else if (r < 65 && g < 65 && b < 65) {
+                    // Turn black text into crisp white
+                    data[idx] = 255;
+                    data[idx + 1] = 255;
+                    data[idx + 2] = 255;
+                  }
+                } else {
+                  // Bottom card: originally dark grey
+                  if (r < 60 && g < 60 && b < 60) {
+                    // Deepen to midnight navy glass
+                    data[idx] = 7;
+                    data[idx + 1] = 16;
+                    data[idx + 2] = 34;
+                  }
+                }
+              }
+            }
+          }
+          ctx.putImageData(imgData, 0, 0);
+          const themedUrl = canvas.toDataURL('image/png');
+
+          const images = cardWrapperRef.current?.querySelectorAll('image');
+          images?.forEach((el) => {
+            const h = (el.getAttribute('href') || el.getAttributeNS('http://www.w3.org/1999/xlink', 'href') || '').split('?')[0];
+            if (h.endsWith('img_12.png')) {
+              el.setAttribute('href', themedUrl);
+              el.setAttributeNS('http://www.w3.org/1999/xlink', 'href', themedUrl);
+              el.style.filter = 'drop-shadow(0 0 20px rgba(56, 189, 248, 0.45))';
+            }
+          });
+        };
+      };
+
+      const applyCardGlassTheme = () => {
+        if (!cardWrapperRef.current) return;
+        // Match ONLY the floating card snippets (excluding img_12 which is recolored via canvas)
+        const cardRegex = /\/img_(0|1|2|3|4|7|8|9|10|11|13|14)\.png$/;
+
+        const images = cardWrapperRef.current.querySelectorAll('image');
+        images.forEach((img) => {
+          const href = (img.getAttribute('href') || img.getAttributeNS('http://www.w3.org/1999/xlink', 'href') || '').split('?')[0];
+          if (cardRegex.test(href)) {
+            img.style.filter =
+              'invert(0.92) hue-rotate(185deg) saturate(2.4) brightness(0.86) contrast(1.15) drop-shadow(0 0 20px rgba(56, 189, 248, 0.45))';
+          } else if (href.endsWith('img_12.png')) {
+            // Handled by recolorCard12
+          } else {
+            img.style.filter = 'none';
+          }
+        });
+
+        recolorCard12();
+      };
+
+      const observer = new MutationObserver(applyCardGlassTheme);
+      observer.observe(cardWrapperRef.current, { childList: true, subtree: true });
+
+      animRef.current.addEventListener('DOMLoaded', () => {
+        applyCardGlassTheme();
+        handleReady();
+      });
     } catch (err) {
       console.warn('Lottie load failed:', err);
     }

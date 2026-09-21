@@ -35,11 +35,12 @@ export const ScrollHelper: React.FC = () => {
           viewBox="0 0 18 27"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
+          style={{ filter: 'drop-shadow(0 0 6px rgba(56, 189, 248, 0.6))' }}
         >
-          <rect x="1" y="5" width="16" height="21" rx="5" stroke="black" strokeWidth="2" />
-          <line x1="9" y1="9" x2="9" y2="14" stroke="black" strokeWidth="2" />
+          <rect x="1" y="5" width="16" height="21" rx="5" stroke="#38bdf8" strokeWidth="2" />
+          <line x1="9" y1="9" x2="9" y2="14" stroke="#38bdf8" strokeWidth="2" />
         </svg>
-        <span>Scrooooll</span>
+        <span style={{ color: '#38bdf8', letterSpacing: '0.08em', fontWeight: 600 }}>SCROLL</span>
       </div>
     </div>
   );

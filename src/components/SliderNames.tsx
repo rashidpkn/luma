@@ -86,7 +86,7 @@ export const SliderNames: React.FC = () => {
         <div className="xxlarge-16 columns">
           <div className="container">
             <div className="left-column">
-              <span className="text">Free for&nbsp;</span>
+              <span className="text text-white!">Free for&nbsp;</span>
               <div className="names-list-regular-wrapper" ref={namesRegularWrapperRef}>
                 <span className="names-list-regular" ref={namesRegularListRef}>
                   {NAMES_DATA.map((item, i) => (
