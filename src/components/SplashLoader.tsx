@@ -26,12 +26,18 @@ export const SplashLoader: React.FC = () => {
         pointerEvents: isFading ? 'none' : 'all'
       }}
     >
-      <div className="anime-container flex items-center justify-center">
-        {/* Pulsing Luma geometric loader logo */}
-        <svg viewBox="0 0 48 48" className="w-16 h-16 animate-pulse">
-          <circle cx="24" cy="24" r="23" fill="none" stroke="#fff" strokeWidth="2" strokeDasharray="30 10" />
-          <circle cx="24" cy="24" r="14" fill="#fff" />
-        </svg>
+      <div className="anime-container flex flex-col items-center justify-center gap-3">
+        <img
+          src="/logos/favicon.png"
+          alt="Luma Pay"
+          className="w-16 h-16 rounded-2xl shadow-2xl animate-pulse"
+          style={{ filter: 'drop-shadow(0 0 20px rgba(56, 189, 248, 0.6))' }}
+        />
+        <img
+          src="/logos/logo-white.png"
+          alt="Luma Pay"
+          style={{ height: '22px', width: 'auto', marginTop: '8px', opacity: 0.95 }}
+        />
       </div>
     </div>
   );

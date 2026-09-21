@@ -43,13 +43,13 @@ export const SustainabilitySection: React.FC = () => {
             <span className="block">
               <span className='text-white!'>We care about our </span>
               <span className="color-text" style={{ color: '#27ae60' }}>Mother Earth</span>
-              <span className='text-white!'> as well as we care about your business. You can just make the world greener by planting a tree. We do it for you with every money you spend with us.</span>
+              <span className='text-white!'> as deeply as we care about your global growth. Through the Luma Pay Eden Project, every cross-border settlement helps plant trees and restore native ecosystems worldwide.</span>
             </span>
           </h2>
           <div className="p-big text-white!">
-            <p className='text-white!'>You can make the world greener by planting a tree. We do it for you with every transaction you make with us.</p>
+            <p className='text-white!'>Powering sustainable global finance. Partnered with verified conservation leaders, Luma Pay pledges tree planting and carbon offsets alongside your transaction volume.</p>
           </div>
-          <a href="#eden-project" className="btn outline text-white!">Read more</a>
+          <a href="#eden-project" className="btn outline text-white!">Discover the Eden Project</a>
         </div>
         <div className="xxlarge-7 small-16 small-offset-0 small-order-1 columns">
           <div className="image-wrapper">

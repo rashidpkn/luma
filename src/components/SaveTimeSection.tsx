@@ -109,7 +109,7 @@ export const SaveTimeSection: React.FC = () => {
               {/* Step 1 Title */}
               <h2 className="h-large title-1">
                 <span className="title-line-1">
-                  <span>Add funds in</span>
+                  <span>Activate in</span>
                   <svg
                     width="52"
                     height="52"
@@ -134,13 +134,13 @@ export const SaveTimeSection: React.FC = () => {
                     />
                   </svg>
                 </span>
-                <span className="title-line-2">seconds</span>
+                <span className="title-line-2">minutes</span>
               </h2>
 
               {/* Step 2 Title */}
               <h2 className="h-large title-2">
                 <span className="title-line-1">
-                  <span>Get an</span>
+                  <span>Portfolio</span>
                   <svg
                     width="52"
                     height="52"
@@ -166,13 +166,13 @@ export const SaveTimeSection: React.FC = () => {
                     />
                   </svg>
                 </span>
-                <span className="title-line-2">Overview</span>
+                <span className="title-line-2">overview</span>
               </h2>
 
               {/* Step 3 Title */}
               <h2 className="h-large title-3">
                 <span className="title-line-1">
-                  <span>Send money,</span>
+                  <span>Settle funds</span>
                   <svg
                     width="52"
                     height="52"
@@ -204,13 +204,13 @@ export const SaveTimeSection: React.FC = () => {
                     />
                   </svg>
                 </span>
-                <span className="title-line-2">anywhere</span>
+                <span className="title-line-2">globally</span>
               </h2>
 
               {/* Step 4 Title */}
               <h2 className="h-large title-4">
                 <span className="title-line-1">
-                  <span>Convert with</span>
+                  <span>Exchange at</span>
                   <svg
                     width="52"
                     height="52"
@@ -235,22 +235,22 @@ export const SaveTimeSection: React.FC = () => {
                     />
                   </svg>
                 </span>
-                <span className="title-line-2">confidence</span>
+                <span className="title-line-2">live rates</span>
               </h2>
             </div>
 
             <div className="text-wrapper">
               <p className="p-big text-1">
-                Top up easily using your card or bank account. No delays, no complications your money, ready to go.
+                Submit your business profile and complete streamlined KYC/AML verification. Receive dedicated multi-currency accounts ready to collect funds worldwide.
               </p>
               <p className="p-big text-2">
-                See all your balances in one place. Track every incoming and outgoing value with real-time updates and effortless control.
+                Gain real-time visibility across all currency balances. Monitor cash flows, track incoming remittances, and oversee liquidity from one intuitive view.
               </p>
               <p className="p-big text-3">
-                Pay friends, family, or suppliers locally or abroad. Fast and secure transfers with just a few taps.
+                Disburse funds to international vendors, contractors, and partners across our supported corridors with rapid domestic clearing and reduced fees.
               </p>
               <p className="p-big text-4">
-                Swap currencies at great rates, instantly. No hidden fees. Just seamless conversions.
+                Access institutional liquidity with competitive exchange spreads. Execute transparent foreign exchange conversions with zero hidden markups.
               </p>
             </div>
           </div>

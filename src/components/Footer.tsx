@@ -12,7 +12,7 @@ export const Footer: React.FC = () => {
             <ul className="social-list">
               <li className="social-list-item">
                 <a
-                  href="https://www.facebook.com/speedy.ioglobal"
+                  href="https://facebook.com/lumapay"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Facebook"
@@ -30,7 +30,7 @@ export const Footer: React.FC = () => {
               </li>
               <li className="social-list-item">
                 <a
-                  href="https://www.instagram.com/speedy.io_global/"
+                  href="https://instagram.com/lumapay"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Instagram"
@@ -48,7 +48,7 @@ export const Footer: React.FC = () => {
               </li>
               <li className="social-list-item">
                 <a
-                  href="https://www.linkedin.com/company/speedy-io/"
+                  href="https://linkedin.com/company/lumapay"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="LinkedIn"
@@ -84,15 +84,44 @@ export const Footer: React.FC = () => {
         </div>
 
         <div className="xxlarge-5 xsmall-16 columns partnership-wrapper">
-          <a
-            href="https://www.linkedin.com/posts/speedy-io_fintech-speedyio-zosta%C5%82-nowym-sponsorem-activity-7354189817762447360-cQbI"
-            target="_blank"
-            rel="noopener noreferrer"
+          <div
             style={{ display: 'flex', gap: '20px', alignItems: 'center', justifyContent: 'flex-end' }}
           >
             <img src="/imgs/partner-1.svg" alt="Official Partner" style={{ height: '48px', width: 'auto' }} />
             <img src="/imgs/partner-2.svg" alt="Official Partner" style={{ height: '48px', width: 'auto' }} />
-          </a>
+          </div>
+        </div>
+      </div>
+
+      <div className="row footer-legal-row" style={{ marginTop: '40px', paddingTop: '30px', borderTop: '1px solid rgba(255,255,255,0.08)' }}>
+        <div className="xxlarge-16 columns">
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '14px', fontSize: '13px', lineHeight: '1.6', color: '#94a3b8' }}>
+            <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'center', gap: '16px' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
+                <img
+                  src="/logos/logo-white.png"
+                  alt="Luma Pay"
+                  style={{ height: '24px', width: 'auto', objectFit: 'contain' }}
+                />
+                <span style={{ color: 'rgba(255,255,255,0.2)' }}>|</span>
+                <p style={{ fontWeight: 500, color: '#94a3b8', margin: 0, fontSize: '13px' }}>
+                  Multi-Currency Accounts, FX &amp; Global Settlement
+                </p>
+              </div>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '16px', fontSize: '13px' }}>
+                <a href="#privacy" style={{ color: '#94a3b8', textDecoration: 'none' }}>Privacy Policy</a>
+                <a href="#terms" style={{ color: '#94a3b8', textDecoration: 'none' }}>Terms of Service</a>
+                <a href="#compliance" style={{ color: '#94a3b8', textDecoration: 'none' }}>AML / Compliance</a>
+                <a href="mailto:support@luma-pay.io" style={{ color: '#38bdf8', textDecoration: 'none' }}>support@luma-pay.io</a>
+              </div>
+            </div>
+            <p style={{ fontSize: '12px', color: '#64748b', margin: 0 }}>
+              Regulatory Disclosures: Luma Pay services vary by jurisdiction and are subject to regulatory restrictions. Dedicated virtual multi-currency accounts and domestic payment rails are provided in partnership with licensed financial institutions and regulated banking partners. Registration as a Money Services Business (MSB) does not constitute a banking licence. This website is for informational purposes only and does not constitute investment, financial, legal, or tax advice.
+            </p>
+            <p style={{ fontSize: '12px', color: '#475569', margin: 0 }}>
+              &copy; {new Date().getFullYear()} Luma Pay Inc. All rights reserved.
+            </p>
+          </div>
         </div>
       </div>
     </footer>

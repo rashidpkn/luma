@@ -34,7 +34,7 @@ const GlobeCanvas: React.FC = () => {
 
     const geometry = new THREE.IcosahedronGeometry(1, 22);
 
-    // Exact gradient shader matching FacilPay production
+    // Optimized gradient shader for Luma Pay globe
     const gradientMaterial = new THREE.ShaderMaterial({
       vertexShader: `
         varying vec3 v_normal;
@@ -221,7 +221,7 @@ export const NoBordersSection: React.FC = () => {
     { id: 'coin-1', className: 's1', img: '/imgs/noborders/coin_1.png', alt: 'BNB' },
     { id: 'coin-2', className: 's2', img: '/imgs/noborders/coin_2.png', alt: 'ETH' },
     { id: 'coin-3', className: 's3', img: '/imgs/noborders/coin_3.png', alt: 'XRP' },
-    { id: 'coin-4', className: 's4', img: '/imgs/noborders/coin_4.png', alt: 'FacilPay' },
+    { id: 'coin-4', className: 's4', img: '/imgs/noborders/coin_4.png', alt: 'Luma Pay' },
     { id: 'coin-5', className: 's5', img: '/imgs/noborders/coin_5.png', alt: 'USDC' },
     { id: 'coin-6', className: 's6', img: '/imgs/noborders/coin_6.png', alt: 'BTC' },
     { id: 'coin-7', className: 's7', img: '/imgs/noborders/coin_7.png', alt: 'SOL' },
@@ -388,14 +388,13 @@ export const NoBordersSection: React.FC = () => {
           <div className="text-block globe-s">
             <div className="headline global-s">
               <h2 className="globe-h neutral-800">
-                One App. <br />
-                <span className="blue-span">No Borders.</span> No Banks.
+                One Platform. <br />
+                <span className="blue-span">Borderless Settlement.</span> Zero Latency.
               </h2>
             </div>
             <div className="description global-s">
               <p className="body-b3 neutral-600">
-                Through our integration with MoneyGram, the FacilPay app allows users to perform
-                cash-out transactions worldwide.
+                Luma Pay combines regulated multi-currency rails with digital asset settlement capabilities, enabling enterprises to move capital freely across borders with bank-grade security.
               </p>
             </div>
           </div>
@@ -448,8 +447,7 @@ export const NoBordersSection: React.FC = () => {
             </p>
             <div className="global-down-text">
               <p className="body-b1 neutral-700">
-                countries: Your wallet becomes a <span className="dark-blue">global crypto debit card</span> — accepted
-                at partner merchants and <span className="dark-blue">locations worldwide.</span>
+                Supported Markets &amp; Corridors: Powering global commerce with <span className="dark-blue">domestic clearing rails</span>, competitive FX spreads, and <span className="dark-blue">institutional liquidity.</span>
               </p>
             </div>
           </div>
@@ -474,7 +472,7 @@ export const NoBordersSection: React.FC = () => {
         </div>
       </div>
 
-      {/* ─── Stylesheet matching FacilPay Production ─── */}
+      {/* ─── Stylesheet for Luma Pay Interactive Globe Section ─── */}
       <style>{`
         .global-sc {
           position: relative;
@@ -546,8 +544,8 @@ export const NoBordersSection: React.FC = () => {
         }
         .globe-h {
           font-family: helv-bold, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-          font-size: calc(5.5 * var(--r));
-          line-height: 110%;
+          font-size: clamp(34px, 4.3vw, 68px);
+          line-height: 112%;
           font-weight: 500;
           color: #080808;
           margin: 0;
@@ -835,13 +833,12 @@ export const NoBordersSection: React.FC = () => {
         /* ═══ 3. BOTTOM STATS ("182 countries") ═══ */
         .gobal-down-info {
           display: grid;
-          grid-template-columns: 1fr 1fr;
-          grid-auto-columns: 1fr;
-          grid-column-gap: calc(2.2 * var(--r));
-          grid-row-gap: calc(2.2 * var(--r));
-          place-items: end center;
-          width: calc(58 * var(--r));
-          max-width: 900px;
+          grid-template-columns: auto 1fr;
+          grid-column-gap: 28px;
+          grid-row-gap: 16px;
+          align-items: center;
+          width: 100%;
+          max-width: 760px;
           margin-left: auto;
           margin-right: auto;
           margin-top: calc(4 * var(--r));
@@ -852,29 +849,30 @@ export const NoBordersSection: React.FC = () => {
         .display-2xl {
           color: #080808;
           font-family: helv-bold, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-          font-size: calc(15.28 * var(--r));
-          line-height: 100%;
+          font-size: clamp(48px, 4.8vw, 76px);
+          line-height: 1;
           font-style: italic;
-          font-weight: 500;
+          font-weight: 700;
           margin: 0;
           letter-spacing: -0.04em;
+          flex-shrink: 0;
         }
 
         .global-down-text {
-          padding-bottom: calc(0.6 * var(--r));
+          padding-bottom: 0;
         }
 
         .body-b1 {
           font-family: helv-regular, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-          font-size: calc(2.2 * var(--r));
-          line-height: 140%;
+          font-size: clamp(15px, 1.2vw, 19px);
+          line-height: 1.45;
           color: #171717;
           margin: 0;
         }
 
         .dark-blue {
           color: #0128a5;
-          font-weight: 500;
+          font-weight: 600;
         }
 
         /* ═══ RESPONSIVE BREAKPOINTS ═══ */
@@ -905,7 +903,7 @@ export const NoBordersSection: React.FC = () => {
             padding-bottom: 30px;
           }
           .globe-h {
-            font-size: clamp(28px, 7.5vw, 38px) !important;
+            font-size: clamp(24px, 6.5vw, 34px) !important;
           }
           .description.global-s {
             width: 92% !important;

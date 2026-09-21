@@ -33,35 +33,24 @@ export const HeroHeader: React.FC = () => {
       <div className="row align-bottom hero-content-row" style={{ height: '100%', position: 'relative', zIndex: 2 }}>
         <div className="xxlarge-8 medium-10 small-16 columns relative pb-20 hero-text-col">
           <div style={{ display: 'none' }}>
-            <h1>NF Payment</h1>
+            <h1>Luma Pay - Multi-Currency Accounts, Foreign Exchange &amp; Cross-Border Payments</h1>
           </div>
 
-          <div
-            className="hero-badge"
+
+
+          <h2
+            className="h-xlarge hero-title"
             style={{
-              color: '#38bdf8',
-              fontSize: '11px',
-              fontWeight: 700,
-              letterSpacing: '0.14em',
-              textTransform: 'uppercase',
-              marginBottom: '14px',
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: '8px',
-              padding: '6px 14px',
-              background: 'rgba(56, 189, 248, 0.08)',
-              border: '1px solid rgba(56, 189, 248, 0.25)',
-              borderRadius: '9999px',
-              backdropFilter: 'blur(8px)',
-              textShadow: '0 0 15px rgba(56, 189, 248, 0.4)'
+              color: '#fff',
+              textShadow: '0 4px 24px rgba(0,0,0,0.5)',
+              marginTop: 0,
+              marginBottom: 0,
+              hyphens: 'none',
+              wordBreak: 'normal',
+              overflowWrap: 'normal'
             }}
           >
-            <span style={{ width: 6, height: 6, borderRadius: '50%', backgroundColor: '#00f2fe', boxShadow: '0 0 8px #00f2fe', flexShrink: 0 }} />
-            MULTI-CURRENCY BUSINESS BANKING
-          </div>
-
-          <h2 className="h-xlarge hero-title" style={{ color: '#fff', textShadow: '0 4px 24px rgba(0,0,0,0.5)', marginTop: 0, marginBottom: 0 }}>
-            <span className="block">Your Money.</span>
+            <span className="block">Multi-Currency Accounts.</span>
             <span
               className="block"
               style={{
@@ -76,7 +65,7 @@ export const HeroHeader: React.FC = () => {
           </h2>
 
           <p className="p-big hero-desc" style={{ color: '#94a3b8', marginTop: '16px', maxWidth: '520px', lineHeight: 1.5 }}>
-            Send, spend, exchange and stay in control—all from one considered platform.
+            Luma Pay delivers dedicated multi-currency accounts, institutional foreign exchange, and swift cross-border payment settlement across global corridors.
           </p>
 
           <a
@@ -98,7 +87,7 @@ export const HeroHeader: React.FC = () => {
               transition: 'all 0.3s ease'
             }}
           >
-            EXPLORE THE FLOW <span style={{ fontSize: '14px' }}>↓</span>
+            EXPLORE OUR SERVICES <span style={{ fontSize: '14px' }}>↓</span>
           </a>
         </div>
       </div>
@@ -110,11 +99,33 @@ export const HeroHeader: React.FC = () => {
             <rect x="1" y="5" width="16" height="21" rx="5" stroke="#38bdf8" strokeWidth="2" />
             <line x1="9" y1="9" x2="9" y2="14" stroke="#38bdf8" strokeWidth="2" />
           </svg>
-          <span style={{ color: '#38bdf8', letterSpacing: '0.08em', fontWeight: 600 }}>SCROLL TO MOVE MONEY</span>
+          <span style={{ color: '#38bdf8', letterSpacing: '0.08em', fontWeight: 600 }}>SCROLL TO EXPLORE LUMA PAY</span>
         </div>
       </div>
 
       <style>{`
+        /* Base / Desktop Hero Title */
+        .hero-title,
+        header h2.hero-title,
+        header h2.h-xlarge {
+          font-size: clamp(40px, 4.2vw, 64px) !important;
+          line-height: 1.06 !important;
+          letter-spacing: -0.025em !important;
+          margin-top: 0 !important;
+          margin-bottom: 0 !important;
+          hyphens: none !important;
+          word-break: normal !important;
+        }
+
+        @media only screen and (max-width: 1200px) {
+          .hero-title,
+          header h2.hero-title,
+          header h2.h-xlarge {
+            font-size: clamp(34px, 4vw, 48px) !important;
+            line-height: 1.08 !important;
+          }
+        }
+
         @media only screen and (max-width: 960px) {
           header.hero-header {
             height: 100svh !important;
@@ -123,32 +134,30 @@ export const HeroHeader: React.FC = () => {
           }
           .hero-content-row {
             align-items: flex-start !important;
-            padding-top: clamp(68px, 10.5vh, 88px) !important;
+            padding-top: clamp(60px, 9vh, 80px) !important;
           }
           .hero-text-col {
             padding-bottom: 0 !important;
           }
-          .hero-badge {
-            font-size: 10px !important;
-            margin-bottom: 10px !important;
-            letter-spacing: 0.12em !important;
-            padding: 4px 10px !important;
-          }
           .hero-title,
-          header h2.h-xlarge {
-            font-size: clamp(30px, 8vw, 42px) !important;
-            line-height: 1.08 !important;
+          header h2.h-xlarge,
+          header h2.hero-title {
+            font-size: clamp(24px, 5.8vw, 32px) !important;
+            line-height: 1.12 !important;
+            letter-spacing: -0.02em !important;
             margin-top: 0 !important;
             margin-bottom: 0 !important;
+            hyphens: none !important;
+            word-break: normal !important;
           }
           .hero-desc {
-            font-size: clamp(13px, 3.5vw, 15px) !important;
+            font-size: clamp(12px, 3.2vw, 14px) !important;
             margin-top: 10px !important;
-            max-width: 92% !important;
+            max-width: 90% !important;
             line-height: 1.4 !important;
           }
           .hero-link {
-            margin-top: 14px !important;
+            margin-top: 12px !important;
             font-size: 11px !important;
           }
           .scroll-helper-wrapper__header {
@@ -157,6 +166,15 @@ export const HeroHeader: React.FC = () => {
           .scroll-helper-wrapper__header span {
             font-size: 9px !important;
             letter-spacing: 0.05em !important;
+          }
+        }
+
+        @media only screen and (max-width: 480px) {
+          .hero-title,
+          header h2.h-xlarge,
+          header h2.hero-title {
+            font-size: clamp(21px, 6vw, 26px) !important;
+            line-height: 1.14 !important;
           }
         }
       `}</style>

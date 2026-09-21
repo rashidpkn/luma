@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
+import { useApp } from '../context/AppContext';
 
 export const DashboardSection: React.FC = () => {
   const [theme, setTheme] = useState<'dark' | 'light'>('dark');
+  const { setIsAppModalOpen } = useApp();
 
   return (
     <section data-theme={theme} data-logo-color={theme === 'dark' ? 'white' : 'black'} className="block-dashboard">
@@ -13,7 +15,7 @@ export const DashboardSection: React.FC = () => {
                 <path d="M24 9C14 9 5.46 15.22 2 24c3.46 8.78 12 15 22 15s18.54-6.22 22-15c-3.46-8.78-12-15-22-15zm0 25c-5.52 0-10-4.48-10-10s4.48-10 10-10 10 4.48 10 10-4.48 10-10 10zm0-16c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6z" fill="currentColor"/>
               </svg>
             </div>
-            Increase your visibility in spendings.
+            Increase your visibility in global spendings.
           </h2>
           <div className="switcher-container">
             <div className="switcher-wrapper">
@@ -74,55 +76,82 @@ export const DashboardSection: React.FC = () => {
         <div className="xxlarge-12 small-16 columns">
           <div className="text-container">
             <div className="p-big">
-              <p>Pay your business expenses with Luma account without any fees.</p>
-              <p>International payments also covered by us for you to expand your business.</p>
-              <p>We don’t have any room for human error thus, we automated the process for you to capture, sort and report all your pay outs from the same platform.</p>
+              <p>The Luma Pay Client Portal provides treasury teams with real-time liquidity oversight, instant FX quote execution, and automated settlement workflows.</p>
+              <p>Eliminate manual reconciliation and banking delays with audit-ready statements and multi-jurisdiction reporting built directly into your operations.</p>
+              <p>Seamlessly initiate cross-border payments, manage multi-currency balances, and track payment statuses across all supported corridors.</p>
             </div>
           </div>
           <div className="btn-wrapper">
-            <a href="https://portal.speedy.io/signup" target="_blank" rel="noopener noreferrer" className="btn">
-              Sign up today, receive today.
-            </a>
+            <button
+              type="button"
+              onClick={() => setIsAppModalOpen(true)}
+              className="btn"
+            >
+              Access the Luma Pay Portal
+            </button>
           </div>
         </div>
       </div>
       <style>{`
+        .block-dashboard .btn-wrapper {
+          display: flex !important;
+          justify-content: center !important;
+          margin-top: 40px !important;
+        }
         .block-dashboard .btn-wrapper .btn {
           display: inline-flex !important;
           align-items: center !important;
           justify-content: center !important;
           text-align: center !important;
           border-radius: 9999px !important;
-          min-height: 178px !important;
-          padding: 0 144px 6px 144px !important;
-          font-family: helv-regular, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
-          font-size: 40px !important;
+          min-height: 54px !important;
+          padding: 14px 38px !important;
+          font-family: inherit !important;
+          font-size: 16px !important;
+          font-weight: 600 !important;
           line-height: 1 !important;
           white-space: nowrap !important;
           text-decoration: none !important;
-          box-shadow: var(--box-shadow-btn) !important;
+          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25), 0 0 20px rgba(56, 189, 248, 0.15) !important;
           box-sizing: border-box !important;
-          transition: background-color .6s cubic-bezier(.19,1,.22,1), color .6s cubic-bezier(.19,1,.22,1), box-shadow .6s cubic-bezier(.19,1,.22,1) !important;
+          cursor: pointer !important;
+          transition: all 0.3s cubic-bezier(.19,1,.22,1) !important;
         }
-        @media (max-width: 1100px) {
-          .block-dashboard .btn-wrapper .btn {
-            min-height: 140px !important;
-            padding: 0 80px !important;
-            font-size: 30px !important;
-          }
+        .block-dashboard[data-theme="dark"] .btn-wrapper .btn {
+          background-color: #ffffff !important;
+          color: #020617 !important;
+          border: 1px solid rgba(255, 255, 255, 0.9) !important;
+        }
+        .block-dashboard[data-theme="dark"] .btn-wrapper .btn:hover {
+          background-color: #f0f9ff !important;
+          box-shadow: 0 14px 35px rgba(56, 189, 248, 0.35) !important;
+          transform: translateY(-2px) !important;
+        }
+        .block-dashboard[data-theme="light"] .btn-wrapper .btn {
+          background-color: #020617 !important;
+          color: #ffffff !important;
+          border: 1px solid #020617 !important;
+        }
+        .block-dashboard[data-theme="light"] .btn-wrapper .btn:hover {
+          background-color: #0f172a !important;
+          box-shadow: 0 14px 35px rgba(15, 23, 42, 0.3) !important;
+          transform: translateY(-2px) !important;
         }
         @media (max-width: 768px) {
+          .block-dashboard .btn-wrapper {
+            margin-top: 30px !important;
+          }
           .block-dashboard .btn-wrapper .btn {
-            min-height: 90px !important;
-            padding: 0 40px !important;
-            font-size: 22px !important;
+            min-height: 48px !important;
+            padding: 12px 28px !important;
+            font-size: 15px !important;
           }
         }
         @media (max-width: 480px) {
           .block-dashboard .btn-wrapper .btn {
-            min-height: 64px !important;
-            padding: 12px 24px !important;
-            font-size: 16px !important;
+            min-height: 44px !important;
+            padding: 10px 22px !important;
+            font-size: 14px !important;
             white-space: normal !important;
           }
         }

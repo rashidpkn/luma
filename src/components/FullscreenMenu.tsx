@@ -36,13 +36,13 @@ export const FullscreenMenu: React.FC = () => {
         WebkitOverflowScrolling: 'touch'
       }}
     >
-      <div className="menu-wrapper" style={{ minHeight: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', paddingTop: '80px', paddingBottom: '40px' }}>
+      <div className="menu-wrapper" style={{ minHeight: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', paddingTop: '100px', paddingBottom: '40px' }}>
         <div className="row align-bottom">
           {/* Main Discover links */}
           <div className="xxlarge-10 small-16 columns">
-            <span className="title anime-in text-white!">Discover</span>
+            <span className="title anime-in">Discover</span>
             <ul className="page-links">
-              <li className="anime-in ">
+              <li className="anime-in">
                 <a
                   href="#"
                   onClick={(e) => {
@@ -50,13 +50,27 @@ export const FullscreenMenu: React.FC = () => {
                     setIsMenuOpen(false);
                     window.scrollTo({ top: 0, behavior: 'smooth' });
                   }}
-                  className="underline-anime "
+                  className="underline-anime"
                 >
-                  <span className="content-wrapper ">
-                    <span className="arrow mr-4 text-[#39BDF8]">→</span>
-                    <span className="text text-[#39BDF8]!">Luma</span>
-                    <span className="line bg-[#39BDF8]! h-0.75!" />
-                    <span className="subtitle text-white!">Business</span>
+                  <span className="content-wrapper">
+                    <span className="arrow">→</span>
+                    <span className="text">Luma Pay</span>
+                    <span className="line" />
+                    <span className="subtitle">Multi-Currency Accounts</span>
+                  </span>
+                </a>
+              </li>
+              <li className="anime-in">
+                <a
+                  href="#corridors"
+                  onClick={() => setIsMenuOpen(false)}
+                  className="underline-anime"
+                >
+                  <span className="content-wrapper">
+                    <span className="arrow">→</span>
+                    <span className="text">Global Corridors</span>
+                    <span className="line" />
+                    <span className="subtitle">Canada, UK, EU, US, AU</span>
                   </span>
                 </a>
               </li>
@@ -67,10 +81,10 @@ export const FullscreenMenu: React.FC = () => {
                   className="underline-anime"
                 >
                   <span className="content-wrapper">
-                    <span className="arrow mr-4 text-[#39BDF8]">→</span>
-                    <span className="text text-[#39BDF8]!">Enterprise</span>
-                    <span className="line bg-[#39BDF8]! h-0.75!" />
-                    <span className="subtitle text-white!">Checkout</span>
+                    <span className="arrow">→</span>
+                    <span className="text">Client Portal</span>
+                    <span className="line" />
+                    <span className="subtitle">Live FX &amp; Treasury</span>
                   </span>
                 </a>
               </li>
@@ -81,9 +95,10 @@ export const FullscreenMenu: React.FC = () => {
                   className="underline-anime"
                 >
                   <span className="content-wrapper">
-                    <span className="arrow mr-4 text-[#39BDF8]">→</span>
-                    <span className="text text-[#39BDF8]!">Eden Project</span>
-                    <span className="line bg-[#39BDF8]! h-0.75!" />
+                    <span className="arrow">→</span>
+                    <span className="text">Eden Project</span>
+                    <span className="line" />
+                    <span className="subtitle">Sustainability</span>
                   </span>
                 </a>
               </li>
@@ -95,26 +110,24 @@ export const FullscreenMenu: React.FC = () => {
             <div className="row">
               {/* Legal Links */}
               <div className="xxlarge-10 small-8 xsmall-16 columns">
-                <span className="title anime-in text-white!">Legal</span>
+                <span className="title anime-in">Legal &amp; Compliance</span>
                 <ul className="legal-links">
                   {[
-                    'Cookie Policy',
-                    'Information Security Policy',
-                    'Privacy Policy',
-                    'Regulatory Information',
-                    'Licences',
-                    'Corporate Governance Principles',
+                    'AML / KYC Policy',
+                    'Regulatory Disclosures',
                     'Terms and Conditions',
-                    'Key Legal Documents',
-                    'AML',
+                    'Privacy Policy',
+                    'Information Security Policy',
+                    'Fee Schedule & Pricing',
                     'Acceptable Use Policy',
-                    'Dispute a Payment'
+                    'Corporate Governance',
+                    'Dispute Resolution'
                   ].map((item, idx) => (
                     <li key={idx} className="anime-in">
                       <a
                         href="#"
                         onClick={(e) => e.preventDefault()}
-                        className="underline-anime small text-white!"
+                        className="underline-anime small"
                       >
                         {item}
                       </a>
@@ -125,22 +138,20 @@ export const FullscreenMenu: React.FC = () => {
 
               {/* Support Links */}
               <div className="xxlarge-6 small-8 xsmall-16 columns">
-                <span className="title anime-in text-white!">Support</span>
+                <span className="title anime-in">Support</span>
                 <ul className="other-links">
-                  {['Contact', 'Developer API', 'Careers'].map((item, idx) => (
+                  {['Contact Support', 'Developer API', 'Compliance Desk'].map((item, idx) => (
                     <li key={idx} className="anime-in">
                       <a
                         href="#"
                         onClick={(e) => e.preventDefault()}
-                        className="underline-anime small text-white!"
+                        className="underline-anime small"
                       >
                         {item}
                       </a>
                     </li>
                   ))}
                 </ul>
-
-
               </div>
             </div>
           </div>

@@ -90,6 +90,11 @@ header[data-logo-color="white"] {
   header .hero-title {
     margin-top: 0 !important;
     margin-bottom: 0 !important;
+    font-size: clamp(24px, 5.8vw, 32px) !important;
+    line-height: 1.12 !important;
+    letter-spacing: -0.02em !important;
+    hyphens: none !important;
+    word-break: normal !important;
   }
   .animation-container {
     display: block !important;
@@ -159,34 +164,33 @@ header[data-logo-color="white"] {
   border-bottom: 1px solid rgba(56, 189, 248, 0.12) !important;
 }
 
-/* Navbar Logo Badge */
-.navbar .logo {
-  border-radius: 50% !important;
-  background: linear-gradient(135deg, #00f2fe 0%, #0ea5e9 50%, #6366f1 100%) !important;
-  box-shadow: 0 0 20px rgba(56, 189, 248, 0.45) !important;
-  border: 1.5px solid rgba(255, 255, 255, 0.4) !important;
+/* Navbar Brand Logo */
+.navbar-brand-logo {
+  height: 24px;
+  width: auto;
+  object-fit: contain;
+  transition: opacity 0.2s ease;
 }
 
-.navbar .logo .logo-svg .logo-svg-primary {
-  fill: #ffffff !important;
+.navbar-brand-logo:hover {
+  opacity: 0.9;
 }
 
-.navbar .logo .logo-svg .logo-svg-secondary {
-  stroke: #ffffff !important;
+/* Corridor Pill Button & Dropdown */
+.corridor-pill-btn:hover {
+  border-color: rgba(56, 189, 248, 0.45) !important;
+  background: rgba(15, 23, 42, 0.9) !important;
+  box-shadow: 0 0 12px rgba(56, 189, 248, 0.15) !important;
 }
 
-.navbar .logo .arrow path {
-  stroke: #38bdf8 !important;
-}
-
-/* Active Country & Subtitle Text */
-.navbar .logo-text-wrapper .color-text {
-  color: #ffffff !important;
-  font-weight: 600;
-}
-
-.navbar .logo-text-wrapper .text span {
-  color: #94a3b8 !important;
+@media only screen and (max-width: 640px) {
+  .navbar-brand-logo {
+    height: 20px !important;
+  }
+  .corridor-pill-btn {
+    padding: 3px 8px !important;
+    font-size: 11px !important;
+  }
 }
 
 /* Center Hamburger Button */
@@ -674,4 +678,164 @@ html, body {
     margin: 0 auto !important;
   }
 }
+
+/* ==========================================================================
+   FULLSCREEN MENU STYLING & TYPOGRAPHY
+   ========================================================================== */
+
+.menu .page-links {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 16px !important;
+  margin-top: 16px !important;
+}
+
+.menu .page-links li {
+  margin-bottom: 0 !important;
+}
+
+.menu .page-links li a {
+  font-size: clamp(26px, 3.2vw, 46px) !important;
+  line-height: 1.25 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  position: relative !important;
+  padding-bottom: 6px !important;
+  text-decoration: none !important;
+  transition: all 0.25s ease !important;
+}
+
+.menu .page-links li a:hover {
+  opacity: 0.9 !important;
+}
+
+.menu .page-links li a .content-wrapper {
+  display: inline-flex !important;
+  align-items: baseline !important;
+  position: relative !important;
+  flex-wrap: wrap !important;
+}
+
+.menu .page-links li a .content-wrapper .arrow {
+  font-size: 0.85em !important;
+  color: #38bdf8 !important;
+  margin-right: 14px !important;
+  transition: transform 0.25s ease !important;
+  display: inline-block !important;
+}
+
+.menu .page-links li a:hover .content-wrapper .arrow {
+  transform: translateX(6px) !important;
+}
+
+.menu .page-links li a .content-wrapper .text {
+  font-size: 1em !important;
+  color: #38bdf8 !important;
+  font-weight: 700 !important;
+  margin-left: 0 !important;
+  letter-spacing: -0.02em !important;
+  transition: color 0.2s ease !important;
+}
+
+.menu .page-links li a:hover .content-wrapper .text {
+  color: #7dd3fc !important;
+}
+
+.menu .page-links li a .content-wrapper .subtitle {
+  font-size: clamp(12px, 1.1vw, 15px) !important;
+  color: #94a3b8 !important;
+  margin-left: 14px !important;
+  top: 0 !important;
+  position: relative !important;
+  font-weight: 400 !important;
+  letter-spacing: normal !important;
+}
+
+.menu .underline-anime .line {
+  height: 2px !important;
+  background-color: rgba(56, 189, 248, 0.35) !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  position: absolute !important;
+  transform: scaleX(0.95);
+  transform-origin: left;
+  transition: all 0.3s ease !important;
+}
+
+.menu .page-links li a:hover .line {
+  background-color: #38bdf8 !important;
+  transform: scaleX(1) !important;
+  box-shadow: 0 0 10px rgba(56, 189, 248, 0.4) !important;
+}
+
+/* Legal and Support Typography in Menu */
+.menu .title {
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+  color: #64748b !important;
+  margin-bottom: 16px !important;
+  display: block !important;
+}
+
+.menu .legal-links {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 8px !important;
+}
+
+.menu .legal-links li a,
+.menu .legal-links li a.small {
+  font-size: 13.5px !important;
+  line-height: 1.5 !important;
+  color: #cbd5e1 !important;
+  font-weight: 400 !important;
+  transition: color 0.2s ease !important;
+}
+
+.menu .legal-links li a:hover {
+  color: #38bdf8 !important;
+}
+
+.menu .other-links {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 8px !important;
+}
+
+.menu .other-links li a,
+.menu .other-links li a.small {
+  font-size: 15px !important;
+  line-height: 1.5 !important;
+  color: #f1f5f9 !important;
+  font-weight: 500 !important;
+  transition: color 0.2s ease !important;
+}
+
+.menu .other-links li a:hover {
+  color: #38bdf8 !important;
+}
+
+@media only screen and (max-width: 960px) {
+  .menu .page-links {
+    gap: 16px !important;
+    margin-bottom: 36px !important;
+  }
+  .menu .page-links li a {
+    font-size: clamp(22px, 5.5vw, 32px) !important;
+  }
+  .menu .page-links li a .content-wrapper {
+    flex-wrap: wrap !important;
+  }
+  .menu .page-links li a .content-wrapper .subtitle {
+    display: block !important;
+    width: 100% !important;
+    margin-left: 28px !important;
+    margin-top: 2px !important;
+    font-size: 12px !important;
+  }
+}
+
 

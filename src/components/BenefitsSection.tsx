@@ -5,9 +5,9 @@ export const BenefitsSection: React.FC = () => {
     <section data-logo-color="black" className="block-benefits">
       <div className="bg-text-container">
         <div className="bg-text-wrapper">
-          <h2 className="bg-text">Better than a bank&nbsp;</h2>
-          <span className="bg-text">Better than a bank&nbsp;</span>
-          <span className="bg-text">Better than a bank&nbsp;</span>
+          <h2 className="bg-text">Beyond traditional banking&nbsp;</h2>
+          <span className="bg-text">Beyond traditional banking&nbsp;</span>
+          <span className="bg-text">Beyond traditional banking&nbsp;</span>
         </div>
       </div>
 
@@ -16,52 +16,55 @@ export const BenefitsSection: React.FC = () => {
           <div className="cards-container">
             <div className="cards-wrapper">
               <div className="card">
-                <h3 className="h-medium">Built for trust. Powered by speed.</h3>
+                <h3 className="h-medium">Built for trust. Grounded in compliance.</h3>
                 <div className="p-normal">
                   <p>
-                    We know how much your business matters — and that’s why protecting your money and saving your time are our top priorities.
+                    We recognize that security and compliance are paramount to global operations. That’s why safeguarding your capital and eliminating operational friction are our highest priorities.
                   </p>
                   <p>
-                    Your funds are held securely in your own dedicated account, safeguarded through trusted global partners. Always separated. Always protected.
+                    Client balances are held in segregated accounts across established Tier-1 institutional banking partners. Always isolated, always secure, and held strictly in your business entity's name.
                   </p>
                   <p>
-                    But trust alone isn’t enough — speed matters too. That’s why we’ve removed the unnecessary steps. Say goodbye to slow forms and outdated processes. You get what you need, when you need it — fast.
+                    Operating under rigorous MSB regulatory frameworks and global AML/KYC standards, Luma Pay replaces tedious paperwork with responsive, enterprise-grade verification.
                   </p>
                 </div>
               </div>
 
               <div className="card">
-                <h3 className="h-medium">Strength you can trust. Simplicity you’ll love</h3>
+                <h3 className="h-medium">Dedicated Multi-Currency Virtual Accounts</h3>
                 <div className="p-normal">
                   <p>
-                    We believe the economy is better when everyone has access. When everyone has room to grow. No one should be left out because the technology is too complex.
+                    Conduct business globally as seamlessly as you do domestically. Luma Pay furnishes your business with dedicated virtual IBANs and account numbers in CAD, USD, EUR, GBP, and AUD.
                   </p>
                   <p>
-                    This is why we built our product at easiest from scratch to finish. Our mission is to improve your financial life by making it simple enough. No challenge included here to just get paid.
+                    Collect directly from overseas clients and marketplaces via domestic clearing networks like SEPA, Faster Payments, Fedwire/ACH, and EFT — bypassing predatory wire charges and hidden conversion markups.
                   </p>
                 </div>
               </div>
 
               <div className="card">
-                <h3 className="h-medium">Professional by design. Flexible by nature.</h3>
+                <h3 className="h-medium">Tailored for Global Trade & Scaling Enterprises</h3>
                 <div className="p-normal">
                   <p>
-                    Whether you need foreign exchange, a dedicated IBAN, or a prepaid card that works anywhere — we’ve got you covered. Our wallet is designed to adapt to your lifestyle and your financial needs.
+                    Engineered to satisfy the demands of software studios, cross-border e-commerce sellers, freight and logistics operators, and international corporate service firms.
                   </p>
                   <p>
-                    No rigid rules. No one-size-fits-all. Just smart, personalized tools that put you in control.
+                    Enjoy complete transparency with live institutional exchange rates, tight wholesale FX spreads, and automated batch disbursement capabilities across all supported international corridors.
                   </p>
                   <p>
-                    Enjoy a lean, responsive experience with services that feel tailor-made. Because you're not just another customer — you're the reason we built this.
+                    No rigid legacy bureaucracy or opaque fees. Just powerful, flexible treasury infrastructure tailored to your commercial workflow.
                   </p>
                 </div>
               </div>
 
               <div className="card">
-                <h3 className="h-medium">Dedicated Accounts and Payment Cards</h3>
+                <h3 className="h-medium">Institutional FX & Digital Asset Rails</h3>
                 <div className="p-normal">
                   <p>
-                    International IBANs and virtual and physical cards just dedicated to your business.
+                    Direct access to deep liquidity across G10 and major currency pairs with real-time settlement and transparent foreign exchange execution.
+                  </p>
+                  <p>
+                    Bridge traditional fiat clearing rails with compliant digital currency and stablecoin settlement options to maximize capital velocity across global markets.
                   </p>
                 </div>
               </div>

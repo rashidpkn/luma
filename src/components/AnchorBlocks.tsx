@@ -10,11 +10,11 @@ interface StepItem {
 }
 
 const STEPS: StepItem[] = [
-  { line1: 'Deposit', line2: 'Money' },
-  { line1: 'Get an', line2: 'Overview' },
-  { line1: 'Send', line2: 'Money' },
-  { line1: 'Exchange', line2: 'Money' },
-  { line1: 'Spend', line2: 'Money' }
+  { line1: 'Open', line2: 'Account' },
+  { line1: 'Track', line2: 'Balances' },
+  { line1: 'Send', line2: 'Globally' },
+  { line1: 'Exchange', line2: 'FX' },
+  { line1: 'Spend', line2: 'Anywhere' }
 ];
 
 export const AnchorBlocks: React.FC = () => {

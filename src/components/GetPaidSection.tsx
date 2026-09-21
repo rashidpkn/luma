@@ -59,7 +59,7 @@ export const GetPaidSection: React.FC = () => {
               margin: 0
             }}
           >
-            Spend anywhere.{'\n'}Stay in control.
+            Spend globally.{'\n'}Stay in command.
           </h2>
 
           <div className="p-big" style={{ marginTop: '20px', maxWidth: '515px' }}>
@@ -73,7 +73,7 @@ export const GetPaidSection: React.FC = () => {
                 margin: 0
               }}
             >
-              Use your Speedy physical or virtual Speedy debit card for purchases in all merchants and terminals, which accepts Master cards.
+              Issue Luma Pay virtual and physical commercial debit cards for operational expenses across worldwide merchants and payment terminals, with automated expense controls and zero foreign transaction friction.
             </p>
           </div>
 

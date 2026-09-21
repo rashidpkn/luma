@@ -8,23 +8,43 @@ interface CountryItem {
 }
 
 const COUNTRIES: CountryItem[] = [
-  { id: 'global', name: 'Luma Global', flagClass: 'currency-flag-usd' },
-  { id: 'pl', name: 'Luma Poland', flagClass: 'currency-flag-pln' },
-  { id: 'br', name: 'Luma Brazil', flagClass: 'currency-flag-brl' },
-  { id: 'pe', name: 'Luma Peru', flagClass: 'currency-flag-pen' },
-  { id: 'us', name: 'Luma USA', flagClass: 'currency-flag-usd' }
+  { id: 'global', name: 'Global', flagClass: 'currency-flag-usd' },
+  { id: 'ca', name: 'Canada', flagClass: 'currency-flag-cad' },
+  { id: 'uk', name: 'United Kingdom', flagClass: 'currency-flag-gbp' },
+  { id: 'eu', name: 'European Union', flagClass: 'currency-flag-eur' },
+  { id: 'us', name: 'United States', flagClass: 'currency-flag-usd' },
+  { id: 'au', name: 'Australia', flagClass: 'currency-flag-aud' }
 ];
 
 export const Navbar: React.FC = () => {
-  const { country, isMenuOpen, setIsMenuOpen, setIsAppModalOpen } = useApp();
+  const { country, setCountry, isMenuOpen, setIsMenuOpen, setIsAppModalOpen } = useApp();
   const [isCollapsed, setIsCollapsed] = useState(false);
   const [isCollapsedDown, setIsCollapsedDown] = useState(false);
   const [isCollapsedUp, setIsCollapsedUp] = useState(false);
   const [isDark, setIsDark] = useState(false);
   const [isLight, setIsLight] = useState(true);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   const lastScrollY = useRef(0);
   const dropdownRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setIsDropdownOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (isMenuOpen) {
+      setIsDropdownOpen(false);
+    }
+  }, [isMenuOpen]);
 
   useEffect(() => {
     let scrollTimeout: any;
@@ -34,7 +54,7 @@ export const Navbar: React.FC = () => {
       const direction = scrollY > lastScrollY.current ? 'down' : 'up';
       lastScrollY.current = scrollY;
 
-      // Scroll collapse behavior matching Speedy.io
+      // Scroll collapse behavior
       if (scrollY > 100) {
         setIsCollapsed(true);
         if (direction === 'down') {
@@ -87,8 +107,6 @@ export const Navbar: React.FC = () => {
     };
   }, []);
 
-
-
   const activeCountry = COUNTRIES.find(c => c.id === country) || COUNTRIES[0];
 
   const classNames = [
@@ -118,72 +136,170 @@ export const Navbar: React.FC = () => {
         />
 
         <div className="row align-middle">
-          {/* Left Column: Logo & Country Switcher */}
+          {/* Left Column: Clean Logo & Corridor Switcher */}
           <div className="xxlarge-6 small-8 columns">
             <div
-              className={`button-dropdown-wrapper`}
-              ref={dropdownRef}
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: '12px',
+                height: '100%',
+                pointerEvents: 'all'
+              }}
             >
-              <div
-                className={`active-country-wrapper`}
-                role="button"
-                tabIndex={0}
-                style={{ cursor: 'pointer', pointerEvents: 'all' }}
+              <a
+                href="#"
+                onClick={(e) => {
+                  e.preventDefault();
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                }}
+                aria-label="Luma Pay Home"
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  textDecoration: 'none',
+                  flexShrink: 0
+                }}
               >
-                <span className="bg" />
+                <img
+                  src="/logos/logo-white.png"
+                  alt="Luma Pay"
+                  className="navbar-brand-logo"
+                  style={{
+                    height: '24px',
+                    width: 'auto',
+                    objectFit: 'contain',
+                    display: 'block'
+                  }}
+                />
+              </a>
+
+              {/* Clean Corridor Dropdown */}
+              <div ref={dropdownRef} style={{ position: 'relative' }}>
                 <button
                   type="button"
-                  aria-label="Switch Website Country"
-                  className={`logo`}
+                  onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+                  aria-label="Select Country Corridor"
+                  aria-expanded={isDropdownOpen}
+                  className="corridor-pill-btn"
+                  style={{
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '6px',
+                    padding: '4px 10px',
+                    borderRadius: '9999px',
+                    background: 'rgba(15, 23, 42, 0.75)',
+                    border: '1px solid rgba(56, 189, 248, 0.25)',
+                    color: '#e2e8f0',
+                    fontSize: '12px',
+                    fontWeight: 500,
+                    cursor: 'pointer',
+                    transition: 'all 0.2s ease',
+                    backdropFilter: 'blur(12px)',
+                    WebkitBackdropFilter: 'blur(12px)'
+                  }}
                 >
-                  {/* Luma Gradient Logo */}
-                  <svg viewBox="0 0 48 48" className="logo-svg" style={{ filter: 'drop-shadow(0 0 10px rgba(56, 189, 248, 0.6))' }}>
-                    <defs>
-                      <linearGradient id="lumaLogoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                        <stop offset="0%" stopColor="#00f2fe" />
-                        <stop offset="50%" stopColor="#38bdf8" />
-                        <stop offset="100%" stopColor="#818cf8" />
-                      </linearGradient>
-                    </defs>
-                    <rect width="48" height="48" rx="24" fill="url(#lumaLogoGrad)" />
-                    <path
-                      d="M17 15v18h13M22 20h5a3.5 3.5 0 0 1 0 7h-5"
-                      stroke="#ffffff"
-                      strokeWidth="3.2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      fill="none"
-                    />
-                  </svg>
-
-
-                </button>
-
-                <div className="logo-country-name-wrapper">
                   <span
-                    className="logo-country-name anime-name p-caption m-width"
+                    className={`currency-flag currency-flag-sm ${activeCountry.flagClass}`}
+                    style={{ borderRadius: '2px', display: 'inline-block' }}
+                  />
+                  <span className="corridor-name" style={{ fontWeight: 600 }}>{activeCountry.name}</span>
+                  <svg
+                    width="9"
+                    height="5"
+                    viewBox="0 0 10 6"
+                    fill="none"
                     style={{
-                      transition: 'opacity 0.3s ease'
+                      transform: isDropdownOpen ? 'rotate(180deg)' : 'none',
+                      transition: 'transform 0.2s ease',
+                      marginLeft: '1px'
                     }}
                   >
-                    {activeCountry.name}
-                  </span>
-                </div>
+                    <path
+                      d="M1 1L5 5L9 1"
+                      stroke="#38bdf8"
+                      strokeWidth="1.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </button>
+
+                {isDropdownOpen && (
+                  <div
+                    className="corridor-dropdown-menu"
+                    style={{
+                      position: 'absolute',
+                      top: 'calc(100% + 8px)',
+                      left: 0,
+                      background: 'rgba(15, 23, 42, 0.96)',
+                      backdropFilter: 'blur(20px)',
+                      WebkitBackdropFilter: 'blur(20px)',
+                      border: '1px solid rgba(56, 189, 248, 0.28)',
+                      borderRadius: '12px',
+                      padding: '6px',
+                      minWidth: '175px',
+                      boxShadow: '0 20px 40px rgba(0, 0, 0, 0.8), 0 0 20px rgba(56, 189, 248, 0.15)',
+                      zIndex: 150,
+                      display: 'flex',
+                      flexDirection: 'column',
+                      gap: '2px'
+                    }}
+                  >
+                    {COUNTRIES.map((c) => {
+                      const isSelected = c.id === activeCountry.id;
+                      return (
+                        <button
+                          key={c.id}
+                          type="button"
+                          onClick={() => {
+                            setCountry(c.id);
+                            setIsDropdownOpen(false);
+                          }}
+                          style={{
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'space-between',
+                            width: '100%',
+                            padding: '8px 10px',
+                            borderRadius: '8px',
+                            border: 'none',
+                            background: isSelected ? 'rgba(56, 189, 248, 0.15)' : 'transparent',
+                            color: isSelected ? '#38bdf8' : '#cbd5e1',
+                            fontSize: '12px',
+                            fontWeight: isSelected ? 600 : 400,
+                            cursor: 'pointer',
+                            textAlign: 'left',
+                            transition: 'all 0.15s ease'
+                          }}
+                          onMouseEnter={(e) => {
+                            if (!isSelected) {
+                              e.currentTarget.style.background = 'rgba(255, 255, 255, 0.05)';
+                              e.currentTarget.style.color = '#f8fafc';
+                            }
+                          }}
+                          onMouseLeave={(e) => {
+                            if (!isSelected) {
+                              e.currentTarget.style.background = 'transparent';
+                              e.currentTarget.style.color = '#cbd5e1';
+                            }
+                          }}
+                        >
+                          <span style={{ display: 'inline-flex', alignItems: 'center', gap: '8px' }}>
+                            <span className={`currency-flag currency-flag-sm ${c.flagClass}`} style={{ borderRadius: '2px' }} />
+                            <span>{c.name}</span>
+                          </span>
+                          {isSelected && (
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                              <polyline points="20 6 9 17 4 12" />
+                            </svg>
+                          )}
+                        </button>
+                      );
+                    })}
+                  </div>
+                )}
               </div>
-
-              {/* Subtitle text beside logo */}
-              <span className="logo-text-wrapper">
-                <span className="text p-small">
-                  <span className="block">
-                    <span className="color-text">{activeCountry.name}</span>
-                  </span>
-                  <span className="block">
-                    <span style={{ color: '#94a3b8' }}>Business money, in one flow.</span>
-                  </span>
-                </span>
-              </span>
-
-
             </div>
           </div>
 
@@ -230,7 +346,7 @@ export const Navbar: React.FC = () => {
                   padding: '10px 22px'
                 }}
               >
-                <span>Get the app</span>
+                <span>Get Started</span>
                 <svg
                   width="15"
                   height="15"
@@ -241,9 +357,8 @@ export const Navbar: React.FC = () => {
                   strokeLinecap="round"
                   strokeLinejoin="round"
                 >
-                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-                  <polyline points="7 10 12 15 17 10" />
-                  <line x1="12" y1="15" x2="12" y2="3" />
+                  <path d="M5 12h14" />
+                  <path d="m12 5 7 7-7 7" />
                 </svg>
               </button>
             </div>

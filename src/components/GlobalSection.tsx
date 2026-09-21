@@ -27,10 +27,10 @@ export const GlobalSection: React.FC = () => {
       <div className="bg-text-container select-none opacity-20">
         <div className="bg-text-wrapper flex whitespace-nowrap animate-marquee">
           <span className="bg-text text-8xl font-black uppercase text-transparent stroke-white" style={{ WebkitTextStroke: '1px #fff' }}>
-            — Global — Brasil — Peru — USA — Global — Brasil — Peru — USA&nbsp;
+            — CANADA — UNITED KINGDOM — EUROPEAN UNION — UNITED STATES — AUSTRALIA — GLOBAL CORRIDORS&nbsp;
           </span>
           <span className="bg-text text-8xl font-black uppercase text-transparent stroke-white" style={{ WebkitTextStroke: '1px #fff' }}>
-            — Global — Brasil — Peru — USA — Global — Brasil — Peru — USA&nbsp;
+            — CANADA — UNITED KINGDOM — EUROPEAN UNION — UNITED STATES — AUSTRALIA — GLOBAL CORRIDORS&nbsp;
           </span>
         </div>
       </div>
@@ -39,16 +39,18 @@ export const GlobalSection: React.FC = () => {
         {/* Left Column: Story */}
         <div className="xxlarge-6 xxlarge-offset-1 small-16 small-offset-0 columns">
           <h2 className="h-large text-white!">
-            <span className="block">We are local,</span>
-            <span className="block text-gray-400">yet global.</span>
+            <span className="block">Serving clients across</span>
+            <span className="block text-gray-400">global corridors.</span>
           </h2>
 
           <div className="p-big mt-6 text-white! space-y-4">
-            <p className="font-semibold text-white!">We adopt the &quot;Glocalization&quot; approach.</p>
+            <p className="font-semibold text-white!">Seamless multi-currency cross-border trade.</p>
             <p className='text-white!'>
-              Our Luma Accounts allow you to receive payments regardless of where your clients are and which payment method they want to go for. Multiple solutions in different regions tailored by Luma only for your business to maintain cashflow without any friction.
+              Luma Pay connects commercial enterprises across Canada, the United Kingdom, the European Union (Germany, the Netherlands, Ireland), the United States, and Australia.
             </p>
-            <p className='text-white!'>Get paid by local and global methods.</p>
+            <p className='text-white!'>
+              Collect settlements in CAD, GBP, EUR, or USD and pay international vendors with local-currency rails, transparent exchange rates, and predictable settlement timelines.
+            </p>
           </div>
         </div>
 

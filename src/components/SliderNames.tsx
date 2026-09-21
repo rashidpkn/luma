@@ -86,7 +86,7 @@ export const SliderNames: React.FC = () => {
         <div className="xxlarge-16 columns">
           <div className="container">
             <div className="left-column">
-              <span className="text text-white!">Free for&nbsp;</span>
+              <span className="text text-white!">Built for&nbsp;</span>
               <div className="names-list-regular-wrapper" ref={namesRegularWrapperRef}>
                 <span className="names-list-regular" ref={namesRegularListRef}>
                   {NAMES_DATA.map((item, i) => (
@@ -122,39 +122,12 @@ export const SliderNames: React.FC = () => {
             <div className="right-column">
               <span className="text secondary">
                 <a
-                  href="https://portal.speedy.io/signup"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="#contact"
+                  aria-label="Join Luma Pay"
                 >
-                  <span className="bold">Join today!</span>
+                  <span className="bold">Join Luma Pay</span>
                 </a>
               </span>
-              {/* <div className="store-wrapper">
-                <a
-                  href="https://apps.apple.com/tr/app/speedy-io/id1659641134"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Download on App Store"
-                >
-                  <img
-                    src="/imgs/app-store.svg"
-                    alt="App Store"
-                    style={{ height: '40px', width: 'auto' }}
-                  />
-                </a>
-                <a
-                  href="https://play.google.com/store/apps/details?id=io.speedy"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Get it on Google Play"
-                >
-                  <img
-                    src="/imgs/google-play.svg"
-                    alt="Google Play"
-                    style={{ height: '40px', width: 'auto' }}
-                  />
-                </a>
-              </div> */}
             </div>
           </div>
         </div>

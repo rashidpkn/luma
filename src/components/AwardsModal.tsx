@@ -88,7 +88,7 @@ export const AwardsModal: React.FC = () => {
             <div className="certifications">
               <h3 className="h-medium mt">Certifications</h3>
               <img
-                src="/imgs/speedy-certfications.svg"
+                src="/imgs/luma-certifications.svg"
                 alt="Certifications"
                 className="certifications"
                 style={{ filter: 'brightness(0) invert(1)', maxWidth: '280px', marginTop: '16px' }}
