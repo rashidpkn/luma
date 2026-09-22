@@ -1,15 +1,15 @@
-import { Routes, Route, Navigate } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import MainLayout from './layout/main-layout';
 import Home from './pages/home';
-import {
-  PrivacyPolicyPage,
-  TermsOfServicePage,
-  RegulatoryDisclosuresPage,
-  InformationSecurityPage,
-  AmlKycPolicyPage,
-  AcceptableUsePolicyPage,
-  LegalRedirect
-} from './pages/legal';
+// import {
+//   PrivacyPolicyPage,
+//   TermsOfServicePage,
+//   RegulatoryDisclosuresPage,
+//   InformationSecurityPage,
+//   AmlKycPolicyPage,
+//   AcceptableUsePolicyPage,
+//   LegalRedirect
+// } from './pages/legal';
 
 export default function App() {
   return (
@@ -18,7 +18,7 @@ export default function App() {
         <Route index element={<Home />} />
 
         {/* Dedicated Standalone Legal Pages */}
-        <Route path="privacy-policy" element={<PrivacyPolicyPage />} />
+        {/* <Route path="privacy-policy" element={<PrivacyPolicyPage />} />
         <Route path="privacy" element={<Navigate to="/privacy-policy" replace />} />
 
         <Route path="terms-of-service" element={<TermsOfServicePage />} />
@@ -43,9 +43,9 @@ export default function App() {
         <Route path="acceptable-use-policy" element={<AcceptableUsePolicyPage />} />
         <Route path="acceptable-use" element={<Navigate to="/acceptable-use-policy" replace />} />
 
-        {/* Legacy /legal and /legal?tab=... Redirect Handler */}
+   
         <Route path="legal" element={<LegalRedirect />} />
-        <Route path="legal/:tab" element={<LegalRedirect />} />
+        <Route path="legal/:tab" element={<LegalRedirect />} /> */}
       </Route>
     </Routes>
   );
