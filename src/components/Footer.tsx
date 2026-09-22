@@ -18,9 +18,9 @@ export const Footer: React.FC = () => {
             <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'center', gap: '16px' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
                 <img
-                  src="/logos/logo-white.png"
+                  src="/logos/logo white.png"
                   alt="Luma Pay"
-                  style={{ height: '24px', width: 'auto', objectFit: 'contain' }}
+                  style={{ height: '50px', width: 'auto', objectFit: 'contain' }}
                 />
                 <span style={{ color: 'rgba(255, 255, 255, 0.3)' }}>|</span>
                 <p style={{ fontWeight: 500, color: 'rgba(255, 255, 255, 0.85)', margin: 0, fontSize: '13px' }}>
