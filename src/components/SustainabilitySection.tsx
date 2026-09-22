@@ -50,9 +50,9 @@ export const SustainabilitySection: React.FC = () => {
         <div className="xxlarge-8 xxlarge-offset-1 small-16 small-offset-0 small-order-2 columns">
           <h2 className="h-medium" style={{ color: '#ffffff' }}>
             <span className="block">
-              <span>We care about our </span>
-              <span className="color-text" style={{ color: '#059669' }}>Mother Earth</span>
-              <span> as deeply as we care about your global growth. Through the Luma Pay Eden Project, every cross-border settlement helps plant trees and restore native ecosystems worldwide.</span>
+              We care about our
+              Mother Earth
+              as deeply as we care about your global growth. Through the Luma Pay Eden Project, every cross-border settlement helps plant trees and restore native ecosystems worldwide.
             </span>
           </h2>
           <div className="p-big" style={{ color: 'rgba(255, 255, 255, 0.92)' }}>
