@@ -130,7 +130,7 @@ export const GetPaidSection: React.FC = () => {
             {/* Layer 1: Desktop Browser Chrome & Cards Overlay */}
             <img
               alt="Payment Method"
-              src="https://cdn.sanity.io/images/1ib26v3b/new/e7eec72eab1b198d80f3860e6d0a7b157e98d0eb-2366x1614.png?auto=format"
+              src="/imgs/desk-browser.avif"
               className="desktop"
               style={{
                 position: 'relative',
@@ -145,7 +145,7 @@ export const GetPaidSection: React.FC = () => {
             {/* Mobile Fallback Overlay */}
             <img
               alt="Invoice Payment"
-              src="https://cdn.sanity.io/images/1ib26v3b/new/9c005840c488a0f13b7718eab0f6f1f2ae18d6b2-565x1005.png?auto=format"
+              src="/imgs/mob-browser.avif"
               className="mobile"
               style={{
                 position: 'relative',
