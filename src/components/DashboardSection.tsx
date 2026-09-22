@@ -59,13 +59,13 @@ export const DashboardSection: React.FC = () => {
         <div className="screen-wrapper">
           <div className="screen-wrapper-images">
             <img
-              alt="Receive Payments Online"
-              src="https://cdn.sanity.io/images/1ib26v3b/new/5e4c0bca2a6fa1d924cbca07458e4744605bb216-3416x1920.jpg?auto=format&q=100"
+              alt="Luma Pay Treasury Portal - Dark Theme"
+              src="/imgs/luma-dashboard-dark.jpg"
               className={theme === 'dark' ? 'active' : ''}
             />
             <img
-              alt="Online Payments"
-              src="https://cdn.sanity.io/images/1ib26v3b/new/1ada672083793eb3d8d909560496f5d9d9f16b25-3416x1920.jpg?auto=format&q=100"
+              alt="Luma Pay Treasury Portal - Light Theme"
+              src="/imgs/luma-dashboard-light.jpg"
               className={theme === 'light' ? 'active' : ''}
             />
           </div>
