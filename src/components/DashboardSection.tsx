@@ -13,7 +13,7 @@ export const DashboardSection: React.FC = () => {
       style={{
         borderTop: '1px solid rgba(255, 255, 255, 0.22)',
         borderBottom: '1px solid rgba(255, 255, 255, 0.22)',
-        backgroundColor: '#2581E9'
+        backgroundColor: '#080F38'
       }}
     >
       <div className="row align-center">

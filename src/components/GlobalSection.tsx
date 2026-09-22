@@ -16,8 +16,8 @@ export const GlobalSection: React.FC = () => {
       data-logo-color="white"
       className="block-countries-global"
       style={{
-        backgroundColor: '#2581E9',
-        background: '#2581E9',
+        backgroundColor: '#080F38',
+        background: '#080F38',
         position: 'relative',
         borderTop: '1px solid rgba(255, 255, 255, 0.22)',
         borderBottom: '1px solid rgba(255, 255, 255, 0.22)',

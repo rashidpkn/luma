@@ -38,8 +38,8 @@ export const SaveTimeSection: React.FC = () => {
     >
       <style>{`
         .block-save-time {
-          background-color: #2581E9 !important;
-          background: #2581E9 !important;
+          background-color: #080F38 !important;
+          background: #080F38 !important;
           border-top: 1px solid rgba(255, 255, 255, 0.22) !important;
           border-bottom: 1px solid rgba(255, 255, 255, 0.22) !important;
           position: relative;

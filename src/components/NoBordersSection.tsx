@@ -479,7 +479,7 @@ export const NoBordersSection: React.FC = () => {
           width: 100%;
           --r: 1vw;
           overflow: hidden;
-          background-color: #2581E9;
+          background-color: #080F38;
           border-top: 1px solid rgba(255, 255, 255, 0.22);
           border-bottom: 1px solid rgba(255, 255, 255, 0.22);
         }
@@ -506,8 +506,8 @@ export const NoBordersSection: React.FC = () => {
           inset: 0%;
           width: 100%;
           height: 100%;
-          background-color: #2581E9;
-          background-image: linear-gradient(#2581E9 9%, #5BA8F0 31%, #0c6ce5 47%, #5BA8F0 67%, #2581E9 88%);
+          background-color: #080F38;
+          background-image: linear-gradient(#080F38 9%, #182368 31%, #0b144d 47%, #182368 67%, #080F38 88%);
           filter: blur(calc(2.2 * var(--r)));
           transform: scale(1.2);
           z-index: 1;

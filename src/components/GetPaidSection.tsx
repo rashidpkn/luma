@@ -6,7 +6,7 @@ export const GetPaidSection: React.FC = () => {
       data-logo-color="white"
       className="block-get-paid no-clients"
       style={{
-        backgroundColor: '#2581E9',
+        backgroundColor: '#080F38',
         borderTop: '1px solid rgba(255, 255, 255, 0.22)',
         borderBottom: '1px solid rgba(255, 255, 255, 0.22)',
         position: 'relative',
