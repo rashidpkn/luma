@@ -18,7 +18,7 @@ const COUNTRIES: CountryItem[] = [
 ];
 
 export const Navbar: React.FC = () => {
-  const { country, setCountry, isMenuOpen, setIsMenuOpen, setIsAppModalOpen } = useApp();
+  const { country, setCountry, isMenuOpen, setIsMenuOpen, } = useApp();
   const [isCollapsed, setIsCollapsed] = useState(false);
   const [isCollapsedDown, setIsCollapsedDown] = useState(false);
   const [isCollapsedUp, setIsCollapsedUp] = useState(false);
@@ -131,10 +131,7 @@ export const Navbar: React.FC = () => {
       }}
     >
       <div className="navbar-wrapper">
-        <span
-          className="bg"
-          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-        />
+
 
         <div className="row align-middle">
           {/* Left Column: Clean Logo & Corridor Switcher */}
@@ -160,7 +157,7 @@ export const Navbar: React.FC = () => {
                 }}
               >
                 <img
-                  src="/logos/logo.png"
+                  src="/logos/logo-white.png"
                   alt="Luma Pay"
                   className="navbar-brand-logo"
                   style={{
@@ -334,7 +331,7 @@ export const Navbar: React.FC = () => {
             <div className="btn-wrapper" style={{ pointerEvents: 'all' }}>
               <button
                 type="button"
-                onClick={() => setIsAppModalOpen(true)}
+
                 className="btn login fill themed"
                 style={{
                   display: 'inline-flex',

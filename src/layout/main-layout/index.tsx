@@ -7,7 +7,6 @@ import { AppProvider, useApp } from '../../context/AppContext';
 import { SplashLoader } from '../../components/SplashLoader';
 import { Navbar } from '../../components/Navbar';
 import { FullscreenMenu } from '../../components/FullscreenMenu';
-import { AppModal } from '../../components/AppModal';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -63,9 +62,6 @@ const LayoutContent: React.FC = () => {
       <div className="js-locomotive home-page">
         <Outlet />
       </div>
-
-
-      <AppModal />
 
 
     </div>

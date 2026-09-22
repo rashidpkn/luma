@@ -34,7 +34,7 @@ export const SaveTimeSection: React.FC = () => {
     <section
       ref={sectionRef}
       data-logo-color="white"
-      className="block-save-time"
+      className="block-save-time border-0!"
     >
       <style>{`
         .block-save-time {

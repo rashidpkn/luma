@@ -480,8 +480,6 @@ export const NoBordersSection: React.FC = () => {
           --r: 1vw;
           overflow: hidden;
           background-color: #2581E9;
-          border-top: 1px solid rgba(255, 255, 255, 0.22);
-          border-bottom: 1px solid rgba(255, 255, 255, 0.22);
         }
 
         .full-container.global-s {

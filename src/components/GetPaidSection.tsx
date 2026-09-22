@@ -7,8 +7,8 @@ export const GetPaidSection: React.FC = () => {
       className="block-get-paid no-clients"
       style={{
         backgroundColor: '#2581E9',
-        borderTop: '1px solid rgba(255, 255, 255, 0.22)',
-        borderBottom: '1px solid rgba(255, 255, 255, 0.22)',
+        // borderTop: '1px solid rgba(255, 255, 255, 0.22)',
+        // borderBottom: '1px solid rgba(255, 255, 255, 0.22)',
         position: 'relative',
         zIndex: 2,
         paddingTop: 'clamp(80px, 8.82vw, 150px)',
@@ -29,16 +29,18 @@ export const GetPaidSection: React.FC = () => {
           overflow: 'hidden'
         }}
       >
-        <div className="block-bg-cover" style={{ width: '100%', height: '100%' }}>
+        <div className="block-bg-cover relative" style={{ width: '100%', height: '100%' }}>
+          {/* <div className="absolute w-full h-full bg-black/50 z-10"></div> */}
           <img
             alt="Spend anywhere. Stay in control."
-            src="https://cdn.sanity.io/images/1ib26v3b/new/29a92889f018458789ceb213209d2295f16337d4-3840x2160.jpg?auto=format&q=100"
+            // src="https://cdn.sanity.io/images/1ib26v3b/new/29a92889f018458789ceb213209d2295f16337d4-3840x2160.jpg?auto=format&q=100"
+            src='/imgs/banner.jpeg'
             className="element-cover"
             style={{
-              width: '104%',
-              height: '104%',
-              top: '-2%',
-              left: '-2%',
+              width: '100%',
+              height: '100%',
+              top: '0%',
+              left: '0%',
               position: 'absolute',
               objectFit: 'cover'
             }}
@@ -114,8 +116,6 @@ export const GetPaidSection: React.FC = () => {
                   loop
                   className="element-cover"
                   style={{
-                    width: '100%',
-                    height: '100%',
                     objectFit: 'cover'
                   }}
                 >
@@ -169,52 +169,8 @@ export const GetPaidSection: React.FC = () => {
               zIndex: 1
             }}
           >
-            {/* Vertical slot / track line */}
-            <div
-              style={{
-                width: '12px',
-                height: '60px',
-                border: '1.5px solid rgba(255, 255, 255, 0.6)',
-                borderTop: 'none',
-                borderRadius: '0 0 2px 2px'
-              }}
-            />
-            {/* Double arch outline icon */}
-            <div
-              style={{
-                marginTop: '12px',
-                width: '46px',
-                height: '30px',
-                position: 'relative'
-              }}
-            >
-              <svg
-                width="46"
-                height="30"
-                viewBox="0 0 46 30"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M1 29V11C1 5.47715 5.47715 1 11 1C16.5228 1 21 5.47715 21 11V29"
-                  stroke="rgba(255, 255, 255, 0.6)"
-                  strokeWidth="1.5"
-                />
-                <path
-                  d="M25 29V11C25 5.47715 29.4772 1 35 1C40.5228 1 45 5.47715 45 11V29"
-                  stroke="rgba(255, 255, 255, 0.6)"
-                  strokeWidth="1.5"
-                />
-                <line
-                  x1="1"
-                  y1="29"
-                  x2="45"
-                  y2="29"
-                  stroke="rgba(255, 255, 255, 0.6)"
-                  strokeWidth="1.5"
-                />
-              </svg>
-            </div>
+
+
           </div>
         </div>
       </div>

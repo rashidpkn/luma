@@ -59,7 +59,7 @@ export const SliderNames: React.FC = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} data-logo-color="white" className="slider-names">
+    <section ref={sectionRef} data-logo-color="white" className="slider-names py-10!">
       <style>{`
         .slider-names {
           background-color: #2581E9 !important;

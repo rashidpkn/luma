@@ -4,7 +4,7 @@ export const BenefitsSection: React.FC = () => {
   return (
     <section
       data-logo-color="white"
-      className="block-benefits"
+      className="block-benefits pb-10!"
       style={{
         borderTop: '1px solid rgba(255, 255, 255, 0.22)',
         borderBottom: '1px solid rgba(255, 255, 255, 0.22)',

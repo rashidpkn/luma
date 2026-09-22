@@ -94,14 +94,14 @@ export const GlobalSection: React.FC = () => {
         { rotateY: 0, rotateX: 0, scale: 1 },
         { rotateY: 0, rotateX: 0, scale: 1, duration: 1.5 }
       )
-      /* Phase 2: flip to back (180°) */
-      .to(cardInnerRef.current, {
-        rotateY: 180,
-        duration: 3,
-        ease: 'power2.inOut',
-      })
-      /* Phase 3: brief hold on back face before unpin */
-      .to(cardInnerRef.current, { duration: 1 });
+        /* Phase 2: flip to back (180°) */
+        .to(cardInnerRef.current, {
+          rotateY: 180,
+          duration: 3,
+          ease: 'power2.inOut',
+        })
+        /* Phase 3: brief hold on back face before unpin */
+        .to(cardInnerRef.current, { duration: 1 });
 
       /* shimmer sweep synced to the same pinned scroll range */
       if (shimmerRef.current) {
