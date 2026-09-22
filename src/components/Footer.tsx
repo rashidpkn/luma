@@ -1,9 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { useApp } from '../context/AppContext';
 
 export const Footer: React.FC = () => {
-  const { setIsAwardsModalOpen } = useApp();
 
   return (
     <footer
@@ -72,16 +70,6 @@ export const Footer: React.FC = () => {
                 </a>
               </li>
             </ul>
-          </div>
-          <div className="copyright-wrapper">
-            <p
-              className="p-normal awards"
-              onClick={() => setIsAwardsModalOpen(true)}
-              style={{ cursor: 'pointer' }}
-              title="Click to view awards and certifications"
-            >
-              Awards &amp; Certifications <span>12</span>
-            </p>
           </div>
         </div>
 

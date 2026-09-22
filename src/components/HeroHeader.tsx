@@ -67,7 +67,7 @@ export const HeroHeader: React.FC = () => {
             Luma Pay delivers dedicated multi-currency accounts, institutional foreign exchange, and swift cross-border payment settlement across global corridors.
           </p>
 
-          <a
+          {/* <a
             href="#flow"
             className="hero-link"
             style={{
@@ -87,7 +87,7 @@ export const HeroHeader: React.FC = () => {
             }}
           >
             EXPLORE OUR SERVICES <span style={{ fontSize: '14px' }}>↓</span>
-          </a>
+          </a> */}
         </div>
       </div>
 

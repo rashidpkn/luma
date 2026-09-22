@@ -5,8 +5,6 @@ export interface AppContextType {
   setCountry: (country: string) => void;
   isMenuOpen: boolean;
   setIsMenuOpen: (open: boolean) => void;
-  isAwardsModalOpen: boolean;
-  setIsAwardsModalOpen: (open: boolean) => void;
   isAppModalOpen: boolean;
   setIsAppModalOpen: (open: boolean) => void;
   isAudioActive: boolean;
@@ -19,7 +17,6 @@ const AppContext = createContext<AppContextType | undefined>(undefined);
 export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [country, setCountry] = useState<string>('global');
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
-  const [isAwardsModalOpen, setIsAwardsModalOpen] = useState<boolean>(false);
   const [isAppModalOpen, setIsAppModalOpen] = useState<boolean>(false);
   const [isAudioActive, setIsAudioActive] = useState<boolean>(false);
 
@@ -74,8 +71,6 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
         setCountry,
         isMenuOpen,
         setIsMenuOpen,
-        isAwardsModalOpen,
-        setIsAwardsModalOpen,
         isAppModalOpen,
         setIsAppModalOpen,
         isAudioActive,
