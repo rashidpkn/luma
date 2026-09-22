@@ -7,7 +7,7 @@ const NAMES_DATA = [
   { name: 'James', color: '#1D4ED8' },
   { name: 'Sarah', color: '#EA580C' },
   { name: 'William', color: '#4F46E5' },
-  { name: 'Rebecca', color: '#0284C7' },
+  { name: 'Rebecca', color: '#1D4ED8' },
 ];
 
 export const SliderNames: React.FC = () => {
