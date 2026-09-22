@@ -8,7 +8,7 @@ export const BenefitsSection: React.FC = () => {
       style={{
         borderTop: '1px solid rgba(255, 255, 255, 0.22)',
         borderBottom: '1px solid rgba(255, 255, 255, 0.22)',
-        backgroundColor: '#2581E9'
+        backgroundColor: '#2580E8'
       }}
     >
       <div className="bg-text-container">

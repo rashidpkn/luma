@@ -121,7 +121,7 @@ export const Navbar: React.FC = () => {
 
   return (
     <nav
-      className={classNames}
+      className={`${classNames} bg-black/30! backdrop-blur-xs`}
       style={{
         position: 'fixed',
         top: 0,
@@ -161,7 +161,7 @@ export const Navbar: React.FC = () => {
                   alt="Luma Pay"
                   className="navbar-brand-logo"
                   style={{
-                    height: '24px',
+                    height: '50px',
                     width: 'auto',
                     objectFit: 'contain',
                     display: 'block'

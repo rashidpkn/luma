@@ -4,10 +4,36 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
 
-/* ─── Inline styles for the 3D Coin scene ─── */
+/* ─── 4-Point Star Sparkle matching the reference image ─── */
+const SparkleStar: React.FC<{ style: React.CSSProperties; color?: string; size?: number }> = ({
+  style,
+  color = '#ffffff',
+  size = 28,
+}) => (
+  <svg
+    viewBox="0 0 24 24"
+    fill="none"
+    style={{
+      position: 'absolute',
+      width: `${size}px`,
+      height: `${size}px`,
+      pointerEvents: 'none',
+      zIndex: 6,
+      ...style,
+    }}
+  >
+    <path
+      d="M12 0C12 6.627 6.627 12 0 12C6.627 12 12 17.373 12 24C12 17.373 17.373 12 24 12C17.373 12 12 6.627 12 0Z"
+      fill={color}
+      style={{ filter: `drop-shadow(0 0 8px ${color})` }}
+    />
+  </svg>
+);
+
+/* ─── Inline styles for the 3D BTC Coin scene ─── */
 const sceneStyle: React.CSSProperties = {
   perspective: '1200px',
-  width: 'clamp(240px, 24vw, 300px)',
+  width: 'clamp(280px, 28vw, 380px)',
   aspectRatio: '1 / 1',
   margin: '0 auto',
   position: 'relative',
@@ -25,44 +51,34 @@ const coinInnerStyle: React.CSSProperties = {
 const faceBase: React.CSSProperties = {
   position: 'absolute',
   inset: 0,
-  borderRadius: '50%',
   backfaceVisibility: 'hidden',
   display: 'flex',
-  flexDirection: 'column',
   alignItems: 'center',
   justifyContent: 'center',
-  overflow: 'hidden',
+  pointerEvents: 'none',
 };
 
-/* ─── front face (Dark Blue) ─── */
+/* ─── front face ─── */
 const frontStyle: React.CSSProperties = {
   ...faceBase,
-  background: 'radial-gradient(ellipse at 35% 28%, #173d69 0%, #0f2b4c 40%, #0a1c33 75%, #050e1a 100%)',
-  boxShadow:
-    '0 25px 60px -12px rgba(0, 0, 0, 0.65), 0 0 0 1px rgba(255,255,255,0.1), inset 0 2px 6px rgba(255,255,255,0.3), inset 0 -4px 10px rgba(0,0,0,0.6)',
-  border: '2px solid rgba(255, 255, 255, 0.22)',
 };
 
-/* ─── back face (Dark Blue) ─── */
+/* ─── back face ─── */
 const backStyle: React.CSSProperties = {
   ...faceBase,
-  background: 'radial-gradient(ellipse at 65% 72%, #173d69 0%, #0f2b4c 40%, #0a1c33 75%, #050e1a 100%)',
-  boxShadow:
-    '0 25px 60px -12px rgba(0, 0, 0, 0.65), 0 0 0 1px rgba(255,255,255,0.1), inset 0 2px 6px rgba(255,255,255,0.3), inset 0 -4px 10px rgba(0,0,0,0.6)',
-  border: '2px solid rgba(255, 255, 255, 0.22)',
   transform: 'rotateY(180deg)',
 };
 
-/* ─── holographic shimmer overlay ─── */
+/* ─── subtle light sweep overlay ─── */
 const shimmerStyle: React.CSSProperties = {
   position: 'absolute',
-  inset: 0,
+  inset: '6%',
   borderRadius: '50%',
   background:
-    'linear-gradient(105deg, transparent 30%, rgba(255,255,255,0.06) 45%, rgba(255,255,255,0.2) 50%, rgba(255,255,255,0.06) 55%, transparent 70%)',
+    'linear-gradient(105deg, transparent 30%, rgba(255,255,255,0.06) 45%, rgba(255,255,255,0.25) 50%, rgba(255,255,255,0.06) 55%, transparent 70%)',
   backgroundSize: '200% 100%',
   pointerEvents: 'none',
-  zIndex: 10,
+  zIndex: 4,
 };
 
 export const SustainabilitySection: React.FC = () => {
@@ -138,8 +154,8 @@ export const SustainabilitySection: React.FC = () => {
       data-logo-color="white"
       className="block-sustainability"
       style={{
-        backgroundColor: '#2581E9',
-        background: '#2581E9',
+        backgroundColor: '#2580E8',
+        background: '#2580E8',
         position: 'relative',
         borderTop: '1px solid rgba(255, 255, 255, 0.22)',
         borderBottom: '1px solid rgba(255, 255, 255, 0.22)',
@@ -167,87 +183,67 @@ export const SustainabilitySection: React.FC = () => {
         {/* Right Column: Coin flip animation */}
         <div className="xxlarge-7 small-16 small-offset-0 small-order-1 columns flex flex-col items-center">
           <div style={sceneStyle}>
-            {/* Subtle soft ambient depth */}
+            {/* Ambient warm glow behind the coin */}
             <div
               style={{
                 position: 'absolute',
-                inset: '-15px',
+                inset: '5%',
                 borderRadius: '50%',
-                background: 'radial-gradient(circle, rgba(5, 14, 26, 0.4) 0%, transparent 70%)',
-                filter: 'blur(20px)',
+                background: 'radial-gradient(circle, rgba(247, 147, 26, 0.35) 0%, rgba(247, 147, 26, 0.1) 45%, transparent 70%)',
+                filter: 'blur(35px)',
                 pointerEvents: 'none',
                 zIndex: 1,
               }}
             />
 
+            {/* Sparkle Glints matching the second reference image */}
+            <SparkleStar
+              style={{ top: '6%', right: '10%' }}
+              color="rgba(255, 245, 220, 0.95)"
+              size={32}
+            />
+            <SparkleStar
+              style={{ bottom: '22%', left: '0%' }}
+              color="rgba(255, 225, 140, 0.9)"
+              size={24}
+            />
+
             <div ref={coinInnerRef} style={coinInnerStyle}>
-              {/* ── FRONT FACE (Dark Blue with Logo in Center) ── */}
+              {/* ── FRONT FACE: REAL 3D BITCOIN (BTC) COIN ── */}
               <div style={frontStyle}>
                 {/* shimmer overlay */}
                 <div ref={shimmerRef} style={shimmerStyle} />
 
-                {/* Inner minted concentric rim */}
-                <div
+                <img
+                  src="/imgs/noborders/coin_6.png"
+                  alt="Bitcoin (BTC)"
                   style={{
-                    width: '84%',
-                    height: '84%',
-                    borderRadius: '50%',
-                    border: '1.5px solid rgba(255, 255, 255, 0.16)',
-                    boxShadow: 'inset 0 0 14px rgba(0, 0, 0, 0.45)',
-                    display: 'flex',
-                    flexDirection: 'column',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    position: 'relative',
-                    zIndex: 2,
-                    padding: '16px',
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'contain',
+                    filter: 'drop-shadow(0 20px 35px rgba(0, 0, 0, 0.45))',
+                    userSelect: 'none',
+                    pointerEvents: 'none',
                   }}
-                >
-                  <img
-                    src="/logos/logo-white.png"
-                    alt="Luma Pay"
-                    style={{
-                      width: '145px',
-                      maxWidth: '78%',
-                      height: 'auto',
-                      objectFit: 'contain',
-                      filter: 'drop-shadow(0 3px 10px rgba(0, 0, 0, 0.6))',
-                    }}
-                  />
-                </div>
+                  draggable={false}
+                />
               </div>
 
-              {/* ── BACK FACE (Dark Blue with Logo in Center) ── */}
+              {/* ── BACK FACE: REAL 3D BITCOIN (BTC) COIN ── */}
               <div style={backStyle}>
-                {/* Inner minted concentric rim */}
-                <div
+                <img
+                  src="/imgs/noborders/coin_6.png"
+                  alt="Bitcoin (BTC)"
                   style={{
-                    width: '84%',
-                    height: '84%',
-                    borderRadius: '50%',
-                    border: '1.5px solid rgba(255, 255, 255, 0.16)',
-                    boxShadow: 'inset 0 0 14px rgba(0, 0, 0, 0.45)',
-                    display: 'flex',
-                    flexDirection: 'column',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    position: 'relative',
-                    zIndex: 2,
-                    padding: '16px',
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'contain',
+                    filter: 'drop-shadow(0 20px 35px rgba(0, 0, 0, 0.45))',
+                    userSelect: 'none',
+                    pointerEvents: 'none',
                   }}
-                >
-                  <img
-                    src="/logos/logo-white.png"
-                    alt="Luma Pay"
-                    style={{
-                      width: '145px',
-                      maxWidth: '78%',
-                      height: 'auto',
-                      objectFit: 'contain',
-                      filter: 'drop-shadow(0 3px 10px rgba(0, 0, 0, 0.6))',
-                    }}
-                  />
-                </div>
+                  draggable={false}
+                />
               </div>
             </div>
           </div>

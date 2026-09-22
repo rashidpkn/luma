@@ -10,8 +10,8 @@ export const HeroHeader: React.FC = () => {
         width: '100%',
         height: '100vh',
         overflow: 'hidden',
-        backgroundColor: '#2581E9',
-        background: '#2581E9',
+        backgroundColor: '#2580E8',
+        background: '#2580E8',
         borderBottom: '1px solid rgba(255, 255, 255, 0.22)'
       }}
     >

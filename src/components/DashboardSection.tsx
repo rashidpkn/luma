@@ -10,7 +10,7 @@ export const DashboardSection: React.FC = () => {
       data-logo-color="white"
       className="block-dashboard pb-14!"
       style={{
-        backgroundColor: '#2581E9'
+        backgroundColor: '#2580E8'
       }}
     >
       <div className="row align-center">

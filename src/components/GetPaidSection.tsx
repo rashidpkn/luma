@@ -6,7 +6,7 @@ export const GetPaidSection: React.FC = () => {
       data-logo-color="white"
       className="block-get-paid no-clients"
       style={{
-        backgroundColor: '#2581E9',
+        backgroundColor: '#2580E8',
         // borderTop: '1px solid rgba(255, 255, 255, 0.22)',
         // borderBottom: '1px solid rgba(255, 255, 255, 0.22)',
         position: 'relative',
@@ -128,19 +128,22 @@ export const GetPaidSection: React.FC = () => {
             </div>
 
             {/* Layer 1: Desktop Browser Chrome & Cards Overlay */}
-            <img
-              alt="Payment Method"
-              src="/imgs/desk-browser.avif"
-              className="desktop"
-              style={{
-                position: 'relative',
-                width: '100%',
-                height: 'auto',
-                display: 'block',
-                zIndex: 1,
-                pointerEvents: 'none'
-              }}
-            />
+            <div className="relative">
+              <div className="absolute h-full w-full top-0 right-0 bg-[#]"></div>
+              <img
+                alt="Payment Method"
+                src="/imgs/desk-browser.avif"
+                className="desktop"
+                style={{
+                  position: 'relative',
+                  width: '100%',
+                  height: 'auto',
+                  display: 'block',
+                  zIndex: 1,
+                  pointerEvents: 'none'
+                }}
+              />
+            </div>
 
             {/* Mobile Fallback Overlay */}
             <img

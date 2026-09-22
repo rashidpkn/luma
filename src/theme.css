@@ -14,12 +14,12 @@
   --grey-color: #cbd5e1 !important;
   --light-grey-color: #f1f5f9 !important;
   --dark-grey: #1e293b !important;
-  --bg-color: #2581E9 !important;
+  --bg-color: #2580E8 !important;
   --text-color: #ffffff !important;
   --hover-color: #ffffff !important;
 
   /* Theme Tokens */
-  --theme-bg-main: #2581E9;
+  --theme-bg-main: #2580E8;
   --theme-bg-elevated: #ffffff;
   --theme-border-glow: rgba(255, 255, 255, 0.25);
   --theme-cyan: #38bdf8;
@@ -32,11 +32,11 @@
 
 /* Global Body & Background */
 body {
-  background-color: #2581E9 !important;
+  background-color: #2580E8 !important;
   color: #ffffff !important;
 }
 
-/* Ensure crisp white readable typography across the #2581E9 background */
+/* Ensure crisp white readable typography across the #2580E8 background */
 p,
 p.p-big,
 .p-big,
@@ -103,15 +103,15 @@ h6,
 .anchor-blocks-wrapper,
 main,
 header {
-  background-color: #2581E9;
+  background-color: #2580E8;
 }
 
-/* Header Background: Solid #2581E9 with layout border */
+/* Header Background: Solid #2580E8 with layout border */
 header[data-logo-color="black"],
 header[data-logo-color="white"],
 header.hero-header {
-  background-color: #2581E9 !important;
-  background: #2581E9 !important;
+  background-color: #2580E8 !important;
+  background: #2580E8 !important;
   border-bottom: 1px solid rgba(255, 255, 255, 0.22) !important;
 }
 
@@ -148,8 +148,8 @@ header.hero-header {
   header[data-logo-color="black"],
   header[data-logo-color="white"],
   header.hero-header {
-    background-color: #2581E9 !important;
-    background: #2581E9 !important;
+    background-color: #2580E8 !important;
+    background: #2580E8 !important;
     padding-top: 0 !important;
   }
 
@@ -354,8 +354,8 @@ header.hero-header {
    ========================================================================== */
 
 .block-save-time {
-  background-color: #2581E9 !important;
-  background: #2581E9 !important;
+  background-color: #2580E8 !important;
+  background: #2580E8 !important;
 }
 
 .block-save-time .fixed-wrapper .title-wrapper h2 {
@@ -421,8 +421,8 @@ header.hero-header {
    ========================================================================== */
 
 .block-get-paid {
-  background-color: #2581E9 !important;
-  background: #2581E9 !important;
+  background-color: #2580E8 !important;
+  background: #2580E8 !important;
 }
 
 .block-get-paid .h-large,
@@ -442,8 +442,8 @@ header.hero-header {
 
 .block-global,
 .block-countries-global {
-  background-color: #2581E9 !important;
-  background: #2581E9 !important;
+  background-color: #2580E8 !important;
+  background: #2580E8 !important;
 }
 
 .block-global .h-large,
@@ -472,8 +472,8 @@ header.hero-header {
    ========================================================================== */
 
 .block-dashboard {
-  background-color: #2581E9 !important;
-  --bg-color: #2581E9 !important;
+  background-color: #2580E8 !important;
+  --bg-color: #2580E8 !important;
   --text-color: #ffffff !important;
 
 }
@@ -676,8 +676,8 @@ header.hero-header {
    ========================================================================== */
 
 .block-sustainability {
-  background-color: #2581E9 !important;
-  background: #2581E9 !important;
+  background-color: #2580E8 !important;
+  background: #2580E8 !important;
 }
 
 .block-sustainability .h-medium,
@@ -723,7 +723,7 @@ header.hero-header {
    ========================================================================== */
 
 .block-benefits {
-  background-color: #2581E9 !important;
+  background-color: #2580E8 !important;
 }
 
 .block-benefits .bg-text-container .bg-text {
@@ -811,8 +811,8 @@ header.hero-header {
    ========================================================================== */
 
 .slider-names {
-  background-color: #2581E9 !important;
-  background: #2581E9 !important;
+  background-color: #2580E8 !important;
+  background: #2580E8 !important;
 }
 
 /* Completely remove dark overlay gradients / pseudo-elements */
@@ -852,8 +852,8 @@ header.hero-header {
    ========================================================================== */
 
 footer {
-  background-color: #2581E9 !important;
-  background: #2581E9 !important;
+  background-color: #2580E8 !important;
+  background: #2580E8 !important;
   border-top: 1px solid rgba(255, 255, 255, 0.22) !important;
 }
 

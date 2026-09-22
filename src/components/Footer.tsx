@@ -8,7 +8,7 @@ export const Footer: React.FC = () => {
       data-logo-color="white"
       style={{
         borderTop: '1px solid rgba(255, 255, 255, 0.22)',
-        backgroundColor: '#2581E9'
+        backgroundColor: '#2580E8'
       }}
     >
 
