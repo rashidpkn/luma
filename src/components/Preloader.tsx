@@ -412,8 +412,8 @@ export default function Preloader({
               fill="none"
               stroke="#FFFFFF"
               strokeWidth="3.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
+              strokeLinecap="butt"
+              strokeLinejoin="miter"
               style={{
                 strokeDasharray: lLength,
                 strokeDashoffset: lLength * (1 - lProgress),
@@ -505,8 +505,8 @@ export default function Preloader({
               fill="none"
               stroke="#FFFFFF"
               strokeWidth="3.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
+              strokeLinecap="butt"
+              strokeLinejoin="miter"
               style={{
                 strokeDasharray: pLength,
                 strokeDashoffset: pLength * (1 - pProgress),

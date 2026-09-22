@@ -643,18 +643,21 @@ header.hero-header {
   .block-dashboard .switcher-wrapper {
     padding: 3px !important;
   }
+
   .block-dashboard .switcher-slider {
     top: 3px !important;
     bottom: 3px !important;
     left: 3px !important;
     width: calc(50% - 3px) !important;
   }
+
   .block-dashboard .switcher-wrapper .btn,
   .block-dashboard .switcher-container .switcher-wrapper .btn {
     padding: 8px 16px !important;
     font-size: 13.5px !important;
     gap: 6px !important;
   }
+
   .block-dashboard .switcher-wrapper .btn .icon,
   .block-dashboard .switcher-container .switcher-wrapper .btn .icon {
     width: 16px !important;
@@ -857,10 +860,7 @@ footer {
   border-top: 1px solid rgba(255, 255, 255, 0.22) !important;
 }
 
-footer p,
-footer a {
-  color: rgba(255, 255, 255, 0.9) !important;
-}
+
 
 footer a:hover {
   color: #ffffff !important;
