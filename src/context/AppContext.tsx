@@ -5,10 +5,6 @@ export interface AppContextType {
   setCountry: (country: string) => void;
   isMenuOpen: boolean;
   setIsMenuOpen: (open: boolean) => void;
-  isAwardsModalOpen: boolean;
-  setIsAwardsModalOpen: (open: boolean) => void;
-  isAppModalOpen: boolean;
-  setIsAppModalOpen: (open: boolean) => void;
   isAudioActive: boolean;
   setIsAudioActive: (active: boolean) => void;
   toggleAudio: () => void;
@@ -19,8 +15,6 @@ const AppContext = createContext<AppContextType | undefined>(undefined);
 export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [country, setCountry] = useState<string>('global');
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
-  const [isAwardsModalOpen, setIsAwardsModalOpen] = useState<boolean>(false);
-  const [isAppModalOpen, setIsAppModalOpen] = useState<boolean>(false);
   const [isAudioActive, setIsAudioActive] = useState<boolean>(false);
 
   // Apply data-country attribute to <html> tag when country changes
@@ -40,7 +34,7 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
         audioCtx = new AudioContextClass();
         oscillator = audioCtx.createOscillator();
         gainNode = audioCtx.createGain();
-        
+
         oscillator.type = 'sine';
         oscillator.frequency.setValueAtTime(432, audioCtx.currentTime); // 432Hz ambient chord
         gainNode.gain.setValueAtTime(0.03, audioCtx.currentTime);
@@ -55,10 +49,10 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
 
     return () => {
       if (oscillator) {
-        try { oscillator.stop(); } catch {}
+        try { oscillator.stop(); } catch { }
       }
       if (audioCtx) {
-        try { audioCtx.close(); } catch {}
+        try { audioCtx.close(); } catch { }
       }
     };
   }, [isAudioActive]);
@@ -74,10 +68,6 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
         setCountry,
         isMenuOpen,
         setIsMenuOpen,
-        isAwardsModalOpen,
-        setIsAwardsModalOpen,
-        isAppModalOpen,
-        setIsAppModalOpen,
         isAudioActive,
         setIsAudioActive,
         toggleAudio

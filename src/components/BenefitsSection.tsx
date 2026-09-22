@@ -2,7 +2,15 @@ import React from 'react';
 
 export const BenefitsSection: React.FC = () => {
   return (
-    <section data-logo-color="black" className="block-benefits">
+    <section
+      data-logo-color="white"
+      className="block-benefits pb-10!"
+      style={{
+        borderTop: '1px solid rgba(255, 255, 255, 0.22)',
+        borderBottom: '1px solid rgba(255, 255, 255, 0.22)',
+        backgroundColor: '#2580E8'
+      }}
+    >
       <div className="bg-text-container">
         <div className="bg-text-wrapper">
           <h2 className="bg-text">Beyond traditional banking&nbsp;</h2>

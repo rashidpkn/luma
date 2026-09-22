@@ -381,7 +381,7 @@ export const NoBordersSection: React.FC = () => {
   }, []);
 
   return (
-    <section className="global-sc" data-logo-color="dark">
+    <section className="global-sc" data-logo-color="white">
       <div className="full-container global-s">
         <div className="container global-s">
           {/* 1. Header Text Block */}
@@ -479,6 +479,7 @@ export const NoBordersSection: React.FC = () => {
           width: 100%;
           --r: 1vw;
           overflow: hidden;
+          background-color: #2580E8;
         }
 
         .full-container.global-s {
@@ -503,8 +504,8 @@ export const NoBordersSection: React.FC = () => {
           inset: 0%;
           width: 100%;
           height: 100%;
-          background-color: #ffffff;
-          background-image: linear-gradient(#fff 9%, #8ae4ff 31%, #0c6ce5 47%, #8ae4ff 67%, #fff 88%);
+          background-color: #2580E8;
+          background-image: linear-gradient(#2580E8 9%, #5BA8F0 31%, #0c6ce5 47%, #5BA8F0 67%, #2580E8 88%);
           filter: blur(calc(2.2 * var(--r)));
           transform: scale(1.2);
           z-index: 1;
@@ -547,12 +548,12 @@ export const NoBordersSection: React.FC = () => {
           font-size: clamp(34px, 4.3vw, 68px);
           line-height: 112%;
           font-weight: 500;
-          color: #080808;
+          color: #ffffff;
           margin: 0;
           letter-spacing: -0.03em;
         }
         .blue-span {
-          color: #2076f3;
+          color: #BAE6FD;
         }
         .description.global-s {
           width: calc(44 * var(--r));
@@ -564,7 +565,7 @@ export const NoBordersSection: React.FC = () => {
           font-family: helv-regular, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
           font-size: calc(1.25 * var(--r));
           line-height: 160%;
-          color: #262626;
+          color: rgba(255, 255, 255, 0.92);
           margin: 0;
         }
 
@@ -847,7 +848,7 @@ export const NoBordersSection: React.FC = () => {
         }
 
         .display-2xl {
-          color: #080808;
+          color: #ffffff;
           font-family: helv-bold, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
           font-size: clamp(48px, 4.8vw, 76px);
           line-height: 1;
@@ -866,12 +867,12 @@ export const NoBordersSection: React.FC = () => {
           font-family: helv-regular, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
           font-size: clamp(15px, 1.2vw, 19px);
           line-height: 1.45;
-          color: #171717;
+          color: rgba(255, 255, 255, 0.92);
           margin: 0;
         }
 
         .dark-blue {
-          color: #0128a5;
+          color: #BAE6FD;
           font-weight: 600;
         }
 

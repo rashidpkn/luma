@@ -6,7 +6,9 @@ export const GetPaidSection: React.FC = () => {
       data-logo-color="white"
       className="block-get-paid no-clients"
       style={{
-        backgroundColor: '#000000',
+        backgroundColor: '#2580E8',
+        // borderTop: '1px solid rgba(255, 255, 255, 0.22)',
+        // borderBottom: '1px solid rgba(255, 255, 255, 0.22)',
         position: 'relative',
         zIndex: 2,
         paddingTop: 'clamp(80px, 8.82vw, 150px)',
@@ -14,7 +16,7 @@ export const GetPaidSection: React.FC = () => {
         overflow: 'visible'
       }}
     >
-      {/* Background Cover Overlay: Extends 100vh down from top, leaving bottom of section in pure black */}
+      {/* Background Cover Overlay: Extends 100vh down from top, leaving bottom of section in pure white */}
       <div
         className="video-wrapper"
         style={{
@@ -27,16 +29,18 @@ export const GetPaidSection: React.FC = () => {
           overflow: 'hidden'
         }}
       >
-        <div className="block-bg-cover" style={{ width: '100%', height: '100%' }}>
+        <div className="block-bg-cover relative" style={{ width: '100%', height: '100%' }}>
+          {/* <div className="absolute w-full h-full bg-black/50 z-10"></div> */}
           <img
             alt="Spend anywhere. Stay in control."
-            src="https://cdn.sanity.io/images/1ib26v3b/new/29a92889f018458789ceb213209d2295f16337d4-3840x2160.jpg?auto=format&q=100"
+            // src="https://cdn.sanity.io/images/1ib26v3b/new/29a92889f018458789ceb213209d2295f16337d4-3840x2160.jpg?auto=format&q=100"
+            src='/imgs/banner.jpeg'
             className="element-cover"
             style={{
-              width: '104%',
-              height: '104%',
-              top: '-2%',
-              left: '-2%',
+              width: '100%',
+              height: '100%',
+              top: '0%',
+              left: '0%',
               position: 'absolute',
               objectFit: 'cover'
             }}
@@ -65,7 +69,7 @@ export const GetPaidSection: React.FC = () => {
           <div className="p-big" style={{ marginTop: '20px', maxWidth: '515px' }}>
             <p
               style={{
-                color: 'rgba(255, 255, 255, 0.6)',
+                color: 'rgba(255, 255, 255, 0.92)',
                 fontFamily: 'helv-regular, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
                 fontSize: 'clamp(18px, 1.41vw, 24px)',
                 lineHeight: 1.35,
@@ -77,7 +81,7 @@ export const GetPaidSection: React.FC = () => {
             </p>
           </div>
 
-          {/* Centered Browser Window Mockup: Spreads across ribbon and pure black screens */}
+          {/* Centered Browser Window Mockup: Spreads across ribbon and pure light screens */}
           <div
             className="browser-wrapper"
             style={{
@@ -87,7 +91,7 @@ export const GetPaidSection: React.FC = () => {
               margin: 'clamp(40px, 4.1vw, 70px) auto 0 auto',
               borderRadius: '14px',
               overflow: 'hidden',
-              boxShadow: '0 30px 60px -12px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(255, 255, 255, 0.08)'
+              boxShadow: '0 30px 60px -12px rgba(12, 108, 229, 0.15), 0 0 0 1px rgba(12, 108, 229, 0.12)'
             }}
           >
             {/* Layer 0: Background Loop Video */}
@@ -112,8 +116,6 @@ export const GetPaidSection: React.FC = () => {
                   loop
                   className="element-cover"
                   style={{
-                    width: '100%',
-                    height: '100%',
                     objectFit: 'cover'
                   }}
                 >
@@ -126,24 +128,27 @@ export const GetPaidSection: React.FC = () => {
             </div>
 
             {/* Layer 1: Desktop Browser Chrome & Cards Overlay */}
-            <img
-              alt="Payment Method"
-              src="https://cdn.sanity.io/images/1ib26v3b/new/e7eec72eab1b198d80f3860e6d0a7b157e98d0eb-2366x1614.png?auto=format"
-              className="desktop"
-              style={{
-                position: 'relative',
-                width: '100%',
-                height: 'auto',
-                display: 'block',
-                zIndex: 1,
-                pointerEvents: 'none'
-              }}
-            />
+            <div className="relative">
+              <div className="absolute h-full w-full top-0 right-0 bg-[#]"></div>
+              <img
+                alt="Payment Method"
+                src="/imgs/desk-browser.avif"
+                className="desktop"
+                style={{
+                  position: 'relative',
+                  width: '100%',
+                  height: 'auto',
+                  display: 'block',
+                  zIndex: 1,
+                  pointerEvents: 'none'
+                }}
+              />
+            </div>
 
             {/* Mobile Fallback Overlay */}
             <img
               alt="Invoice Payment"
-              src="https://cdn.sanity.io/images/1ib26v3b/new/9c005840c488a0f13b7718eab0f6f1f2ae18d6b2-565x1005.png?auto=format"
+              src="/imgs/mob-browser.avif"
               className="mobile"
               style={{
                 position: 'relative',
@@ -167,52 +172,8 @@ export const GetPaidSection: React.FC = () => {
               zIndex: 1
             }}
           >
-            {/* Vertical slot / track line */}
-            <div
-              style={{
-                width: '12px',
-                height: '60px',
-                border: '1.5px solid rgba(255, 255, 255, 0.4)',
-                borderTop: 'none',
-                borderRadius: '0 0 2px 2px'
-              }}
-            />
-            {/* Double arch outline icon */}
-            <div
-              style={{
-                marginTop: '12px',
-                width: '46px',
-                height: '30px',
-                position: 'relative'
-              }}
-            >
-              <svg
-                width="46"
-                height="30"
-                viewBox="0 0 46 30"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M1 29V11C1 5.47715 5.47715 1 11 1C16.5228 1 21 5.47715 21 11V29"
-                  stroke="rgba(255, 255, 255, 0.45)"
-                  strokeWidth="1.5"
-                />
-                <path
-                  d="M25 29V11C25 5.47715 29.4772 1 35 1C40.5228 1 45 5.47715 45 11V29"
-                  stroke="rgba(255, 255, 255, 0.45)"
-                  strokeWidth="1.5"
-                />
-                <line
-                  x1="1"
-                  y1="29"
-                  x2="45"
-                  y2="29"
-                  stroke="rgba(255, 255, 255, 0.45)"
-                  strokeWidth="1.5"
-                />
-              </svg>
-            </div>
+
+
           </div>
         </div>
       </div>

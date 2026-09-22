@@ -18,7 +18,7 @@ const COUNTRIES: CountryItem[] = [
 ];
 
 export const Navbar: React.FC = () => {
-  const { country, setCountry, isMenuOpen, setIsMenuOpen, setIsAppModalOpen } = useApp();
+  const { country, setCountry, isMenuOpen, setIsMenuOpen, } = useApp();
   const [isCollapsed, setIsCollapsed] = useState(false);
   const [isCollapsedDown, setIsCollapsedDown] = useState(false);
   const [isCollapsedUp, setIsCollapsedUp] = useState(false);
@@ -81,7 +81,7 @@ export const Navbar: React.FC = () => {
 
       // Detect [data-logo-color] of section directly under navbar
       const sections = document.querySelectorAll('[data-logo-color]');
-      let activeColor = 'white';
+      let activeColor = 'black';
 
       sections.forEach((sec) => {
         const rect = sec.getBoundingClientRect();
@@ -121,7 +121,7 @@ export const Navbar: React.FC = () => {
 
   return (
     <nav
-      className={classNames}
+      className={`${classNames} bg-black/30! backdrop-blur-xs`}
       style={{
         position: 'fixed',
         top: 0,
@@ -131,10 +131,7 @@ export const Navbar: React.FC = () => {
       }}
     >
       <div className="navbar-wrapper">
-        <span
-          className="bg"
-          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-        />
+
 
         <div className="row align-middle">
           {/* Left Column: Clean Logo & Corridor Switcher */}
@@ -164,7 +161,7 @@ export const Navbar: React.FC = () => {
                   alt="Luma Pay"
                   className="navbar-brand-logo"
                   style={{
-                    height: '24px',
+                    height: '50px',
                     width: 'auto',
                     objectFit: 'contain',
                     display: 'block'
@@ -186,9 +183,9 @@ export const Navbar: React.FC = () => {
                     gap: '6px',
                     padding: '4px 10px',
                     borderRadius: '9999px',
-                    background: 'rgba(15, 23, 42, 0.75)',
-                    border: '1px solid rgba(56, 189, 248, 0.25)',
-                    color: '#e2e8f0',
+                    background: 'rgba(255, 255, 255, 0.9)',
+                    border: '1px solid rgba(12, 108, 229, 0.2)',
+                    color: '#0f172a',
                     fontSize: '12px',
                     fontWeight: 500,
                     cursor: 'pointer',
@@ -215,7 +212,7 @@ export const Navbar: React.FC = () => {
                   >
                     <path
                       d="M1 1L5 5L9 1"
-                      stroke="#38bdf8"
+                      stroke="#0c6ce5"
                       strokeWidth="1.5"
                       strokeLinecap="round"
                       strokeLinejoin="round"
@@ -230,14 +227,14 @@ export const Navbar: React.FC = () => {
                       position: 'absolute',
                       top: 'calc(100% + 8px)',
                       left: 0,
-                      background: 'rgba(15, 23, 42, 0.96)',
+                      background: 'rgba(255, 255, 255, 0.98)',
                       backdropFilter: 'blur(20px)',
                       WebkitBackdropFilter: 'blur(20px)',
-                      border: '1px solid rgba(56, 189, 248, 0.28)',
+                      border: '1px solid rgba(12, 108, 229, 0.2)',
                       borderRadius: '12px',
                       padding: '6px',
                       minWidth: '175px',
-                      boxShadow: '0 20px 40px rgba(0, 0, 0, 0.8), 0 0 20px rgba(56, 189, 248, 0.15)',
+                      boxShadow: '0 20px 40px rgba(12, 108, 229, 0.12), 0 2px 10px rgba(0, 0, 0, 0.04)',
                       zIndex: 150,
                       display: 'flex',
                       flexDirection: 'column',
@@ -262,8 +259,8 @@ export const Navbar: React.FC = () => {
                             padding: '8px 10px',
                             borderRadius: '8px',
                             border: 'none',
-                            background: isSelected ? 'rgba(56, 189, 248, 0.15)' : 'transparent',
-                            color: isSelected ? '#38bdf8' : '#cbd5e1',
+                            background: isSelected ? 'rgba(12, 108, 229, 0.1)' : 'transparent',
+                            color: isSelected ? '#0c6ce5' : '#334155',
                             fontSize: '12px',
                             fontWeight: isSelected ? 600 : 400,
                             cursor: 'pointer',
@@ -272,14 +269,14 @@ export const Navbar: React.FC = () => {
                           }}
                           onMouseEnter={(e) => {
                             if (!isSelected) {
-                              e.currentTarget.style.background = 'rgba(255, 255, 255, 0.05)';
-                              e.currentTarget.style.color = '#f8fafc';
+                              e.currentTarget.style.background = 'rgba(12, 108, 229, 0.06)';
+                              e.currentTarget.style.color = '#0f172a';
                             }
                           }}
                           onMouseLeave={(e) => {
                             if (!isSelected) {
                               e.currentTarget.style.background = 'transparent';
-                              e.currentTarget.style.color = '#cbd5e1';
+                              e.currentTarget.style.color = '#334155';
                             }
                           }}
                         >
@@ -288,7 +285,7 @@ export const Navbar: React.FC = () => {
                             <span>{c.name}</span>
                           </span>
                           {isSelected && (
-                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#0c6ce5" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                               <polyline points="20 6 9 17 4 12" />
                             </svg>
                           )}
@@ -334,7 +331,7 @@ export const Navbar: React.FC = () => {
             <div className="btn-wrapper" style={{ pointerEvents: 'all' }}>
               <button
                 type="button"
-                onClick={() => setIsAppModalOpen(true)}
+
                 className="btn login fill themed"
                 style={{
                   display: 'inline-flex',

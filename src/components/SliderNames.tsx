@@ -2,34 +2,25 @@ import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 
 const NAMES_DATA = [
-  { name: 'Michael', color: '#F6CF55' },
-  { name: 'Linda', color: '#4DA29E' },
-  { name: 'James', color: '#96A24D' },
-  { name: 'Sarah', color: '#F1AE5E' },
-  { name: 'William', color: '#051BF5' },
-  { name: 'Rebecca', color: '#61A8EF' },
+  { name: 'Michael', color: '#D97706' },
+  { name: 'Linda', color: '#059669' },
+  { name: 'James', color: '#1D4ED8' },
+  { name: 'Sarah', color: '#EA580C' },
+  { name: 'William', color: '#4F46E5' },
+  { name: 'Rebecca', color: '#0284C7' },
 ];
 
 export const SliderNames: React.FC = () => {
   const sectionRef = useRef<HTMLElement>(null);
-  const namesListWrapperRef = useRef<HTMLDivElement>(null);
   const namesRegularWrapperRef = useRef<HTMLDivElement>(null);
   const namesRegularListRef = useRef<HTMLSpanElement>(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      const namesListEl = document.querySelector('.slider-names .names-list .name') as HTMLElement | null;
-      if (!namesListEl) return;
+      const nameEl = document.querySelector('.slider-names .name-regular') as HTMLElement | null;
+      if (!nameEl) return;
 
-      const singleHeight = namesListEl.offsetHeight || 110;
-      const totalCount = NAMES_DATA.length;
-      const offset = singleHeight * totalCount;
-
-      if (window.innerWidth > 960) {
-        gsap.set('.slider-names .names-list-container', { y: -offset });
-      } else {
-        gsap.set('.slider-names .names-list-container', { y: -singleHeight });
-      }
+      const singleHeight = nameEl.offsetHeight || 96;
 
       gsap.set('.slider-names .names-list-regular-wrapper', { height: singleHeight });
 
@@ -38,22 +29,9 @@ export const SliderNames: React.FC = () => {
       let delayedCall: gsap.core.Tween | null = null;
 
       const cycle = () => {
-        if (counter >= totalCount) {
-          gsap.set('.slider-names .names-list-wrapper', { clearProps: 'all' });
-          counter = 0;
-        }
-
-        gsap.to('.slider-names .names-list-wrapper', {
-          duration: 1.5,
-          y: `-=${singleHeight}`,
-          ease: 'power2.inOut',
-          willChange: 'transform',
-          force3D: true,
-        });
-
         gsap.timeline()
           .to(namesRegular, {
-            duration: 1.5,
+            duration: 1.2,
             y: `-=${singleHeight}`,
             ease: 'power2.inOut',
             willChange: 'transform',
@@ -81,12 +59,104 @@ export const SliderNames: React.FC = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} data-logo-color="white" className="slider-names">
+    <section ref={sectionRef} data-logo-color="white" className="slider-names py-10!">
+      <style>{`
+        .slider-names {
+          background-color: #2580E8 !important;
+          border-top: 1px solid rgba(255, 255, 255, 0.22) !important;
+          border-bottom: 1px solid rgba(255, 255, 255, 0.22) !important;
+          padding: clamp(48px, 6vw, 96px) 0 !important;
+          position: relative !important;
+          overflow: hidden !important;
+          height: auto !important;
+        }
+
+        .slider-names:before,
+        .slider-names:after,
+        .slider-names .names-list-container {
+          display: none !important;
+          content: none !important;
+        }
+
+        .slider-names-container {
+          display: flex !important;
+          flex-direction: row !important;
+          align-items: center !important;
+          justify-content: space-between !important;
+          width: 100% !important;
+          gap: 24px !important;
+        }
+
+        .slider-names-left {
+          display: inline-flex !important;
+          flex-direction: row !important;
+          align-items: center !important;
+          position: relative !important;
+          gap: 0 !important;
+        }
+
+        .slider-names-title {
+          color: #ffffff !important;
+          font-family: helv-regular, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+          font-size: clamp(32px, 5.2vw, 84px) !important;
+          line-height: 1.15 !important;
+          letter-spacing: -0.02em !important;
+          white-space: nowrap !important;
+        }
+
+        .slider-names .names-list-regular-wrapper {
+          position: relative !important;
+          left: auto !important;
+          top: auto !important;
+          display: inline-block !important;
+          overflow: hidden !important;
+          background-color: transparent !important;
+          vertical-align: middle !important;
+        }
+
+        .slider-names .names-list-regular {
+          display: block !important;
+        }
+
+        .slider-names .name-regular {
+          display: block !important;
+          font-family: helv-bold, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+          font-size: clamp(32px, 5.2vw, 84px) !important;
+          line-height: 1.15 !important;
+          letter-spacing: -0.02em !important;
+          white-space: nowrap !important;
+          font-weight: 700 !important;
+        }
+
+        .slider-names-right .secondary a {
+          color: #ffffff !important;
+          font-family: helv-bold, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+          font-size: clamp(28px, 4.4vw, 72px) !important;
+          line-height: 1.15 !important;
+          letter-spacing: -0.02em !important;
+          text-decoration: underline !important;
+          text-underline-offset: 6px !important;
+          white-space: nowrap !important;
+          transition: opacity 0.2s ease !important;
+        }
+
+        .slider-names-right .secondary a:hover {
+          opacity: 0.8 !important;
+        }
+
+        @media only screen and (max-width: 960px) {
+          .slider-names-container {
+            flex-direction: column !important;
+            align-items: flex-start !important;
+            gap: 20px !important;
+          }
+        }
+      `}</style>
       <div className="row">
         <div className="xxlarge-16 columns">
-          <div className="container">
-            <div className="left-column">
-              <span className="text text-white!">Built for&nbsp;</span>
+          <div className="container slider-names-container">
+            <div className="left-column slider-names-left">
+              <span className="text slider-names-title">Built for&nbsp;</span>
               <div className="names-list-regular-wrapper" ref={namesRegularWrapperRef}>
                 <span className="names-list-regular" ref={namesRegularListRef}>
                   {NAMES_DATA.map((item, i) => (
@@ -100,32 +170,15 @@ export const SliderNames: React.FC = () => {
                   ))}
                 </span>
               </div>
-              <div className="names-list-container">
-                <div className="names-list-wrapper" ref={namesListWrapperRef}>
-                  {[0, 1, 2].map((copyIndex) => (
-                    <span key={copyIndex} className="names-list">
-                      {NAMES_DATA.map((item, i) => (
-                        <span
-                          key={i}
-                          className="name"
-                          style={{ color: item.color }}
-                        >
-                          {item.name}
-                        </span>
-                      ))}
-                    </span>
-                  ))}
-                </div>
-              </div>
             </div>
 
-            <div className="right-column">
+            <div className="right-column slider-names-right">
               <span className="text secondary">
                 <a
                   href="#contact"
                   aria-label="Join Luma Pay"
                 >
-                  <span className="bold">Join Luma Pay</span>
+                  <span className="bold">Join Luma Pay.</span>
                 </a>
               </span>
             </div>

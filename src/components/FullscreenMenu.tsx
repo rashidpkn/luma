@@ -41,7 +41,7 @@ export const FullscreenMenu: React.FC = () => {
         transition: 'opacity 0.4s cubic-bezier(0.19, 1, 0.22, 1), visibility 0.4s ease',
         backdropFilter: 'blur(25px)',
         WebkitBackdropFilter: 'blur(25px)',
-        backgroundColor: 'rgba(0, 0, 0, 0.95)',
+        backgroundColor: 'rgba(255, 255, 255, 0.97)',
         overflowY: 'auto',
         WebkitOverflowScrolling: 'touch'
       }}
